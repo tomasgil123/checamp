@@ -15,7 +15,7 @@ const colors = {
     error: '#DF744A',
     link: '#4998d7',
     success: '#57bc90',
-    primary: '#272727',
+    primary: '#373b3e',
     hint: '#4c4c4c',
     titles: '#212121',
     subTitles: '#888',
