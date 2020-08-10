@@ -8,7 +8,7 @@ const colors = {
     borders: '#e8e8e8',
     gray: '#c6c6c6',
     background: '#fffffe',
-    primaryLightBlue: '#A8C7DC',
+    primaryLightBlue: '#e5faf1',
     primaryGreen: '#246b62',
   },
   text: {
