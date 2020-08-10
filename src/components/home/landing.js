@@ -6,12 +6,13 @@ import MainButton from 'src/components/mainButton'
 
 const Container = styled.div`
   background-color: ${colors.base.white};
-  height: 70vh;
+  height: 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
   @media (min-width: ${breakpoints.md}) {
     flex-direction: row;
+    height: 70vh;
   }
 `
 
