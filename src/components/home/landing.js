@@ -18,9 +18,11 @@ const Container = styled.div`
 const ContainerImageLanding = styled.div`
   @media (min-width: ${breakpoints.md}) and (max-width: ${breakpoints.lg}) {
     flex: 4;
+    padding-right: ${space.s12};
   }
   @media (min-width: ${breakpoints.lg}) {
     flex: 5;
+    padding-right: ${space.s12};
   }
   img {
     width: 100%;
