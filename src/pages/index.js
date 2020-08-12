@@ -1,15 +1,18 @@
-import Header from 'src/components/header'
+import Layout from 'src/components/layout'
 import Landing from 'src/components/home/landing'
 import HowItWorks from 'src/components/home/howItWorks/index'
 import ValueProp from 'src/components/home/valueProp'
 
-export default function Home() {
+function Home() {
   return (
-    <div>
-      <Header />
+    <>
       <Landing />
       <HowItWorks />
       <ValueProp />
-    </div>
+    </>
   )
 }
+
+Home.layout = Layout
+
+export default Home

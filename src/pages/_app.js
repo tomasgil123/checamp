@@ -7,10 +7,14 @@ function MyApp({ Component, pageProps }) {
   // eslint-disable-next-line react/prop-types
   const store = useStore(pageProps.initialReduxState)
 
+  const Layout = Component.layout || ((children) => <>{children}</>)
+
   // eslint-disable-next-line react/jsx-props-no-spreading
   return (
     <Provider store={store}>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </Provider>
   )
 }
