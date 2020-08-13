@@ -5,11 +5,12 @@ const colors = {
     grayStrongest: '#333',
     black: '#202020',
     overlay: '#212121',
-    borders: '#e8e8e8',
+    borders: '#ebeff3',
     gray: '#c6c6c6',
     background: '#fffffe',
     primaryLightBlue: '#e5faf1',
     primaryGreen: '#246b62',
+    secondaryGreen: '#ADE8C4',
   },
   text: {
     error: '#DF744A',

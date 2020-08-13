@@ -11,6 +11,11 @@ a {
   text-decoration: none;
 }
 
+h3 {
+  color: #373b3e;
+  font-weight: 700;
+}
+
 * {
   box-sizing: border-box;
 }
