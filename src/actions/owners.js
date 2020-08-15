@@ -8,3 +8,11 @@ export const changeLastStepNumber = (lastStepNumber) => ({
   type: 'CHANGE_LAST_STEP_NUMBER',
   lastStepNumber,
 })
+
+export const addFeatures = (brand, model, year, lenght) => ({
+  type: 'ADD_FEATURES',
+  brand,
+  model,
+  year,
+  lenght,
+})

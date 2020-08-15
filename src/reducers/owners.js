@@ -1,9 +1,14 @@
+/* eslint-disable no-param-reassign */
 import { createSelector } from 'reselect'
 import produce from 'immer'
 
 const initialState = {
   typeRV: '',
   lastStepNumber: 0,
+  RVBrand: '',
+  RVModel: '',
+  RVManufactureDate: '',
+  RVLenght: '',
 }
 
 export default function ownersReducer(state = initialState, action) {
@@ -13,13 +18,18 @@ export default function ownersReducer(state = initialState, action) {
     switch (action.type) {
       // eslint-disable-next-line no-undef
       case 'ADD_TYPE_RV': {
-        // eslint-disable-next-line no-param-reassign
         draft.typeRV = action.typeRV
         return draft
       }
       case 'CHANGE_LAST_STEP_NUMBER': {
-        // eslint-disable-next-line no-param-reassign
         draft.lastStepNumber = action.lastStepNumber
+        return draft
+      }
+      case 'ADD_FEATURES': {
+        draft.RVBrand = action.brand
+        draft.RVModel = action.model
+        draft.RVManufactureDate = action.year
+        draft.RVLenght = action.lenght
         return draft
       }
     }
@@ -34,4 +44,13 @@ export const getTypeRV = createSelector(getOwnerssState, (ownersState) => {
 
 export const getLastStepNumber = createSelector(getOwnerssState, (ownersState) => {
   return ownersState.lastStepNumber
+})
+
+export const getFeatures = createSelector(getOwnerssState, (ownersState) => {
+  return {
+    brand: ownersState.RVBrand,
+    model: ownersState.RVModel,
+    year: ownersState.RVManufactureDate,
+    length: ownersState.RVLength,
+  }
 })

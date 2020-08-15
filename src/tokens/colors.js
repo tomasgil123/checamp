@@ -6,11 +6,13 @@ const colors = {
     black: '#202020',
     overlay: '#212121',
     borders: '#ebeff3',
+    inputBorders: '#e2e8f0',
     gray: '#c6c6c6',
     background: '#fffffe',
     primaryLightBlue: '#e5faf1',
     primaryGreen: '#246b62',
     secondaryGreen: '#ADE8C4',
+    secondaryBlue: '#719ECE',
   },
   text: {
     error: '#DF744A',
