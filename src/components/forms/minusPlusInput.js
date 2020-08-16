@@ -47,7 +47,7 @@ const MinusPlusInputElement = styled.button`
   height: ${space.s8};
   width: ${space.s8};
   position: relative;
-  background: #f6f7f9;
+  background: ${colors.base.grayBgIcons};
   font-size: ${space.s5};
   box-shadow: ${boxShadow.shadow};
   top: 0px;
@@ -69,7 +69,7 @@ const Number = styled.span`
   padding-right: ${space.s4};
 `
 
-const MinusPlusInput = ({ name, title, subtitle, value, handleChange, formProps }) => {
+const MinusPlusInput = ({ name, title, subtitle, value, handleChange }) => {
   const onClickMinusButton = () => {
     if (value > 1) {
       handleChange(name, value - 1)

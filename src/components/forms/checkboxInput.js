@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { space, boxShadow, colors } from 'src/tokens'
+import { space, colors } from 'src/tokens'
 import PropTypes from 'prop-types'
 
 const Container = styled.div`

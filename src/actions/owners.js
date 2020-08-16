@@ -27,3 +27,8 @@ export const addAmenities = (amenities) => ({
   type: 'ADD_AMENITIES',
   amenities,
 })
+
+export const addRules = (rules) => ({
+  type: 'ADD_RULES',
+  rules,
+})

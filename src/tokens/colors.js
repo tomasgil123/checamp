@@ -2,9 +2,11 @@ const colors = {
   base: {
     white: '#ffffff',
     grayLightest: '#f4f4f4',
+    grayMedium: '#ccc',
     grayStrongest: '#333',
     black: '#202020',
     overlay: '#212121',
+    grayBgIcons: '#f6f7f9',
     borders: '#ebeff3',
     inputBorders: '#e2e8f0',
     minusPlusButton: '#d0d6dc',

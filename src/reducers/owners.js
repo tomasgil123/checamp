@@ -12,6 +12,7 @@ const initialState = {
   spaceForSleepers: 1,
   spaceForPassengers: 1,
   amenities: {},
+  rules: {},
 }
 
 export default function ownersReducer(state = initialState, action) {
@@ -42,6 +43,10 @@ export default function ownersReducer(state = initialState, action) {
       }
       case 'ADD_AMENITIES': {
         draft.amenities = action.amenities
+        return draft
+      }
+      case 'ADD_RULES': {
+        draft.rules = action.rules
         return draft
       }
     }
@@ -77,5 +82,11 @@ export const getSpace = createSelector(getOwnerssState, (ownersState) => {
 export const getAmenities = createSelector(getOwnerssState, (ownersState) => {
   return {
     amenities: ownersState.amenities,
+  }
+})
+
+export const getRules = createSelector(getOwnerssState, (ownersState) => {
+  return {
+    rules: ownersState.rules,
   }
 })
