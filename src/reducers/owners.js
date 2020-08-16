@@ -16,6 +16,7 @@ const initialState = {
   pickupAddress: '',
   city: '',
   nameListing: '',
+  descriptionListing: '',
 }
 
 export default function ownersReducer(state = initialState, action) {
@@ -59,6 +60,10 @@ export default function ownersReducer(state = initialState, action) {
       }
       case 'ADD_NAME_LISTING': {
         draft.nameListing = action.nameListing
+        return draft
+      }
+      case 'ADD_DESCRIPTION_LISTING': {
+        draft.descriptionListing = action.descriptionListing
         return draft
       }
     }
@@ -113,5 +118,11 @@ export const getPickupAddressDetails = createSelector(getOwnerssState, (ownersSt
 export const getNameListing = createSelector(getOwnerssState, (ownersState) => {
   return {
     nameListing: ownersState.nameListing,
+  }
+})
+
+export const getDescriptionListing = createSelector(getOwnerssState, (ownersState) => {
+  return {
+    descriptionListing: ownersState.descriptionListing,
   }
 })

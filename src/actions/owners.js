@@ -42,3 +42,8 @@ export const addNameListing = (nameListing) => ({
   type: 'ADD_NAME_LISTING',
   nameListing,
 })
+
+export const addDescriptionListing = (descriptionListing) => ({
+  type: 'ADD_DESCRIPTION_LISTING',
+  descriptionListing,
+})
