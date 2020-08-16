@@ -32,3 +32,8 @@ export const addRules = (rules) => ({
   type: 'ADD_RULES',
   rules,
 })
+
+export const addPickupAddressDetails = (pickupAddressDetails) => ({
+  type: 'ADD_PICKUP_ADDRESS_DETAILS',
+  pickupAddressDetails,
+})

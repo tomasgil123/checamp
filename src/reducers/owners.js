@@ -13,6 +13,8 @@ const initialState = {
   spaceForPassengers: 1,
   amenities: {},
   rules: {},
+  pickupAddress: '',
+  city: '',
 }
 
 export default function ownersReducer(state = initialState, action) {
@@ -47,6 +49,11 @@ export default function ownersReducer(state = initialState, action) {
       }
       case 'ADD_RULES': {
         draft.rules = action.rules
+        return draft
+      }
+      case 'ADD_PICKUP_ADDRESS_DETAILS': {
+        draft.pickupAddress = action.pickupAddressDetails.pickupAddress
+        draft.city = action.pickupAddressDetails.city
         return draft
       }
     }
@@ -88,5 +95,12 @@ export const getAmenities = createSelector(getOwnerssState, (ownersState) => {
 export const getRules = createSelector(getOwnerssState, (ownersState) => {
   return {
     rules: ownersState.rules,
+  }
+})
+
+export const getPickupAddressDetails = createSelector(getOwnerssState, (ownersState) => {
+  return {
+    pickupAddress: ownersState.pickupAddress,
+    city: ownersState.city,
   }
 })

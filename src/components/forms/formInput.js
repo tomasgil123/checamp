@@ -12,6 +12,7 @@ const LabelElement = styled.label`
   font-weight: 500;
   width: 100%;
   display: block;
+  color: ${colors.text.primary};
   margin-bottom: ${space.s2};
 `
 
