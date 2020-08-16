@@ -16,3 +16,14 @@ export const addFeatures = (brand, model, year, lenght) => ({
   year,
   lenght,
 })
+
+export const addSpace = (sleepers, passengers) => ({
+  type: 'ADD_SPACE',
+  sleepers,
+  passengers,
+})
+
+export const addAmenities = (amenities) => ({
+  type: 'ADD_AMENITIES',
+  amenities,
+})

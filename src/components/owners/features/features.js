@@ -1,32 +1,10 @@
-import styled from 'styled-components'
-import { space, colors, breakpoints } from 'src/tokens'
 import PropTypes from 'prop-types'
 import * as Yup from 'yup'
 
 import { Formik } from 'formik'
 import FormInput from 'src/components/forms/formInput'
 import MainButton from 'src/components/mainButton'
-
-const ContainerMainButton = styled.div`
-  padding-top: ${space.s5};
-  padding-bottom: ${space.s5};
-  width: 100%;
-  max-width: 500px;
-  display: flex;
-  justify-content: flex-end;
-  position: fixed;
-  bottom: 0px;
-  border-top: 1px solid ${colors.base.borders};
-  button {
-    width: 50%;
-  }
-  @media (min-width: ${breakpoints.md}) {
-    justify-content: right;
-    button {
-      width: 100%;
-    }
-  }
-`
+import { WrapperSubmitSection, ContainerSubmitButton } from 'src/components/forms/submitButton'
 
 function Features({ features, addFeatures }) {
   return (
@@ -99,9 +77,10 @@ function Features({ features, addFeatures }) {
             errors={formProps.errors}
             touched={formProps.touched}
           />
-          <ContainerMainButton>
+          <WrapperSubmitSection />
+          <ContainerSubmitButton>
             <MainButton text="Continuar" onClickButton={undefined} type="submit" />
-          </ContainerMainButton>
+          </ContainerSubmitButton>
         </form>
       )}
     </Formik>

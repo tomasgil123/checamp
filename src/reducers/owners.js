@@ -9,6 +9,9 @@ const initialState = {
   RVModel: '',
   RVManufactureDate: '',
   RVLenght: '',
+  spaceForSleepers: 1,
+  spaceForPassengers: 1,
+  amenities: {},
 }
 
 export default function ownersReducer(state = initialState, action) {
@@ -32,6 +35,15 @@ export default function ownersReducer(state = initialState, action) {
         draft.RVLenght = action.lenght
         return draft
       }
+      case 'ADD_SPACE': {
+        draft.spaceForSleepers = action.sleepers
+        draft.spaceForPassengers = action.passengers
+        return draft
+      }
+      case 'ADD_AMENITIES': {
+        draft.amenities = action.amenities
+        return draft
+      }
     }
   })
 }
@@ -52,5 +64,18 @@ export const getFeatures = createSelector(getOwnerssState, (ownersState) => {
     model: ownersState.RVModel,
     year: ownersState.RVManufactureDate,
     length: ownersState.RVLength,
+  }
+})
+
+export const getSpace = createSelector(getOwnerssState, (ownersState) => {
+  return {
+    sleepers: ownersState.spaceForSleepers,
+    passengers: ownersState.spaceForPassengers,
+  }
+})
+
+export const getAmenities = createSelector(getOwnerssState, (ownersState) => {
+  return {
+    amenities: ownersState.amenities,
   }
 })
