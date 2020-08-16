@@ -13,7 +13,7 @@ const Container = styled.div`
 `
 
 const ContainerText = styled.div`
-  flex: 1;
+  flex: 2;
   display: flex;
   flex-direction: column;
 `

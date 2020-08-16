@@ -2,7 +2,7 @@ import * as Yup from 'yup'
 // eslint-disable-next-line import/prefer-default-export
 export const initialValues = (rules) => {
   return {
-    pets: rules.pets ? rules.pets : true,
+    pets: rules.pets ? rules.pets : false,
     tailgating: rules.tailgating ? rules.tailgating : false,
     festivals: rules.festivals ? rules.festivals : false,
     smoking: rules.smoking ? rules.smoking : false,
