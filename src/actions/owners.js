@@ -37,3 +37,8 @@ export const addPickupAddressDetails = (pickupAddressDetails) => ({
   type: 'ADD_PICKUP_ADDRESS_DETAILS',
   pickupAddressDetails,
 })
+
+export const addNameListing = (nameListing) => ({
+  type: 'ADD_NAME_LISTING',
+  nameListing,
+})

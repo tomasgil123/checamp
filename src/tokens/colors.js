@@ -2,7 +2,6 @@ const colors = {
   base: {
     white: '#ffffff',
     grayLightest: '#f4f4f4',
-    grayMedium: '#ccc',
     grayStrongest: '#333',
     black: '#202020',
     overlay: '#212121',
