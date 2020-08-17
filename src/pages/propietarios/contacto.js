@@ -3,8 +3,7 @@ import { space, colors } from 'src/tokens'
 import { useContext } from 'react'
 import { PageNavigationContext } from 'src/context'
 
-// import LayoutForm from 'src/components/layout/layoutForm'
-import Layout from 'src/components/layout'
+import LayoutForm from 'src/components/layout/layoutForm'
 import Contact from 'src/components/owners/contact'
 
 const Container = styled.div`
@@ -47,6 +46,6 @@ function ContactInfoOwner() {
   )
 }
 
-ContactInfoOwner.layout = Layout
+ContactInfoOwner.layout = LayoutForm
 
 export default ContactInfoOwner
