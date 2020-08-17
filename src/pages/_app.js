@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
   // eslint-disable-next-line react/prop-types
   const store = useStore(pageProps.initialReduxState)
 
-  const Layout = Component.layout || ((children) => <>{children}</>)
+  const Layout = Component.layout ? Component.layout : React.Fragment
 
   // eslint-disable-next-line react/jsx-props-no-spreading
   return (
