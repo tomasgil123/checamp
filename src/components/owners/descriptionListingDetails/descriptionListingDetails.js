@@ -33,7 +33,7 @@ function DescriptionListingDetails({ descriptionListing, addDescriptionListing, 
           .test(
             'len',
             'Intenta que la descripcion no tenga menos de 20 caracteres',
-            (val) => val.toString().length > 21
+            (val) => !val || val.toString().length > 21
           )
           .required('Por favor, completa la descripcion de tu anuncio'),
       })}

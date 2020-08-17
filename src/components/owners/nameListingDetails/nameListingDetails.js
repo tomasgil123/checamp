@@ -26,7 +26,7 @@ function NameListingDetails({ nameListing, addNameListing, goToNextStep }) {
           .test(
             'len',
             'Intenta que el titulo no tenga mas de 75 caracteres',
-            (val) => val.toString().length < 76
+            (val) => !val || val.toString().length < 76
           )
           .required('Por favor, completa el titulo de tu anuncio'),
       })}
