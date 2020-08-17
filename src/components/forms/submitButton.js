@@ -20,7 +20,7 @@ export const ContainerSubmitButton = styled.div`
   width: 100%;
   max-width: 500px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   background-color: ${colors.base.white};
   z-index: 10;
   position: fixed;

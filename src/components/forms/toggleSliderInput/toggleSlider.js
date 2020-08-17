@@ -7,6 +7,7 @@ const LabelElement = styled.label`
   height: 34px;
   position: relative;
   width: 60px;
+  -webkit-tap-highlight-color: transparent;
   input {
     display: none;
   }
