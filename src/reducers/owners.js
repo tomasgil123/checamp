@@ -4,11 +4,11 @@ import produce from 'immer'
 
 const initialState = {
   typeRV: '',
-  lastStepNumber: 0,
+  lastStepNumber: -1,
   RVBrand: '',
   RVModel: '',
   RVManufactureDate: '',
-  RVLenght: '',
+  RVLength: '',
   spaceForSleepers: 1,
   spaceForPassengers: 1,
   amenities: {},
@@ -37,7 +37,7 @@ export default function ownersReducer(state = initialState, action) {
         draft.RVBrand = action.brand
         draft.RVModel = action.model
         draft.RVManufactureDate = action.year
-        draft.RVLenght = action.lenght
+        draft.RVLength = action.length
         return draft
       }
       case 'ADD_SPACE': {
@@ -54,8 +54,9 @@ export default function ownersReducer(state = initialState, action) {
         return draft
       }
       case 'ADD_PICKUP_ADDRESS_DETAILS': {
-        draft.pickupAddress = action.pickupAddressDetails.pickupAddress
-        draft.city = action.pickupAddressDetails.city
+        console.log('action', action)
+        draft.pickupAddress = action.details.pickupAddress
+        draft.city = action.details.city
         return draft
       }
       case 'ADD_NAME_LISTING': {

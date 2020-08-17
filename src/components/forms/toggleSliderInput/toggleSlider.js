@@ -46,13 +46,14 @@ const InputElement = styled.input`
 
 const ToggleSlider = ({ name, value, handleChange }) => {
   return (
-    <LabelElement htmlFor="checkbox-slider">
+    <LabelElement htmlFor={`checkbox-slider-${name}`}>
       <InputElement
+        key={name}
         name={name}
         checked={value}
         onChange={handleChange}
         type="checkbox"
-        id="checkbox-slider"
+        id={`checkbox-slider-${name}`}
       />
       <Slider />
     </LabelElement>

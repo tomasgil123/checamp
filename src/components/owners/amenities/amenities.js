@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { colors, breakpoints, space } from 'src/tokens/index'
@@ -39,17 +40,18 @@ const Column = styled.div`
   }
 `
 
-const Amenities = ({ spaceRV, amenities, addSpace, addAmenities }) => {
+const Amenities = ({ spaceRV, amenities, addSpace, addAmenities, goToNextStep }) => {
   return (
     <>
       <h2>Espacio del vehiculo</h2>
       <Formik
-        initialValues={initialValues(spaceRV, amenities)}
+        initialValues={initialValues(spaceRV, amenities.amenities)}
         validationSchema={Yup.object().shape(validationSchema)}
         onSubmit={(values) => {
           const { sleepers, passengers, ...allAmenities } = values
           addSpace(sleepers, passengers)
           addAmenities(allAmenities)
+          goToNextStep()
         }}
       >
         {(formProps) => (
@@ -74,7 +76,7 @@ const Amenities = ({ spaceRV, amenities, addSpace, addAmenities }) => {
             <Divider />
             <h2>Amenities</h2>
             {listAmenities.map((typeAmenity) => (
-              <>
+              <React.Fragment key={typeAmenity.typeAmenity}>
                 <TypeAmenity>{typeAmenity.typeAmenity}</TypeAmenity>
                 <ContainerAmenities>
                   <Column>
@@ -108,7 +110,7 @@ const Amenities = ({ spaceRV, amenities, addSpace, addAmenities }) => {
                     ))}
                   </Column>
                 </ContainerAmenities>
-              </>
+              </React.Fragment>
             ))}
             <WrapperSubmitSection />
             <ContainerSubmitButton>
@@ -128,6 +130,7 @@ Amenities.propTypes = {
   amenities: PropTypes.object,
   addSpace: PropTypes.func,
   addAmenities: PropTypes.func,
+  goToNextStep: PropTypes.func,
 }
 
 export default Amenities

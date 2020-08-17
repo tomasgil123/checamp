@@ -6,7 +6,7 @@ import FormInput from 'src/components/forms/formInput'
 import MainButton from 'src/components/mainButton'
 import { WrapperSubmitSection, ContainerSubmitButton } from 'src/components/forms/submitButton'
 
-function Features({ features, addFeatures }) {
+function Features({ features, addFeatures, goToNextStep }) {
   return (
     <Formik
       initialValues={{
@@ -22,13 +22,14 @@ function Features({ features, addFeatures }) {
           .test(
             'len',
             'Ingresa un ano de 4 digitos. Por ejemplo: 2010',
-            (val) => val.toString().length === 4
+            (val) => !val || val.toString().length === 4
           )
           .required('Por favor, indicanos el ano de fabricacion de tu RV'),
         length: Yup.number().required('Por favor, indicanos el largo de tu RV'),
       })}
       onSubmit={(values) => {
         addFeatures(values.brand, values.model, values.year, values.length)
+        goToNextStep()
       }}
     >
       {(formProps) => (
@@ -91,6 +92,7 @@ Features.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   features: PropTypes.object,
   addFeatures: PropTypes.func,
+  goToNextStep: PropTypes.func,
 }
 
 export default Features

@@ -6,7 +6,7 @@ import FormInput from 'src/components/forms/formInput'
 import MainButton from 'src/components/mainButton'
 import { WrapperSubmitSection, ContainerSubmitButton } from 'src/components/forms/submitButton'
 
-function PickupAddressDetails({ pickupAddressDetails, addPickupAddressDetails }) {
+function PickupAddressDetails({ pickupAddressDetails, addPickupAddressDetails, goToNextStep }) {
   return (
     <Formik
       initialValues={{
@@ -22,7 +22,8 @@ function PickupAddressDetails({ pickupAddressDetails, addPickupAddressDetails })
         ),
       })}
       onSubmit={(values) => {
-        addPickupAddressDetails(values.pickupAddress, values.city)
+        addPickupAddressDetails(values)
+        goToNextStep()
       }}
     >
       {(formProps) => (
@@ -63,6 +64,7 @@ PickupAddressDetails.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   pickupAddressDetails: PropTypes.object,
   addPickupAddressDetails: PropTypes.func,
+  goToNextStep: PropTypes.func,
 }
 
 export default PickupAddressDetails

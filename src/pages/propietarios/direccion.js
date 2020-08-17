@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 import { space, colors } from 'src/tokens'
+import { useContext } from 'react'
+import { PageNavigationContext } from 'src/context'
 
-import Layout from 'src/components/layout'
+import LayoutForm from 'src/components/layout/layoutForm'
 import PickupAddressDetails from 'src/components/owners/pickupAddressDetails'
 
 const Container = styled.div`
@@ -23,6 +25,11 @@ const Subtitle = styled.div`
 `
 
 function PickupAddressDetailsRV() {
+  const { loading, goToNextStep } = useContext(PageNavigationContext)
+
+  if (loading) {
+    return <div>Loading...</div>
+  }
   return (
     <Container>
       <ContainerTitle>
@@ -33,12 +40,12 @@ function PickupAddressDetailsRV() {
         </Subtitle>
       </ContainerTitle>
       <ContainerFeatures>
-        <PickupAddressDetails />
+        <PickupAddressDetails goToNextStep={goToNextStep} />
       </ContainerFeatures>
     </Container>
   )
 }
 
-PickupAddressDetailsRV.layout = Layout
+PickupAddressDetailsRV.layout = LayoutForm
 
 export default PickupAddressDetailsRV

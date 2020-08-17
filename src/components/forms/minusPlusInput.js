@@ -83,7 +83,12 @@ const MinusPlusInput = ({ name, title, subtitle, value, handleChange }) => {
         <Subtitle>{subtitle}</Subtitle>
       </ContainerText>
       <ContainerInput>
-        <MinusPlusInputElement active={value > 1} onClick={onClickMinusButton}>
+        <MinusPlusInputElement
+          key="button1"
+          type="button"
+          active={value > 1}
+          onClick={onClickMinusButton}
+        >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63.95 7.53">
             <path
               fill={value > 1 ? `${colors.base.primaryGreen}` : `${colors.base.minusIcon}`}
@@ -92,7 +97,12 @@ const MinusPlusInput = ({ name, title, subtitle, value, handleChange }) => {
           </svg>
         </MinusPlusInputElement>
         <Number>{value}</Number>
-        <MinusPlusInputElement active onClick={() => handleChange(name, value + 1)}>
+        <MinusPlusInputElement
+          key="button2"
+          type="button"
+          active
+          onClick={() => handleChange(name, value + 1)}
+        >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63.95 64">
             <path
               fill={`${colors.base.primaryGreen}`}

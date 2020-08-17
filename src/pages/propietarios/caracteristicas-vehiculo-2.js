@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 import { space } from 'src/tokens'
+import { useContext } from 'react'
+import { PageNavigationContext } from 'src/context'
 
-import Layout from 'src/components/layout'
+import LayoutForm from 'src/components/layout/layoutForm'
 import Amenities from 'src/components/owners/amenities'
 
 const Container = styled.div`
@@ -16,15 +18,20 @@ const ContainerFeatures = styled.div`
 `
 
 function FeaturesRVOne() {
+  const { loading, goToNextStep } = useContext(PageNavigationContext)
+
+  if (loading) {
+    return <div>Loading...</div>
+  }
   return (
     <Container>
       <ContainerFeatures>
-        <Amenities />
+        <Amenities goToNextStep={goToNextStep} />
       </ContainerFeatures>
     </Container>
   )
 }
 
-FeaturesRVOne.layout = Layout
+FeaturesRVOne.layout = LayoutForm
 
 export default FeaturesRVOne

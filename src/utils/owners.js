@@ -13,4 +13,8 @@ export const stepsOwnersForm = [
   { url: 'tipo-de-vehiculo', stepNumber: 0 },
   { url: 'caracteristicas-vehiculo-1', stepNumber: 1 },
   { url: 'caracteristicas-vehiculo-2', stepNumber: 2 },
+  { url: 'reglas', stepNumber: 3 },
+  { url: 'direccion', stepNumber: 4 },
+  { url: 'titulo-anuncio', stepNumber: 5 },
+  { url: 'descripcion-anuncio', stepNumber: 6 },
 ]

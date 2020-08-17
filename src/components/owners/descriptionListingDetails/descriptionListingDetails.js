@@ -22,7 +22,7 @@ const Hint = styled.div`
   padding-top: ${space.s3};
 `
 
-function DescriptionListingDetails({ descriptionListing, addDescriptionListing }) {
+function DescriptionListingDetails({ descriptionListing, addDescriptionListing, goToNextStep }) {
   return (
     <Formik
       initialValues={{
@@ -39,6 +39,7 @@ function DescriptionListingDetails({ descriptionListing, addDescriptionListing }
       })}
       onSubmit={(values) => {
         addDescriptionListing(values.name)
+        goToNextStep()
       }}
     >
       {(formProps) => (
@@ -70,6 +71,7 @@ DescriptionListingDetails.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   descriptionListing: PropTypes.object,
   addDescriptionListing: PropTypes.func,
+  goToNextStep: PropTypes.func,
 }
 
 export default DescriptionListingDetails

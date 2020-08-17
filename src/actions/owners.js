@@ -9,12 +9,12 @@ export const changeLastStepNumber = (lastStepNumber) => ({
   lastStepNumber,
 })
 
-export const addFeatures = (brand, model, year, lenght) => ({
+export const addFeatures = (brand, model, year, length) => ({
   type: 'ADD_FEATURES',
   brand,
   model,
   year,
-  lenght,
+  length,
 })
 
 export const addSpace = (sleepers, passengers) => ({
@@ -33,10 +33,12 @@ export const addRules = (rules) => ({
   rules,
 })
 
-export const addPickupAddressDetails = (pickupAddressDetails) => ({
-  type: 'ADD_PICKUP_ADDRESS_DETAILS',
-  pickupAddressDetails,
-})
+export const addPickupAddressDetails = (details) => {
+  return {
+    type: 'ADD_PICKUP_ADDRESS_DETAILS',
+    details,
+  }
+}
 
 export const addNameListing = (nameListing) => ({
   type: 'ADD_NAME_LISTING',

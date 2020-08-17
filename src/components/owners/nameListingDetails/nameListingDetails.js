@@ -15,7 +15,7 @@ const CharacterLimit = styled.div`
   width: 100%;
 `
 
-function NameListingDetails({ nameListing, addNameListing }) {
+function NameListingDetails({ nameListing, addNameListing, goToNextStep }) {
   return (
     <Formik
       initialValues={{
@@ -32,6 +32,7 @@ function NameListingDetails({ nameListing, addNameListing }) {
       })}
       onSubmit={(values) => {
         addNameListing(values.name)
+        goToNextStep()
       }}
     >
       {(formProps) => (
@@ -62,6 +63,7 @@ NameListingDetails.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   nameListing: PropTypes.object,
   addNameListing: PropTypes.func,
+  goToNextStep: PropTypes.func,
 }
 
 export default NameListingDetails

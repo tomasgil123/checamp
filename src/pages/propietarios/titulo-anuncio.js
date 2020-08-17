@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 import { space, colors } from 'src/tokens'
+import { useContext } from 'react'
+import { PageNavigationContext } from 'src/context'
 
-import Layout from 'src/components/layout'
+import LayoutForm from 'src/components/layout/layoutForm'
 import NameListingDetails from 'src/components/owners/nameListingDetails'
 
 const Container = styled.div`
@@ -23,6 +25,11 @@ const Subtitle = styled.div`
 `
 
 function NameListingRV() {
+  const { loading, goToNextStep } = useContext(PageNavigationContext)
+
+  if (loading) {
+    return <div>Loading...</div>
+  }
   return (
     <Container>
       <ContainerTitle>
@@ -33,12 +40,12 @@ function NameListingRV() {
         </Subtitle>
       </ContainerTitle>
       <ContainerFeatures>
-        <NameListingDetails />
+        <NameListingDetails goToNextStep={goToNextStep} />
       </ContainerFeatures>
     </Container>
   )
 }
 
-NameListingRV.layout = Layout
+NameListingRV.layout = LayoutForm
 
 export default NameListingRV

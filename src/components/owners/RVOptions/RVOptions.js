@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import { space, colors } from 'src/tokens'
 import PropTypes from 'prop-types'
 import { typesOfRV } from 'src/utils/owners'
-import { useGoToNextStep } from 'src/hooks/forms'
 
 const ContainerRVBoxes = styled.div`
   display: flex;
@@ -30,9 +29,10 @@ const RVBox = styled.div`
   }
 `
 
-function RVOptions({ typeRV, addTypeOfRV }) {
+function RVOptions({ typeRV, addTypeOfRV, goToNextStep }) {
   const onChooseTypeRV = (typeOfRV) => {
     addTypeOfRV(typeOfRV)
+    goToNextStep()
   }
 
   return (
@@ -54,6 +54,7 @@ function RVOptions({ typeRV, addTypeOfRV }) {
 RVOptions.propTypes = {
   typeRV: PropTypes.string,
   addTypeOfRV: PropTypes.func,
+  goToNextStep: PropTypes.func,
 }
 
 export default RVOptions

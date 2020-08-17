@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 import { space, colors } from 'src/tokens'
+import { useContext } from 'react'
+import { PageNavigationContext } from 'src/context'
 
-import Layout from 'src/components/layout'
+import LayoutForm from 'src/components/layout/layoutForm'
 import Rules from 'src/components/owners/rules'
 
 const Container = styled.div`
@@ -24,6 +26,11 @@ const Subtitle = styled.div`
 `
 
 function RulesRV() {
+  const { loading, goToNextStep } = useContext(PageNavigationContext)
+
+  if (loading) {
+    return <div>Loading...</div>
+  }
   return (
     <Container>
       <ContainerTitle>
@@ -31,12 +38,12 @@ function RulesRV() {
         <Subtitle>Inidica que cosas se permiten hacer y cuales no con tu vehiculo</Subtitle>
       </ContainerTitle>
       <ContainerFeatures>
-        <Rules />
+        <Rules goToNextStep={goToNextStep} />
       </ContainerFeatures>
     </Container>
   )
 }
 
-RulesRV.layout = Layout
+RulesRV.layout = LayoutForm
 
 export default RulesRV

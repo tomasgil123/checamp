@@ -70,6 +70,7 @@ const CheckboxInput = ({
         name={name}
         type={type}
         value={value}
+        checked={value}
         onChange={handleChange}
         onBlur={handleBlur}
       />
@@ -83,7 +84,7 @@ CheckboxInput.propTypes = {
   type: PropTypes.string,
   name: PropTypes.string,
   label: PropTypes.string,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  value: PropTypes.bool,
   handleChange: PropTypes.func,
   handleBlur: PropTypes.func,
   checked: PropTypes.string,

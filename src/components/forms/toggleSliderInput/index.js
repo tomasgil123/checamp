@@ -56,7 +56,7 @@ ToggleSliderInput.propTypes = {
   name: PropTypes.string,
   title: PropTypes.string,
   subtitle: PropTypes.string,
-  value: PropTypes.number,
+  value: PropTypes.bool,
   handleChange: PropTypes.func,
 }
 
