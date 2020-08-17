@@ -23,4 +23,11 @@ const Subtitle = styled.div`
   padding-bottom: ${space.s4};
 `
 
-export { Container, ContainerTitle, ContainerFeatures, Subtitle }
+const ContainerHelpCard = styled.div`
+  margin-top: ${space.s4};
+  div {
+    margin: auto;
+  }
+`
+
+export { Container, ContainerTitle, ContainerFeatures, Subtitle, ContainerHelpCard }

@@ -1,9 +1,10 @@
 import { useContext } from 'react'
 import { PageNavigationContext } from 'src/context'
 
-import { Container, ContainerTitle } from 'src/components/owners/general'
+import { Container, ContainerTitle, ContainerHelpCard } from 'src/components/owners/general'
 import RVOptions from 'src/components/owners/RVOptions'
 import LayoutForm from 'src/components/layout/layoutForm'
+import HelpCard from 'src/components/forms/helpCard'
 
 function TypeRV() {
   const { goToNextStep } = useContext(PageNavigationContext)
@@ -14,6 +15,12 @@ function TypeRV() {
         <h2>Indica tu tipo de vehiculo</h2>
       </ContainerTitle>
       <RVOptions goToNextStep={goToNextStep} />
+      <ContainerHelpCard>
+        <HelpCard
+          title="Consejo"
+          body="Tenes una consulta? Contactanos por whatsapp al 11-5621-7620"
+        />
+      </ContainerHelpCard>
     </Container>
   )
 }
