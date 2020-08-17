@@ -6,6 +6,7 @@ import { changeLastStepNumber } from 'src/actions/owners'
 import { getLastStepNumber } from 'src/reducers/owners'
 import { PageNavigationContext } from 'src/context'
 import styled from 'styled-components'
+import { colors } from 'src/tokens'
 
 import Header from 'src/components/header'
 
@@ -15,7 +16,7 @@ const ProgressBar = styled.div`
   top: 0;
   left: 0;
   height: 4px;
-  background: #246b62;
+  background: ${colors.base.primaryGreen};
   transition: width 0.5s;
 `
 
