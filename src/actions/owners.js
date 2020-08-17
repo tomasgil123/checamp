@@ -49,3 +49,8 @@ export const addDescriptionListing = (descriptionListing) => ({
   type: 'ADD_DESCRIPTION_LISTING',
   descriptionListing,
 })
+
+export const addContactInfo = (contactInfo) => ({
+  type: 'ADD_CONTACT_INFO',
+  contactInfo,
+})
