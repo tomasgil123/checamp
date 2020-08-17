@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import { navigation } from 'src/utils/index'
+import PropTypes from 'prop-types'
 import Link from 'next/link'
 import {
   HeaderWrapper,
@@ -11,10 +12,11 @@ import {
   ContainerTabs,
   Tab,
   ContainerImageLogo,
+  FormTabs,
 } from './headerComponents'
 import { MenuDrawer, GrayOverlay } from './menuDrawer'
 
-function Header() {
+function Header({ isInForm }) {
   const [showMenuDrawer, setShowMenuDrawer] = useState('-500%')
   const router = useRouter()
 
@@ -32,14 +34,29 @@ function Header() {
     })
   }
 
+  const TabsHeader = isInForm ? (
+    <FormTabs />
+  ) : (
+    <>
+      {navigation.pages.map((page) => (
+        <Tab>
+          <Link href={`/${page.link}`}>
+            <a>{page.name}</a>
+          </Link>
+        </Tab>
+      ))}
+    </>
+  )
+
   return (
-    <HeaderWrapper>
+    <HeaderWrapper isInForm={isInForm}>
       <Container>
         <GrayOverlay showOverlay={showMenuDrawer} onClose={onCloseMenuDrawer} />
         <MenuDrawer
           translate={showMenuDrawer}
           onClose={onCloseMenuDrawer}
           pages={navigation.pages}
+          isInForm={isInForm}
         />
         <MenuLeft onClick={onOpenMenuDrawer}>
           <svg viewBox="0 0 24 24">
@@ -59,18 +76,14 @@ function Header() {
           </ContainerImageLogo>
         </Logo>
         <MenuRight />
-        <ContainerTabs>
-          {navigation.pages.map((page) => (
-            <Tab>
-              <Link href={`/${page.link}`}>
-                <a>{page.name}</a>
-              </Link>
-            </Tab>
-          ))}
-        </ContainerTabs>
+        <ContainerTabs>{TabsHeader}</ContainerTabs>
       </Container>
     </HeaderWrapper>
   )
+}
+
+Header.propTypes = {
+  isInForm: PropTypes.bool,
 }
 
 export default Header

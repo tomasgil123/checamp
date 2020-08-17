@@ -64,7 +64,34 @@ GrayOverlay.propTypes = {
   onClose: PropTypes.func,
 }
 
-const MenuDrawer = ({ translate, pages }) => {
+const NavigationOptionsInForm = () => {
+  return (
+    <>
+      <li>Tenes una consulta? Escribinos por whatsapp al 11-5621-7620</li>
+      <li>
+        <Link href="/">
+          <a>Salir</a>
+        </Link>
+      </li>
+    </>
+  )
+}
+
+const MenuDrawer = ({ translate, pages, isInForm }) => {
+  const navigationOptions = isInForm ? (
+    <NavigationOptionsInForm />
+  ) : (
+    <>
+      {pages.map((page) => (
+        <li key={page.name}>
+          <Link href={`/${page.link}`}>
+            <a>{page.name}</a>
+          </Link>
+        </li>
+      ))}
+    </>
+  )
+
   return (
     <ContainerMenuDrawer translate={translate}>
       <ContainerLogo>
@@ -76,15 +103,7 @@ const MenuDrawer = ({ translate, pages }) => {
         </Logo>
       </ContainerLogo>
       <ContainerNavigation>
-        <div style={{ position: 'relative' }}>
-          {pages.map((page) => (
-            <li key={page.name}>
-              <Link href={`/${page.link}`}>
-                <a>{page.name}</a>
-              </Link>
-            </li>
-          ))}
-        </div>
+        <div style={{ position: 'relative' }}>{navigationOptions}</div>
       </ContainerNavigation>
     </ContainerMenuDrawer>
   )
@@ -94,6 +113,7 @@ MenuDrawer.propTypes = {
   translate: PropTypes.string,
   // eslint-disable-next-line react/forbid-prop-types
   pages: PropTypes.array,
+  isInForm: PropTypes.bool,
 }
 
 export { MenuDrawer, GrayOverlay }

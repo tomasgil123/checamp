@@ -1,14 +1,15 @@
 import styled from 'styled-components'
 import { space, breakpoints, boxShadow, colors } from 'src/tokens'
+import Link from 'next/link'
 
 const HeaderWrapper = styled.div`
-  position: sticky;
+  position: sticky ${(props) => (props.isInForm ? 'relative' : 'sticky')};
   top: 0px;
   left: 0px;
   background-color: ${colors.base.white};
   z-index: 101;
   font-size: ${space.s4};
-  box-shadow: ${boxShadow.shadow};
+  box-shadow: ${(props) => (props.isInForm ? 'inherit' : `${boxShadow.shadow}`)};
   transition: box-shadow 500ms ease-in-out;
 `
 
@@ -105,6 +106,19 @@ const Tab = styled.div`
   }
 `
 
+const FormTabs = () => {
+  return (
+    <>
+      <Tab>Tenes una consulta? Escribinos por whatsapp al 11-5621-7620</Tab>
+      <Tab>
+        <Link href="/">
+          <a>Salir</a>
+        </Link>
+      </Tab>
+    </>
+  )
+}
+
 export {
   HeaderWrapper,
   Container,
@@ -115,4 +129,5 @@ export {
   Tab,
   TitleLogo,
   ContainerImageLogo,
+  FormTabs,
 }

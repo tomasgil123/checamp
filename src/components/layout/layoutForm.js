@@ -18,6 +18,14 @@ const ProgressBar = styled.div`
   height: 4px;
   background: ${colors.base.primaryGreen};
   transition: width 0.5s;
+  &:after {
+    content: '';
+    width: 100vw;
+    height: 4px;
+    background: #dfe4e7;
+    position: absolute;
+    z-index: -1;
+  }
 `
 
 // eslint-disable-next-line react/prop-types
@@ -75,7 +83,7 @@ export default function Layout({ children }) {
 
   return (
     <div>
-      <Header />
+      <Header isInForm />
       <ProgressBar width={widthProgressBar} />
       <PageNavigationContext.Provider value={{ loading, goToNextStep }}>
         {children}
