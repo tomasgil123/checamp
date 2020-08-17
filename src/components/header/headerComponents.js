@@ -3,7 +3,7 @@ import { space, breakpoints, boxShadow, colors } from 'src/tokens'
 import Link from 'next/link'
 
 const HeaderWrapper = styled.div`
-  position: sticky ${(props) => (props.isInForm ? 'relative' : 'sticky')};
+  position: ${(props) => (props.isInForm ? 'relative' : 'sticky')};
   top: 0px;
   left: 0px;
   background-color: ${colors.base.white};

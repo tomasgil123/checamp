@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import styled from 'styled-components'
 import { colors, breakpoints, space } from 'src/tokens'
 
@@ -82,7 +83,13 @@ const ContainerButton = styled.div`
 `
 
 function Landing() {
-  const onRentRV = () => {}
+  const router = useRouter()
+
+  const onRentRV = () => {
+    router.push({
+      pathname: `/propietarios/tipo-de-vehiculo`,
+    })
+  }
   return (
     <Container>
       <ContainerTitle>

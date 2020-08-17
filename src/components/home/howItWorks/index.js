@@ -3,8 +3,8 @@ import { breakpoints, space, colors } from 'src/tokens'
 import Item from './item'
 
 const Container = styled.div`
-  padding-top: ${space.s24};
-  padding-bottom: ${space.s24};
+  padding-top: ${space.s32};
+  padding-bottom: ${space.s32};
   @media (min-width: ${breakpoints.md}) {
     padding-top: ${space.s40};
     padding-bottom: ${space.s40};

@@ -28,6 +28,10 @@ const ProgressBar = styled.div`
   }
 `
 
+const Container = styled.div`
+  overflow-x: hidden;
+`
+
 // eslint-disable-next-line react/prop-types
 export default function Layout({ children }) {
   const router = useRouter()
@@ -82,12 +86,12 @@ export default function Layout({ children }) {
   }
 
   return (
-    <div>
+    <Container>
       <Header isInForm />
       <ProgressBar width={widthProgressBar} />
       <PageNavigationContext.Provider value={{ loading, goToNextStep }}>
         {children}
       </PageNavigationContext.Provider>
-    </div>
+    </Container>
   )
 }
