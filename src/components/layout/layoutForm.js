@@ -30,6 +30,7 @@ const ProgressBar = styled.div`
 
 const Container = styled.div`
   overflow-x: hidden;
+  overflow-y: ${(props) => (`${props.overflowHidden}` ? `hidden` : `inherit`)};
 `
 
 // eslint-disable-next-line react/prop-types
@@ -86,7 +87,7 @@ export default function Layout({ children }) {
   }
 
   return (
-    <Container>
+    <Container overflowHidden={router.pathname.includes('caracteristicas-vehiculos-1')}>
       <Header isInForm />
       <ProgressBar width={widthProgressBar} />
       <PageNavigationContext.Provider value={{ loading, goToNextStep }}>
