@@ -5,8 +5,19 @@ import { useDispatch, useSelector } from 'react-redux'
 import { changeLastStepNumber } from 'src/actions/owners'
 import { getLastStepNumber } from 'src/reducers/owners'
 import { PageNavigationContext } from 'src/context'
+import styled from 'styled-components'
 
 import Header from 'src/components/header'
+
+const ProgressBar = styled.div`
+  width: ${(props) => `${props.width}%`};
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: #246b62;
+  transition: width 0.5s;
+`
 
 // eslint-disable-next-line react/prop-types
 export default function Layout({ children }) {
@@ -19,6 +30,15 @@ export default function Layout({ children }) {
 
   // eslint-disable-next-line no-undef
   const [loading, setLoading] = React.useState(true)
+  // eslint-disable-next-line no-undef
+  const [widthProgressBar, setWidthProgressBar] = React.useState(0)
+
+  useEffect(() => {
+    const currentStepUrl = router.pathname
+    const numberOfPages = stepsOwnersForm.length
+    const currentStep = stepsOwnersForm.find((step) => currentStepUrl.includes(step.url))
+    setWidthProgressBar(((currentStep.stepNumber + 1) / numberOfPages) * 100)
+  }, [router.pathname])
 
   useEffect(() => {
     if (window) {
@@ -55,6 +75,7 @@ export default function Layout({ children }) {
   return (
     <div>
       <Header />
+      <ProgressBar width={widthProgressBar} />
       <PageNavigationContext.Provider value={{ loading, goToNextStep }}>
         {children}
       </PageNavigationContext.Provider>

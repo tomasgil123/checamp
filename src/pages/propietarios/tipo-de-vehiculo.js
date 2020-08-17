@@ -4,7 +4,6 @@ import { useContext } from 'react'
 import { PageNavigationContext } from 'src/context'
 
 import RVOptions from 'src/components/owners/RVOptions'
-// import Layout from 'src/components/layout/'
 import LayoutForm from 'src/components/layout/layoutForm'
 
 const Container = styled.div`
@@ -15,9 +14,6 @@ const Container = styled.div`
 const ContainerTitle = styled.div`
   margin-left: ${space.s3};
 `
-
-// const goToNextStep = useContext(PageNavigationContext)
-// console.log('goToNextStep', goToNextStep)
 
 function TypeRV() {
   const { goToNextStep } = useContext(PageNavigationContext)
