@@ -9,11 +9,13 @@ const ContainerButton = styled.button`
   width: 100%;
   outline: none;
   border-width: 0px;
+  border: ${(props) => (props.secondary ? `2px solid ${colors.base.primaryGreen}` : `inherit`)};
   font-size: ${space.s4} !important;
   max-width: 250px;
   border-radius: 4px;
-  color: ${colors.base.white};
-  background-color: ${colors.base.primaryGreen};
+  color: ${(props) => (props.secondary ? `${colors.base.primaryGreen}` : `${colors.base.white}`)};
+  background-color: ${(props) =>
+    props.secondary ? `${colors.base.white}` : `${colors.base.primaryGreen}`};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,9 +30,9 @@ const ContainerButton = styled.button`
   }
 `
 
-const MainButton = ({ text, onClickButton, type }) => {
+const MainButton = ({ text, onClickButton, type, secondary }) => {
   return (
-    <ContainerButton type={type} onClick={onClickButton}>
+    <ContainerButton secondary={secondary} type={type} onClick={onClickButton}>
       {text}
     </ContainerButton>
   )
@@ -40,6 +42,7 @@ MainButton.propTypes = {
   text: PropTypes.string,
   onClickButton: PropTypes.func,
   type: PropTypes.string,
+  secondary: PropTypes.bool,
 }
 
 export default MainButton

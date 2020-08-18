@@ -54,3 +54,8 @@ export const addContactInfo = (contactInfo) => ({
   type: 'ADD_CONTACT_INFO',
   contactInfo,
 })
+
+export const addImages = (images) => ({
+  type: 'ADD_IMAGES',
+  images,
+})

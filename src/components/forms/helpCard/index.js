@@ -16,7 +16,7 @@ const Card = styled.div`
   box-shadow: ${boxShadow.shadow};
 `
 
-const ContainerIcon = styled.div`
+const ContainerIcon = styled.span`
   flex-shrink: 0;
   svg {
     width: 48px;
@@ -25,7 +25,7 @@ const ContainerIcon = styled.div`
 `
 
 const ContainerText = styled.div`
-  margin-left: ${space.s3};
+  margin-left: ${space.s3} !important;
 `
 
 const Title = styled.div`

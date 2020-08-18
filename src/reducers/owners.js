@@ -19,6 +19,7 @@ const initialState = {
   descriptionListing: '',
   email: '',
   phone: '',
+  images: [],
 }
 
 export default function ownersReducer(state = initialState, action) {
@@ -71,6 +72,10 @@ export default function ownersReducer(state = initialState, action) {
       case 'ADD_CONTACT_INFO': {
         draft.email = action.contactInfo.email
         draft.phone = action.contactInfo.phone
+        return draft
+      }
+      case 'ADD_IMAGES': {
+        draft.images = [...draft.images, action.images]
         return draft
       }
     }
@@ -138,5 +143,11 @@ export const getContactInfo = createSelector(getOwnerssState, (ownersState) => {
   return {
     email: ownersState.email,
     phone: ownersState.phone,
+  }
+})
+
+export const getImages = createSelector(getOwnerssState, (ownersState) => {
+  return {
+    images: ownersState.images,
   }
 })
