@@ -59,3 +59,8 @@ export const addImages = (images) => ({
   type: 'ADD_IMAGES',
   images,
 })
+
+export const addPriceDetails = (priceDetails) => ({
+  type: 'ADD_PRICE_DETAILS',
+  priceDetails,
+})

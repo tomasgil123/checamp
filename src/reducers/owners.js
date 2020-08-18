@@ -20,6 +20,8 @@ const initialState = {
   email: '',
   phone: '',
   images: [],
+  pricePerDay: '',
+  priceExtra: '',
 }
 
 export default function ownersReducer(state = initialState, action) {
@@ -76,6 +78,11 @@ export default function ownersReducer(state = initialState, action) {
       }
       case 'ADD_IMAGES': {
         draft.images = [...draft.images, action.images]
+        return draft
+      }
+      case 'ADD_PRICE_DETAILS': {
+        draft.pricePerDay = action.priceDetails.pricePerDay
+        draft.priceExtra = action.priceDetails.priceExtra
         return draft
       }
     }
@@ -149,5 +156,12 @@ export const getContactInfo = createSelector(getOwnerssState, (ownersState) => {
 export const getImages = createSelector(getOwnerssState, (ownersState) => {
   return {
     images: ownersState.images,
+  }
+})
+
+export const getPriceDetails = createSelector(getOwnerssState, (ownersState) => {
+  return {
+    pricePerDay: ownersState.pricePerDay,
+    priceExtra: ownersState.priceExtra,
   }
 })
