@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
 
 import MainButton from 'src/components/mainButton'
-import { Subtitle } from 'src/components/owners/general'
+import { Subtitle, ContainerButton } from 'src/components/owners/general'
 
 function End({ ownerData, saveOwnerDataInit, resultRequest, isLoading }) {
   const router = useRouter()
@@ -35,7 +35,9 @@ function End({ ownerData, saveOwnerDataInit, resultRequest, isLoading }) {
             Ante cualquier duda o consulta no dudes en escribirnos por whatsapp al numero
             11-5621-7620
           </Subtitle>
-          <MainButton text="Volver a la pagina principal" onClickButton={goBackHome} />
+          <ContainerButton>
+            <MainButton text="Volver a la pagina principal" onClickButton={goBackHome} />
+          </ContainerButton>
         </div>
       ) : (
         <div>
@@ -44,7 +46,9 @@ function End({ ownerData, saveOwnerDataInit, resultRequest, isLoading }) {
             Por favor, reintenta enviarlos y si el problema persiste no dudes en escribirnos por
             whatsapp al numero 11-5621-7620{' '}
           </Subtitle>
-          <MainButton text="Reenviar datos" secondary onClickButton={retryDataSent} />
+          <ContainerButton>
+            <MainButton text="Reenviar datos" secondary onClickButton={retryDataSent} />
+          </ContainerButton>
         </div>
       )}
     </div>

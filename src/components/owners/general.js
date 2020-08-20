@@ -30,4 +30,18 @@ const ContainerHelpCard = styled.div`
   }
 `
 
-export { Container, ContainerTitle, ContainerFeatures, Subtitle, ContainerHelpCard }
+const ContainerButton = styled.div`
+  margin-top: ${space.s4};
+  button {
+    margin: auto;
+  }
+`
+
+export {
+  Container,
+  ContainerButton,
+  ContainerTitle,
+  ContainerFeatures,
+  Subtitle,
+  ContainerHelpCard,
+}
