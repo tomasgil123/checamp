@@ -19,7 +19,9 @@ export const stepsOwnersForm = [
   { url: 'descripcion-anuncio', stepNumber: 6 },
   { url: 'imagenes', stepNumber: 7 },
   { url: 'precio-alquiler', stepNumber: 8 },
-  { url: 'contacto', stepNumber: 9 },
+  { url: 'disponibilidad', stepNumber: 9 },
+  { url: 'contacto', stepNumber: 10 },
+  { url: 'fin', stepNumber: 11 },
 ]
 
 export const isPhoneValid = (number) => {

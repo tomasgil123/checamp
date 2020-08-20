@@ -32,3 +32,7 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+#keys
+oauth2.keys.json
+client_secret.json

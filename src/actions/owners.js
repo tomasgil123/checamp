@@ -64,3 +64,21 @@ export const addPriceDetails = (priceDetails) => ({
   type: 'ADD_PRICE_DETAILS',
   priceDetails,
 })
+
+export const addAvailability = (availability) => ({
+  type: 'ADD_AVAILABILITY',
+  availability,
+})
+
+export const saveOwnerDataInit = (ownerData) => ({
+  type: 'SAVE_OWNER_DATA_INIT',
+  ownerData,
+})
+
+export const saveOwnerDataSuccess = () => ({
+  type: 'SAVE_OWNER_DATA_SUCCESS',
+})
+
+export const saveOwnerDataFail = () => ({
+  type: 'SAVE_OWNER_DATA_FAIL',
+})

@@ -1,6 +1,7 @@
 /* eslint-disable no-param-reassign */
 import { createSelector } from 'reselect'
 import produce from 'immer'
+import { flattenObject } from 'src/utils/general'
 
 const initialState = {
   typeRV: '',
@@ -22,6 +23,9 @@ const initialState = {
   images: [],
   pricePerDay: '',
   priceExtra: '',
+  availability: '',
+  loading: true,
+  wasRequestSuccessfull: null,
 }
 
 export default function ownersReducer(state = initialState, action) {
@@ -85,11 +89,43 @@ export default function ownersReducer(state = initialState, action) {
         draft.priceExtra = action.priceDetails.priceExtra
         return draft
       }
+      case 'ADD_AVAILABILITY': {
+        draft.availability = action.availability
+        return draft
+      }
+      case 'SAVE_OWNER_DATA_INIT': {
+        draft.loading = true
+        return draft
+      }
+      case 'SAVE_OWNER_DATA_SUCCESS': {
+        draft.loading = false
+        draft.wasRequestSuccessfull = true
+        return draft
+      }
+      case 'SAVE_OWNER_DATA_FAIL': {
+        draft.loading = false
+        draft.wasRequestSuccessfull = false
+        return draft
+      }
     }
   })
 }
 
 const getOwnerssState = (state) => state.owners
+
+export const getAllOwnerData = createSelector(getOwnerssState, (ownersState) => {
+  const { loading, wasRequestSuccessfull, lastStepNumber, ...ownerData } = ownersState
+  const flattenOwnerData = flattenObject(ownerData)
+  return flattenOwnerData
+})
+
+export const isLoading = createSelector(getOwnerssState, (ownersState) => {
+  return ownersState.loading
+})
+
+export const resultRequest = createSelector(getOwnerssState, (ownersState) => {
+  return ownersState.wasRequestSuccessfull
+})
 
 export const getTypeRV = createSelector(getOwnerssState, (ownersState) => {
   return ownersState.typeRV
@@ -164,4 +200,8 @@ export const getPriceDetails = createSelector(getOwnerssState, (ownersState) => 
     pricePerDay: ownersState.pricePerDay,
     priceExtra: ownersState.priceExtra,
   }
+})
+
+export const getAvailability = createSelector(getOwnerssState, (ownersState) => {
+  return ownersState.availability
 })
