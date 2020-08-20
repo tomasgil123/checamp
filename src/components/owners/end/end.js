@@ -1,4 +1,5 @@
-import { useEffect, useRouter } from 'react'
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
 
 import MainButton from 'src/components/mainButton'
@@ -6,6 +7,7 @@ import { Subtitle } from 'src/components/owners/general'
 
 function End({ ownerData, saveOwnerDataInit, resultRequest, isLoading }) {
   const router = useRouter()
+
   useEffect(() => {
     saveOwnerDataInit(ownerData)
   }, [])

@@ -114,8 +114,9 @@ export default function ownersReducer(state = initialState, action) {
 const getOwnerssState = (state) => state.owners
 
 export const getAllOwnerData = createSelector(getOwnerssState, (ownersState) => {
-  const { loading, wasRequestSuccessfull, lastStepNumber, ...ownerData } = ownersState
+  const { loading, wasRequestSuccessfull, lastStepNumber, images, ...ownerData } = ownersState
   const flattenOwnerData = flattenObject(ownerData)
+  flattenOwnerData.images = images.join(',')
   return flattenOwnerData
 })
 

@@ -18,7 +18,7 @@ function Availability({ availability, addAvailability, goToNextStep }) {
         ),
       })}
       onSubmit={(values) => {
-        addAvailability(values.availability)
+        addAvailability(values)
         goToNextStep()
       }}
     >

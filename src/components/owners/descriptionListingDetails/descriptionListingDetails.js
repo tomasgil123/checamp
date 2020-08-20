@@ -38,7 +38,7 @@ function DescriptionListingDetails({ descriptionListing, addDescriptionListing, 
           .required('Por favor, completa la descripcion de tu anuncio'),
       })}
       onSubmit={(values) => {
-        addDescriptionListing(values.name)
+        addDescriptionListing(values.description)
         goToNextStep()
       }}
     >

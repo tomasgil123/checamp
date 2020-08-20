@@ -7,8 +7,7 @@ import {
   ContainerFeatures,
   Subtitle,
 } from 'src/components/owners/general'
-// import LayoutForm from 'src/components/layout/layoutForm'
-import Layout from 'src/components/layout'
+import LayoutForm from 'src/components/layout/layoutForm'
 import Availability from 'src/components/owners/availability'
 
 function AvailabilityRV() {
@@ -34,6 +33,6 @@ function AvailabilityRV() {
   )
 }
 
-AvailabilityRV.layout = Layout
+AvailabilityRV.layout = LayoutForm
 
 export default AvailabilityRV

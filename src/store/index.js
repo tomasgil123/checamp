@@ -1,13 +1,22 @@
 import { useMemo } from 'react'
+import createSagaMiddleware from 'redux-saga'
 import { createStore, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
 import rootReducer from 'src/reducers'
+import rootSaga from 'src/sagas'
 
 let store
 
 function initStore(preloadedState) {
-  return createStore(rootReducer, preloadedState, composeWithDevTools(applyMiddleware()))
+  const sagaMiddleware = createSagaMiddleware()
+  const storeInitialized = createStore(
+    rootReducer,
+    preloadedState,
+    composeWithDevTools(applyMiddleware(sagaMiddleware))
+  )
+  storeInitialized.sagaTask = sagaMiddleware.run(rootSaga)
+  return storeInitialized
 }
 
 export const initializeStore = (preloadedState) => {
@@ -34,6 +43,7 @@ export const initializeStore = (preloadedState) => {
 }
 
 export function useStore(initialState) {
+  // eslint-disable-next-line no-shadow
   const store = useMemo(() => initializeStore(initialState), [initialState])
   return store
 }

@@ -21,9 +21,9 @@ export const textLocal = {
       mini_upload_count: '{{num}} Uploaded',
       mini_failed: '{{num}} Failed',
       statuses: {
-        uploading: 'Uploading...',
+        uploading: 'Cargando...',
         error: 'Error',
-        uploaded: 'Done',
+        uploaded: 'Hecho',
         aborted: 'Aborted',
       },
     },
