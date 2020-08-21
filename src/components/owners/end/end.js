@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
 
-import MainButton from 'src/components/mainButton'
+import MainButton from 'src/components/primitives/mainButton'
 import { Subtitle, ContainerButton } from 'src/components/owners/general'
 
 function End({ ownerData, saveOwnerDataInit, resultRequest, isLoading }) {

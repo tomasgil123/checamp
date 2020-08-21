@@ -3,7 +3,7 @@ import * as Yup from 'yup'
 
 import { Formik } from 'formik'
 import FormInput from 'src/components/forms/formInput'
-import MainButton from 'src/components/mainButton'
+import MainButton from 'src/components/primitives/mainButton'
 import { WrapperSubmitSection, ContainerSubmitButton } from 'src/components/forms/submitButton'
 
 function Features({ features, addFeatures, goToNextStep }) {

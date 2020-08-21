@@ -2,8 +2,8 @@ import { useRouter } from 'next/router'
 import styled from 'styled-components'
 import { colors, breakpoints, space } from 'src/tokens'
 
-import OptimizedImg from 'src/components/optimizedImg'
-import MainButton from 'src/components/mainButton'
+import OptimizedImg from 'src/components/primitives/optimizedImg'
+import MainButton from 'src/components/primitives/mainButton'
 
 const Container = styled.div`
   background-color: ${colors.base.white};

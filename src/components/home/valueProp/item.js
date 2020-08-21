@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import { colors, space, breakpoints } from 'src/tokens'
 
-import OptimizedImage from 'src/components/optimizedImg'
+import OptimizedImage from 'src/components/primitives/optimizedImg'
 
 const Container = styled.div`
   display: flex;

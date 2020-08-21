@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 import { Formik } from 'formik'
 import FormInput from 'src/components/forms/formInput'
-import MainButton from 'src/components/mainButton'
+import MainButton from 'src/components/primitives/mainButton'
 import { WrapperSubmitSection, ContainerSubmitButton } from 'src/components/forms/submitButton'
 
 const CharacterLimit = styled.div`

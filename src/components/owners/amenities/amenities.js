@@ -7,7 +7,7 @@ import * as Yup from 'yup'
 import { Formik } from 'formik'
 import MinusPlusInput from 'src/components/forms/minusPlusInput'
 import CheckboxInput from 'src/components/forms/checkboxInput'
-import MainButton from 'src/components/mainButton'
+import MainButton from 'src/components/primitives/mainButton'
 import { WrapperSubmitSection, ContainerSubmitButton } from 'src/components/forms/submitButton'
 import { initialValues, validationSchema, listAmenities } from './utils'
 

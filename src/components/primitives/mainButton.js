@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
-
 import { colors, boxShadow, space } from 'src/tokens/index'
+
+import Loader from './loader'
 
 const ContainerButton = styled.button`
   height: 50px;
@@ -30,10 +31,12 @@ const ContainerButton = styled.button`
   }
 `
 
-const MainButton = ({ text, onClickButton, type, secondary }) => {
+const MainButton = ({ text, onClickButton, type, secondary, isLoading }) => {
+  const contentButton = isLoading ? <Loader secondary={secondary} /> : <>{text}</>
+
   return (
     <ContainerButton secondary={secondary} type={type} onClick={onClickButton}>
-      {text}
+      {contentButton}
     </ContainerButton>
   )
 }
@@ -43,6 +46,7 @@ MainButton.propTypes = {
   onClickButton: PropTypes.func,
   type: PropTypes.string,
   secondary: PropTypes.bool,
+  isLoading: PropTypes.bool,
 }
 
 export default MainButton

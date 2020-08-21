@@ -4,7 +4,7 @@ import * as Yup from 'yup'
 import { Formik } from 'formik'
 import TextareaInput from 'src/components/forms/textareaInput'
 import FormInput from 'src/components/forms/formInput'
-import MainButton from 'src/components/mainButton'
+import MainButton from 'src/components/primitives/mainButton'
 import { WrapperSubmitSection, ContainerSubmitButton } from 'src/components/forms/submitButton'
 
 function Price({ priceDetails, addPriceDetails, goToNextStep }) {
