@@ -27,6 +27,9 @@ const ErrorMessage = styled.div`
   padding-bottom: ${space.s4};
   color: ${colors.text.error};
 `
+// We had to use a global variable because doing setImages() when event === success wasnt working
+// in the case the user uploaded more than one photo. It was only saving the last one
+global.imagesToUpload = []
 
 function Images({ imagesLinks, addImages, goToNextStep }) {
   const [images, setImages] = useState(imagesLinks.images)
@@ -35,6 +38,8 @@ function Images({ imagesLinks, addImages, goToNextStep }) {
 
   const beginUpload = () => {
     setLoadingWidget(true)
+    global.imagesToUpload = []
+
     const uploadOptions = {
       cloudName: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
       uploadPreset: process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET,
@@ -45,11 +50,11 @@ function Images({ imagesLinks, addImages, goToNextStep }) {
     openUploadWidget(uploadOptions, (error, photos) => {
       if (!error) {
         if (photos.event === 'success') {
-          setImages([...images, photos.info.secure_url])
+          global.imagesToUpload.push(photos.info.secure_url)
           setUploadImageError(false)
         }
-        if (photos.event === 'display-changed') {
-          return
+        if (photos.event === 'close') {
+          setImages([...images, ...global.imagesToUpload])
         }
         setLoadingWidget(false)
       } else {
