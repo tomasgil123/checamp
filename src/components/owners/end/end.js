@@ -3,7 +3,8 @@ import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
 
 import MainButton from 'src/components/primitives/mainButton'
-import { Subtitle, ContainerButton } from 'src/components/owners/general'
+import { Subtitle, ContainerButton, ContainerLoader } from 'src/components/owners/general'
+import Loader from 'src/components/primitives/loader'
 
 function End({ ownerData, saveOwnerDataInit, resultRequest, isLoading }) {
   const router = useRouter()
@@ -23,7 +24,11 @@ function End({ ownerData, saveOwnerDataInit, resultRequest, isLoading }) {
   }
 
   if (isLoading) {
-    return <div>Loading...</div>
+    return (
+      <ContainerLoader>
+        <Loader />
+      </ContainerLoader>
+    )
   }
 
   return (

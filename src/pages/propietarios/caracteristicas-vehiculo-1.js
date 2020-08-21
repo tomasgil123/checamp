@@ -1,15 +1,27 @@
 import { useContext } from 'react'
 import { PageNavigationContext } from 'src/context'
 
-import { Container, ContainerTitle, ContainerFeatures } from 'src/components/owners/general'
+import {
+  Container,
+  ContainerTitle,
+  ContainerFeatures,
+  ContainerLoader,
+} from 'src/components/owners/general'
 import LayoutForm from 'src/components/layout/layoutForm'
 import Features from 'src/components/owners/features'
+import Loader from 'src/components/primitives/loader'
 
 function FeaturesRVOne() {
   const { loading, goToNextStep } = useContext(PageNavigationContext)
 
   if (loading) {
-    return <div>Loading...</div>
+    return (
+      <Container>
+        <ContainerLoader>
+          <Loader />
+        </ContainerLoader>
+      </Container>
+    )
   }
   return (
     <Container>

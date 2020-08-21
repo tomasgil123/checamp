@@ -6,15 +6,23 @@ import {
   ContainerTitle,
   ContainerFeatures,
   Subtitle,
+  ContainerLoader,
 } from 'src/components/owners/general'
 import LayoutForm from 'src/components/layout/layoutForm'
 import NameListingDetails from 'src/components/owners/nameListingDetails'
+import Loader from 'src/components/primitives/loader'
 
 function NameListingRV() {
   const { loading, goToNextStep } = useContext(PageNavigationContext)
 
   if (loading) {
-    return <div>Loading...</div>
+    return (
+      <Container>
+        <ContainerLoader>
+          <Loader />
+        </ContainerLoader>
+      </Container>
+    )
   }
   return (
     <Container>

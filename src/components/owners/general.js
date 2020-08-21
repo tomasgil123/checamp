@@ -30,6 +30,11 @@ const ContainerHelpCard = styled.div`
   }
 `
 
+const ContainerLoader = styled.div`
+  padding-top: ${space.s4};
+  margin: auto;
+`
+
 const ContainerButton = styled.div`
   margin-top: ${space.s4};
   button {
@@ -44,4 +49,5 @@ export {
   ContainerFeatures,
   Subtitle,
   ContainerHelpCard,
+  ContainerLoader,
 }

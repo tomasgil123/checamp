@@ -6,15 +6,23 @@ import {
   ContainerTitle,
   ContainerFeatures,
   Subtitle,
+  ContainerLoader,
 } from 'src/components/owners/general'
 import LayoutForm from 'src/components/layout/layoutForm'
 import Contact from 'src/components/owners/contact'
+import Loader from 'src/components/primitives/loader'
 
 function ContactInfoOwner() {
   const { loading, goToNextStep } = useContext(PageNavigationContext)
 
   if (loading) {
-    return <div>Loading...</div>
+    return (
+      <Container>
+        <ContainerLoader>
+          <Loader />
+        </ContainerLoader>
+      </Container>
+    )
   }
   return (
     <Container>
