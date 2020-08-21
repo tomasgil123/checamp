@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 
 import MainButton from 'src/components/primitives/mainButton'
 import { WrapperSubmitSection, ContainerSubmitButton } from 'src/components/forms/submitButton'
-import { textLocal, openUploadWidget } from './CloudinaryService'
+import { textLocal, openUploadWidget } from './cloudinaryService'
 
 const ContainerButton = styled.div`
   margin-top: ${space.s6};
