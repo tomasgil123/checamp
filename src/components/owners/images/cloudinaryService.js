@@ -8,9 +8,9 @@ export const openUploadWidget = (options, callback) => {
 export const textLocal = {
   en: {
     queue: {
-      title: 'Upload Queue',
-      title_uploading_with_counter: 'Uploading {{num}} Assets',
-      title_uploading: 'Uploading Assets',
+      title: 'Images cargadas',
+      title_uploading_with_counter: 'Cargando {{num}} imagen/es',
+      title_uploading: 'Cargando imagenes',
       mini_title: 'Uploaded',
       mini_title_uploading: 'Uploading',
       show_completed: 'Show completed',
@@ -18,6 +18,7 @@ export const textLocal = {
       abort_all: 'Abort all',
       upload_more: 'Upload More',
       more: 'More',
+      done: 'Listo',
       mini_upload_count: '{{num}} Uploaded',
       mini_failed: '{{num}} Failed',
       statuses: {
