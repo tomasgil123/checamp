@@ -1,11 +1,14 @@
 import styled from 'styled-components'
-import { space, colors } from 'src/tokens'
+import { space, colors, breakpoints } from 'src/tokens'
 import PropTypes from 'prop-types'
 import { typesOfRV } from 'src/utils/owners'
 
 const ContainerRVBoxes = styled.div`
   display: flex;
   flex-wrap: wrap;
+  @media (max-width: ${breakpoints.sm}) {
+    justify-content: center;
+  }
 `
 
 const RVBox = styled.div`
