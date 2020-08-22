@@ -1,15 +1,20 @@
 const { google } = require('googleapis')
-const path = require('path')
 const { v4: uuidv4 } = require('uuid')
+const _ = require('lodash')
 
 const sheets = google.sheets('v4')
+
+const privateKey = _.replace(process.env.GOOGLE_PRIVATE_KEY, new RegExp('\\\\n', 'g'), '\n')
 
 export default async (req, res) => {
   let auth
   let result
   try {
     auth = new google.auth.GoogleAuth({
-      keyFile: path.join(path.resolve('.'), 'client_secret.json'),
+      credentials: {
+        client_email: process.env.GOOGLE_CLIENT_EMAIL,
+        private_key: privateKey,
+      },
       scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     })
   } catch (err) {
