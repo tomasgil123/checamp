@@ -26,6 +26,7 @@ function End({ ownerData, saveOwnerDataInit, resultRequest, isLoading }) {
   if (isLoading) {
     return (
       <ContainerLoader>
+        <Subtitle>Estamos guardando tus datos. Espera unos segundos</Subtitle>
         <Loader secondary />
       </ContainerLoader>
     )

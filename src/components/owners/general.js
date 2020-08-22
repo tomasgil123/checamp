@@ -34,6 +34,7 @@ const ContainerHelpCard = styled.div`
 const ContainerLoader = styled.div`
   padding-top: ${space.s4};
   margin: auto;
+  text-align: center;
 `
 
 const ContainerButton = styled.div`
