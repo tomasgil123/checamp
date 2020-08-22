@@ -5,6 +5,7 @@ const Container = styled.div`
   max-width: 500px;
   margin: auto;
   padding-top: ${space.s12};
+  min-height: 90vh;
   margin-bottom: ${space.s32};
 `
 const ContainerTitle = styled.div`

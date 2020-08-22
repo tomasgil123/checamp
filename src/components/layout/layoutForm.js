@@ -89,7 +89,7 @@ export default function Layout({ children }) {
       router.push({
         pathname: `/propietarios/${nextStep.url}`,
       })
-    }, 300)
+    }, 500)
   }
 
   return (
@@ -100,9 +100,10 @@ export default function Layout({ children }) {
         {showContent && (
           <motion.div
             key={router.pathname}
-            initial={{ x: '300px', opacity: 0 }}
-            exit={{ x: '-300px', opacity: 0 }}
+            initial={{ x: 300, opacity: 0 }}
+            exit={{ x: -300, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5 }}
           >
             <PageNavigationContext.Provider value={{ loading, goToNextStep }}>
               {children}
