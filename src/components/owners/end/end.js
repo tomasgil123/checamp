@@ -26,7 +26,7 @@ function End({ ownerData, saveOwnerDataInit, resultRequest, isLoading }) {
   if (isLoading) {
     return (
       <ContainerLoader>
-        <Loader />
+        <Loader secondary />
       </ContainerLoader>
     )
   }
