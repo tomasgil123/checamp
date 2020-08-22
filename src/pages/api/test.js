@@ -8,13 +8,21 @@ const { v4: uuidv4 } = require('uuid')
 
 const sheets = google.sheets('v4')
 
+// const keysEnvVar = process.env.GOOGLE_CREDS
+// if (!keysEnvVar) {
+//   throw new Error('The $CREDS environment variable was not found!')
+// }
+// const keys = JSON.parse(keysEnvVar)
+
 export default async (req, res) => {
   let auth
   let result
   try {
     auth = new google.auth.GoogleAuth({
-      email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-      key: process.env.GOOGLE_PRIVATE_KEY,
+      credentials: {
+        client_email: process.env.GOOGLE_CLIENT_EMAIL,
+        private_key: process.env.GOOGLE_PRIVATE_KEY,
+      },
       scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     })
   } catch (err) {
