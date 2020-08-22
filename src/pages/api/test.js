@@ -30,7 +30,7 @@ export default async (req, res) => {
       scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     })
   } catch (err) {
-    result = { success: false, err: err.message }
+    result = { success: false, err: err.message, private_key: privateKey }
     res.json(result ? { ...result } : null)
     return
   }
@@ -49,7 +49,7 @@ export default async (req, res) => {
       range: '1:1',
     })
   } catch (err) {
-    result = { success: false, err: err.message }
+    result = { success: false, err: err.message, private_key: privateKey }
     res.json(result ? { ...result } : null)
     return
   }
