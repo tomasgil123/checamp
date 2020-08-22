@@ -1,7 +1,7 @@
 const { google } = require('googleapis')
 const path = require('path')
 const { v4: uuidv4 } = require('uuid')
-
+const _ = require('lodash')
 // https://stackoverflow.com/questions/60574191/what-keyfile-key-does-google-auth-googleauth-need
 // Aca usan JWT
 // https://github.com/theoephraim/node-google-spreadsheet/blob/250c702ae07212721f0aabe454cd2b17c0ec5ade/lib/GoogleSpreadsheet.js#L77
@@ -14,6 +14,8 @@ const sheets = google.sheets('v4')
 // }
 // const keys = JSON.parse(keysEnvVar)
 
+const privateKey = _.replace(process.env.GOOGLE_PRIVATE_KEY, new RegExp('\\\\n', 'g'), '\n')
+
 export default async (req, res) => {
   let auth
   let result
@@ -21,7 +23,7 @@ export default async (req, res) => {
     auth = new google.auth.GoogleAuth({
       credentials: {
         client_email: process.env.GOOGLE_CLIENT_EMAIL,
-        private_key: process.env.GOOGLE_PRIVATE_KEY,
+        private_key: privateKey,
       },
       scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     })
