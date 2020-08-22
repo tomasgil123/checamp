@@ -9,8 +9,7 @@ import {
   ContainerHelpCard,
   ContainerLoader,
 } from 'src/components/owners/general'
-// import LayoutForm from 'src/components/layout/layoutForm'
-import Layout from 'src/components/layout'
+import LayoutForm from 'src/components/layout/layoutForm'
 import Head from 'next/head'
 import Images from 'src/components/owners/images'
 import HelpCard from 'src/components/forms/helpCard'
@@ -53,6 +52,6 @@ function ImagesRV() {
   )
 }
 
-ImagesRV.layout = Layout
+ImagesRV.layout = LayoutForm
 
 export default ImagesRV
