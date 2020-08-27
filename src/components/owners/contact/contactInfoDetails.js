@@ -6,6 +6,7 @@ import { Formik } from 'formik'
 import FormInput from 'src/components/forms/formInput'
 import MainButton from 'src/components/primitives/mainButton'
 import { WrapperSubmitSection, ContainerSubmitButton } from 'src/components/forms/submitButton'
+import { Hint } from 'src/components/owners/general'
 
 function ContactInfoDetails({ contactInfo, addContactInfo, goToNextStep }) {
   return (
@@ -51,6 +52,10 @@ function ContactInfoDetails({ contactInfo, addContactInfo, goToNextStep }) {
             errors={formProps.errors}
             touched={formProps.touched}
           />
+          <Hint>
+            Recorda utilizar la característica correcta al momento de ingresar tu número. Por ej: si
+            es un número de capital utiliza 11
+          </Hint>
           <WrapperSubmitSection />
           <ContainerSubmitButton>
             <MainButton text="Continuar" onClickButton={undefined} type="submit" />
