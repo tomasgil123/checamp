@@ -44,6 +44,20 @@ const ContainerButton = styled.div`
   }
 `
 
+const CharacterLimit = styled.div`
+  font-size: ${space.s4};
+  font-weight: 400;
+  color: ${colors.text.secondary};
+  width: 100%;
+`
+
+const Hint = styled.div`
+  font-size: ${space.s4};
+  color: ${colors.text.secondary};
+  padding-bottom: ${space.s2};
+  padding-top: ${space.s3};
+`
+
 export {
   Container,
   ContainerButton,
@@ -52,4 +66,6 @@ export {
   Subtitle,
   ContainerHelpCard,
   ContainerLoader,
+  CharacterLimit,
+  Hint,
 }

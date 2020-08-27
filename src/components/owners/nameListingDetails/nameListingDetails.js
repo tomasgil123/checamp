@@ -1,19 +1,11 @@
 import PropTypes from 'prop-types'
 import * as Yup from 'yup'
-import { space, colors } from 'src/tokens'
-import styled from 'styled-components'
 
 import { Formik } from 'formik'
 import FormInput from 'src/components/forms/formInput'
 import MainButton from 'src/components/primitives/mainButton'
 import { WrapperSubmitSection, ContainerSubmitButton } from 'src/components/forms/submitButton'
-
-const CharacterLimit = styled.div`
-  font-size: ${space.s4};
-  font-weight: 400;
-  color: ${colors.text.secondary};
-  width: 100%;
-`
+import { CharacterLimit } from 'src/components/owners/general'
 
 function NameListingDetails({ nameListing, addNameListing, goToNextStep }) {
   return (
