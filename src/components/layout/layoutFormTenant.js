@@ -32,7 +32,7 @@ export default function Layout({ children }) {
     setShowContent(false)
     setTimeout(function () {
       router.push({
-        pathname: `/propietarios/fin`,
+        pathname: `/inquilinos/fin`,
       })
     }, 500)
   }

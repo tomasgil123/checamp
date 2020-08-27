@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 export const addTenantContactInfo = (contactInfo) => ({
-  type: 'ADD_CONTACT_INFO_TENTANT',
+  type: 'ADD_CONTACT_INFO_TENANT',
   contactInfo,
 })
 

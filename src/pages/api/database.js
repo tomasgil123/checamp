@@ -22,10 +22,14 @@ export default async (req, res) => {
     res.json(result ? { ...result } : null)
     return
   }
+  const spreadsheetId =
+    req.body.typeUser === 'owner'
+      ? process.env.SPREAD_SHEET_ID
+      : process.env.SPREAD_SHEET_ID_TENANTS
 
-  const ownersData = req.body
+  const usersData = req.body.data
   // we add a special id
-  ownersData.uid = uuidv4()
+  usersData.uid = uuidv4()
 
   google.options({ auth })
 
@@ -33,7 +37,7 @@ export default async (req, res) => {
   let dataFirstRow
   try {
     dataFirstRow = await sheets.spreadsheets.values.get({
-      spreadsheetId: process.env.SPREAD_SHEET_ID,
+      spreadsheetId,
       range: '1:1',
     })
   } catch (err) {
@@ -46,11 +50,11 @@ export default async (req, res) => {
   if (!dataFirstRow.data.values) {
     try {
       result = await sheets.spreadsheets.values.append({
-        spreadsheetId: process.env.SPREAD_SHEET_ID,
+        spreadsheetId,
         range: '1:1',
         valueInputOption: 'RAW',
         requestBody: {
-          values: [Object.keys(ownersData)],
+          values: [Object.keys(usersData)],
         },
       })
     } catch (err) {
@@ -63,11 +67,11 @@ export default async (req, res) => {
   // we add a new row
   try {
     result = await sheets.spreadsheets.values.append({
-      spreadsheetId: process.env.SPREAD_SHEET_ID,
+      spreadsheetId,
       range: '1:1',
       valueInputOption: 'RAW',
       requestBody: {
-        values: [Object.values(ownersData)],
+        values: [Object.values(usersData)],
       },
     })
     result.success = true

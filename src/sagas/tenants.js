@@ -1,11 +1,11 @@
 import { put, all, takeLatest, call } from 'redux-saga/effects'
 
-import { saveDataTenant } from 'src/services/tenants'
+import { saveDataInSpreadsheet } from 'src/services/formData'
 import { saveTenantDataSuccess, saveTenantDataFail } from 'src/actions/tenants'
 
 export function* saveTenantData(action) {
   try {
-    const resultRequest = yield call(saveDataTenant, action.tenantData)
+    const resultRequest = yield call(saveDataInSpreadsheet, action.tenantData, 'tenant')
 
     if (resultRequest.data.success) {
       yield put(saveTenantDataSuccess())
