@@ -71,7 +71,7 @@ function Features({ features, addFeatures, goToNextStep }) {
             key="length"
             type="number"
             name="length"
-            label="Largo (en metros)"
+            label="Largo (en metros) - Utiliza un punto para indicar decimales. Ej: 2.5"
             handleChange={formProps.handleChange}
             handleBlur={formProps.handleBlur}
             value={formProps.values.length}
