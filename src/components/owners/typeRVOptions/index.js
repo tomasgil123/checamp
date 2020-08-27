@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { addTypeOfRV } from 'src/actions/owners'
-import RVOptions from './RVOptions'
+import TypeRVOptions from './typeRVOptions'
 
 const mapStateToProps = (state) => {
   return {
@@ -12,4 +12,4 @@ const mapDispatchToProps = (dispatch) => ({
   addTypeOfRV: (typeRV) => dispatch(addTypeOfRV(typeRV)),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(RVOptions)
+export default connect(mapStateToProps, mapDispatchToProps)(TypeRVOptions)
