@@ -1,15 +1,20 @@
 const { google } = require('googleapis')
-const path = require('path')
 const { v4: uuidv4 } = require('uuid')
+const _ = require('lodash')
 
 const sheets = google.sheets('v4')
+
+const privateKey = _.replace(process.env.GOOGLE_PRIVATE_KEY, new RegExp('\\\\n', 'g'), '\n')
 
 export default async (req, res) => {
   let auth
   let result
   try {
     auth = new google.auth.GoogleAuth({
-      keyFile: path.join(path.resolve('.'), 'client_secret.json'),
+      credentials: {
+        client_email: process.env.GOOGLE_CLIENT_EMAIL,
+        private_key: privateKey,
+      },
       scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     })
   } catch (err) {
@@ -17,10 +22,14 @@ export default async (req, res) => {
     res.json(result ? { ...result } : null)
     return
   }
+  const spreadsheetId =
+    req.body.typeUser === 'owner'
+      ? process.env.SPREAD_SHEET_ID
+      : process.env.SPREAD_SHEET_ID_TENANTS
 
-  const ownersData = req.body
+  const usersData = req.body.data
   // we add a special id
-  ownersData.uid = uuidv4()
+  usersData.uid = uuidv4()
 
   google.options({ auth })
 
@@ -28,7 +37,7 @@ export default async (req, res) => {
   let dataFirstRow
   try {
     dataFirstRow = await sheets.spreadsheets.values.get({
-      spreadsheetId: process.env.SPREAD_SHEET_ID,
+      spreadsheetId,
       range: '1:1',
     })
   } catch (err) {
@@ -41,11 +50,11 @@ export default async (req, res) => {
   if (!dataFirstRow.data.values) {
     try {
       result = await sheets.spreadsheets.values.append({
-        spreadsheetId: process.env.SPREAD_SHEET_ID,
+        spreadsheetId,
         range: '1:1',
         valueInputOption: 'RAW',
         requestBody: {
-          values: [Object.keys(ownersData)],
+          values: [Object.keys(usersData)],
         },
       })
     } catch (err) {
@@ -58,11 +67,11 @@ export default async (req, res) => {
   // we add a new row
   try {
     result = await sheets.spreadsheets.values.append({
-      spreadsheetId: process.env.SPREAD_SHEET_ID,
+      spreadsheetId,
       range: '1:1',
       valueInputOption: 'RAW',
       requestBody: {
-        values: [Object.values(ownersData)],
+        values: [Object.values(usersData)],
       },
     })
     result.success = true

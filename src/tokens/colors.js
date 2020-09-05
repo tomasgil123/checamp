@@ -13,9 +13,9 @@ const colors = {
     gray: '#c6c6c6',
     background: '#fffffe',
     primaryLightBlue: '#e5faf1',
-    primaryGreen: '#246b62',
+    primaryGreen: '#2a5913',
     secondaryGreen: '#ADE8C4',
-    secondaryBlue: '#719ECE',
+    secondaryBlue: '#47657f',
   },
   text: {
     error: '#DF744A',

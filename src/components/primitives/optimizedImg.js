@@ -2,7 +2,7 @@
 /* eslint-disable global-require */
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const BlurImage = styled.div`
   & > img {
@@ -21,6 +21,33 @@ const ContainerNormalImage = styled.div`
 
 function OptimizedImg({ srcImg }) {
   const [isLoaded, setIsLoaded] = useState(true)
+  const [isChrome, setIsChrome] = useState(true)
+
+  useEffect(() => {
+    // it seems only chrome support webp images. Firefox and safari wont sohw the image
+    const isChromium = window.chrome
+    const winNav = window.navigator
+    const vendorName = winNav.vendor
+    const isOpera = typeof window.opr !== 'undefined'
+    const isIEedge = winNav.userAgent.indexOf('Edge') > -1
+    const isIOSChrome = winNav.userAgent.match('CriOS')
+
+    if (isIOSChrome) {
+      // is Google Chrome on IOS
+    } else if (
+      isChromium !== null &&
+      typeof isChromium !== 'undefined' &&
+      vendorName === 'Google Inc.' &&
+      isOpera === false &&
+      isIEedge === false
+    ) {
+      // is Google Chrome
+      setIsChrome(true)
+    } else {
+      // not Google Chrome
+      setIsChrome(false)
+    }
+  }, [])
 
   return (
     <>
@@ -32,7 +59,7 @@ function OptimizedImg({ srcImg }) {
           onLoad={() => {
             setIsLoaded(true)
           }}
-          src={require(`images/${srcImg}?webp`)}
+          src={isChrome ? require(`images/${srcImg}?webp`) : require(`images/${srcImg}`)}
           alt=""
         />
       </ContainerNormalImage>

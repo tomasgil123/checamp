@@ -1,20 +1,25 @@
 import { useContext } from 'react'
 import { PageNavigationContext } from 'src/context'
+import styled from 'styled-components'
 
 import { Container, ContainerTitle, ContainerHelpCard } from 'src/components/owners/general'
-import RVOptions from 'src/components/owners/RVOptions'
+import TypeRVOptions from 'src/components/owners/typeRVOptions'
 import LayoutForm from 'src/components/layout/layoutForm'
 import HelpCard from 'src/components/forms/helpCard'
+
+const ContainerTitleTypeRV = styled(ContainerTitle)`
+  text-align: center;
+`
 
 function TypeRV() {
   const { goToNextStep } = useContext(PageNavigationContext)
 
   return (
     <Container>
-      <ContainerTitle>
+      <ContainerTitleTypeRV>
         <h2>Indica tu tipo de vehiculo</h2>
-      </ContainerTitle>
-      <RVOptions goToNextStep={goToNextStep} />
+      </ContainerTitleTypeRV>
+      <TypeRVOptions goToNextStep={goToNextStep} />
       <ContainerHelpCard>
         <HelpCard
           title="Consejo"

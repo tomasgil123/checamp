@@ -71,7 +71,7 @@ const SubTitle = styled.div`
 `
 
 const ContainerButton = styled.div`
-  div {
+  button {
     margin: auto;
     @media (min-width: ${breakpoints.md}) {
       margin: inherit;

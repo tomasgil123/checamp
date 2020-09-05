@@ -19,6 +19,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   padding-top: ${space.s2};
+  padding-bottom: ${space.s2};
   width: 100%;
   @media (min-width: ${breakpoints.md}) {
     align-items: center;
@@ -51,7 +52,7 @@ const Logo = styled.div`
   align-items: center;
   & img {
     height: ${space.s16};
-    width: ${space.s32};
+    width: ${space.s16};
   }
   @media (min-width: ${breakpoints.md}) {
     flex: 1;

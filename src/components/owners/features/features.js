@@ -5,6 +5,7 @@ import { Formik } from 'formik'
 import FormInput from 'src/components/forms/formInput'
 import MainButton from 'src/components/primitives/mainButton'
 import { WrapperSubmitSection, ContainerSubmitButton } from 'src/components/forms/submitButton'
+import { Hint } from 'src/components/owners/general'
 
 function Features({ features, addFeatures, goToNextStep }) {
   return (
@@ -21,10 +22,10 @@ function Features({ features, addFeatures, goToNextStep }) {
         year: Yup.number()
           .test(
             'len',
-            'Ingresa un ano de 4 digitos. Por ejemplo: 2010',
+            'Ingresa un año de 4 digitos. Por ejemplo: 2010',
             (val) => !val || val.toString().length === 4
           )
-          .required('Por favor, indicanos el ano de fabricacion de tu RV'),
+          .required('Por favor, indicanos el año de fabricación de tu RV'),
         length: Yup.number().required('Por favor, indicanos el largo de tu RV'),
       })}
       onSubmit={(values) => {
@@ -60,7 +61,7 @@ function Features({ features, addFeatures, goToNextStep }) {
             key="year"
             type="number"
             name="year"
-            label="Ano de fabricacion"
+            label="Año de fabricación"
             handleChange={formProps.handleChange}
             handleBlur={formProps.handleBlur}
             value={formProps.values.year}
@@ -71,13 +72,14 @@ function Features({ features, addFeatures, goToNextStep }) {
             key="length"
             type="number"
             name="length"
-            label="Largo (en metros)"
+            label="Largo (en metros) - Utiliza un punto para indicar decimales. Ej: 2.5"
             handleChange={formProps.handleChange}
             handleBlur={formProps.handleBlur}
             value={formProps.values.length}
             errors={formProps.errors}
             touched={formProps.touched}
           />
+          <Hint>Si usas un iphone o una mac solo vas a poder ingresar un número entero</Hint>
           <WrapperSubmitSection />
           <ContainerSubmitButton>
             <MainButton text="Continuar" onClickButton={undefined} type="submit" />

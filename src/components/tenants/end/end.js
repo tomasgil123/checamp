@@ -6,15 +6,15 @@ import MainButton from 'src/components/primitives/mainButton'
 import { Subtitle, ContainerButton, ContainerLoader } from 'src/components/owners/general'
 import Loader from 'src/components/primitives/loader'
 
-function End({ ownerData, saveOwnerDataInit, resultRequest, isLoading }) {
+function End({ tenantData, saveTenantDataInit, resultRequest, isLoading }) {
   const router = useRouter()
 
   useEffect(() => {
-    saveOwnerDataInit(ownerData)
+    saveTenantDataInit(tenantData)
   }, [])
 
   const retryDataSent = () => {
-    saveOwnerDataInit(ownerData)
+    saveTenantDataInit(tenantData)
   }
 
   const goBackHome = () => {
@@ -63,8 +63,8 @@ function End({ ownerData, saveOwnerDataInit, resultRequest, isLoading }) {
 
 End.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
-  ownerData: PropTypes.object,
-  saveOwnerDataInit: PropTypes.func,
+  tenantData: PropTypes.object,
+  saveTenantDataInit: PropTypes.func,
   resultRequest: PropTypes.bool,
   isLoading: PropTypes.bool,
 }

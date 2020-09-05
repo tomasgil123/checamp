@@ -1,11 +1,28 @@
 import PropTypes from 'prop-types'
 import * as Yup from 'yup'
+import styled from 'styled-components'
 
 import { Formik } from 'formik'
 import TextareaInput from 'src/components/forms/textareaInput'
 import FormInput from 'src/components/forms/formInput'
 import MainButton from 'src/components/primitives/mainButton'
 import { WrapperSubmitSection, ContainerSubmitButton } from 'src/components/forms/submitButton'
+
+const ContainerInputPrice = styled.div`
+  position: relative;
+  display: inline;
+  z-index: 10;
+  &:before {
+    content: '$';
+    padding: 0 10px;
+    text-align: center;
+    position: absolute;
+    top: 48px;
+  }
+  input {
+    text-indent: 17px;
+  }
+`
 
 function Price({ priceDetails, addPriceDetails, goToNextStep }) {
   return (
@@ -27,17 +44,20 @@ function Price({ priceDetails, addPriceDetails, goToNextStep }) {
     >
       {(formProps) => (
         <form onSubmit={formProps.handleSubmit}>
-          <FormInput
-            key="pricePerDay"
-            type="text"
-            name="pricePerDay"
-            label="Precio por dia"
-            handleChange={formProps.handleChange}
-            handleBlur={formProps.handleBlur}
-            value={formProps.values.pricePerDay}
-            errors={formProps.errors}
-            touched={formProps.touched}
-          />
+          <ContainerInputPrice>
+            <FormInput
+              key="pricePerDay"
+              type="number"
+              name="pricePerDay"
+              label="Precio por dia"
+              handleChange={formProps.handleChange}
+              handleBlur={formProps.handleBlur}
+              value={formProps.values.pricePerDay}
+              errors={formProps.errors}
+              touched={formProps.touched}
+            />
+          </ContainerInputPrice>
+
           <TextareaInput
             key="priceExtra"
             type="text"

@@ -6,6 +6,9 @@ import { typesOfRV } from 'src/utils/owners'
 const ContainerRVBoxes = styled.div`
   display: flex;
   flex-wrap: wrap;
+  max-width: 400px;
+  margin: auto;
+  justify-content: center;
 `
 
 const RVBox = styled.div`
@@ -29,7 +32,7 @@ const RVBox = styled.div`
   }
 `
 
-function RVOptions({ typeRV, addTypeOfRV, goToNextStep }) {
+function TypeRVOptions({ typeRV, addTypeOfRV, goToNextStep }) {
   const onChooseTypeRV = (typeOfRV) => {
     addTypeOfRV(typeOfRV)
     goToNextStep()
@@ -51,10 +54,10 @@ function RVOptions({ typeRV, addTypeOfRV, goToNextStep }) {
   )
 }
 
-RVOptions.propTypes = {
+TypeRVOptions.propTypes = {
   typeRV: PropTypes.string,
   addTypeOfRV: PropTypes.func,
   goToNextStep: PropTypes.func,
 }
 
-export default RVOptions
+export default TypeRVOptions

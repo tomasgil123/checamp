@@ -19,9 +19,9 @@ function ContactInfoDetails({ contactInfo, addContactInfo, goToNextStep }) {
         email: Yup.string()
           .test('is-phone-valid', 'Ese email no parece ser valido', (val) => isEmailValid(val))
           .required('Por favor, completa con tu email'),
-        phone: Yup.string()
-          .test('is-phone-valid', 'Ese numero no parece ser valido', (val) => isPhoneValid(val))
-          .required('Por favor, completa con tu numero de telefono'),
+        phone: Yup.string().test('is-phone-valid', 'Ese numero no parece ser valido', (val) =>
+          isPhoneValid(val)
+        ),
       })}
       onSubmit={(values) => {
         addContactInfo(values)
@@ -45,7 +45,7 @@ function ContactInfoDetails({ contactInfo, addContactInfo, goToNextStep }) {
             key="phone"
             type="number"
             name="phone"
-            label="Tu numero de celular"
+            label="Tu numero de celular (opcional)"
             handleChange={formProps.handleChange}
             handleBlur={formProps.handleBlur}
             value={formProps.values.phone}

@@ -23,6 +23,7 @@ const ContainerMenuDrawer = styled.ul`
 const ContainerNavigation = styled.ul`
   padding-top: ${space.s12};
   padding-left: ${space.s12};
+  padding-right: ${space.s6};
   li {
     list-style-type: none;
     padding: 10px 0;

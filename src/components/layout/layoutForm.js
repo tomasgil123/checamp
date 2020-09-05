@@ -7,6 +7,7 @@ import { getLastStepNumber } from 'src/reducers/owners'
 import { PageNavigationContext } from 'src/context'
 import styled from 'styled-components'
 import { colors } from 'src/tokens'
+import { motion, AnimatePresence } from 'framer-motion'
 
 import Header from 'src/components/header'
 
@@ -44,6 +45,7 @@ export default function Layout({ children }) {
 
   // eslint-disable-next-line no-undef
   const [loading, setLoading] = React.useState(true)
+  const [showContent, setShowContent] = React.useState(true)
   // eslint-disable-next-line no-undef
   const [widthProgressBar, setWidthProgressBar] = React.useState(0)
 
@@ -52,6 +54,7 @@ export default function Layout({ children }) {
     const numberOfPages = stepsOwnersForm.length
     const currentStep = stepsOwnersForm.find((step) => currentStepUrl.includes(step.url))
     setWidthProgressBar(((currentStep.stepNumber + 1) / numberOfPages) * 100)
+    setShowContent(true)
   }, [router.pathname])
 
   useEffect(() => {
@@ -81,18 +84,33 @@ export default function Layout({ children }) {
     const nextStep = stepsOwnersForm.find((step) => step.stepNumber === currentStep.stepNumber + 1)
     dispatch(changeLastStepNumber(currentStep.stepNumber))
     setLoading(false)
-    router.push({
-      pathname: `/propietarios/${nextStep.url}`,
-    })
+    setShowContent(false)
+    setTimeout(function () {
+      router.push({
+        pathname: `/propietarios/${nextStep.url}`,
+      })
+    }, 500)
   }
 
   return (
     <Container overflowHidden={router.pathname.includes('caracteristicas-vehiculos-1')}>
       <Header isInForm />
       <ProgressBar width={widthProgressBar} />
-      <PageNavigationContext.Provider value={{ loading, goToNextStep }}>
-        {children}
-      </PageNavigationContext.Provider>
+      <AnimatePresence>
+        {showContent && (
+          <motion.div
+            key={router.pathname}
+            initial={{ x: 300, opacity: 0 }}
+            exit={{ x: -300, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <PageNavigationContext.Provider value={{ loading, goToNextStep }}>
+              {children}
+            </PageNavigationContext.Provider>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </Container>
   )
 }
