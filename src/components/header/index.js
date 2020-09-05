@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import { navigation } from 'src/utils/index'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
+import OptimizedImage from 'src/components/primitives/optimizedImg'
 import {
   HeaderWrapper,
   Container,
@@ -69,10 +70,7 @@ function Header({ isInForm }) {
         </MenuLeft>
         <Logo>
           <ContainerImageLogo onClick={onGoHome}>
-            <img
-              src="https://d1o5877uy6tsnd.cloudfront.net/application-layout/outdoorsy-logo.svg"
-              alt="cheCamp"
-            />
+            <OptimizedImage srcImg="checamp_logo_green.png" />
           </ContainerImageLogo>
         </Logo>
         <MenuRight />
