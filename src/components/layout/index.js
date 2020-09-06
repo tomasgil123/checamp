@@ -1,4 +1,5 @@
 import Header from 'src/components/header'
+import Footer from 'src/components/footer'
 
 // eslint-disable-next-line react/prop-types
 export default function Layout({ children }) {
@@ -6,6 +7,7 @@ export default function Layout({ children }) {
     <div>
       <Header />
       {children}
+      <Footer />
     </div>
   )
 }
