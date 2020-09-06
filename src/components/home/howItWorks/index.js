@@ -1,48 +1,17 @@
 import styled from 'styled-components'
-import { breakpoints, space, colors } from 'src/tokens'
+import { breakpoints } from 'src/tokens'
 import Item from './item'
-
-const Container = styled.div`
-  padding-top: ${space.s32};
-  padding-bottom: ${space.s32};
-  @media (min-width: ${breakpoints.md}) {
-    padding-top: ${space.s40};
-    padding-bottom: ${space.s40};
-  }
-`
+import { Container, Title, TextBody } from '../general'
 
 const ContainerItems = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: auto;
   @media (min-width: ${breakpoints.md}) {
     flex-direction: row;
-  }
-`
-
-const Title = styled.div`
-  color: ${colors.text.primary};
-  font-size: ${space.s6};
-  font-weight: 700;
-  width: 70%;
-  margin: auto;
-  text-align: center;
-  padding-bottom: ${space.s4};
-  @media (min-width: ${breakpoints.md}) {
-    font-size: ${space.s8};
-  }
-`
-
-const TextBody = styled.div`
-  color: ${colors.text.secondary};
-  font-size: ${space.s4};
-  font-weight: 400;
-  width: 70%;
-  margin: auto;
-  text-align: center;
-  padding-bottom: ${space.s4};
-  @media (min-width: ${breakpoints.md}) {
-    font-size: ${space.s5};
+    align-items: inherit;
   }
 `
 

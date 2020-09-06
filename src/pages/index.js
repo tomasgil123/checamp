@@ -1,14 +1,14 @@
 import Layout from 'src/components/layout'
 import Landing from 'src/components/home/landing'
 import HowItWorks from 'src/components/home/howItWorks/index'
-import ValueProp from 'src/components/home/valueProp'
+import Questions from 'src/components/home/questions'
 
 function Home() {
   return (
     <>
       <Landing />
       <HowItWorks />
-      <ValueProp />
+      <Questions />
     </>
   )
 }
