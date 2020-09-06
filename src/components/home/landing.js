@@ -24,7 +24,7 @@ const ContainerImageLanding = styled.div`
   }
   @media (min-width: ${breakpoints.lg}) {
     flex: 5;
-    padding-right: ${space.s12};
+    padding-right: ${space.s40};
   }
   img {
     width: 100%;
@@ -45,18 +45,20 @@ const ContainerTitle = styled.div`
     flex: 5;
     margin: inherit;
     text-align: left;
-    padding-top: ${space.s12};
+    padding-top: ${space.s40};
     padding-left: ${space.s12};
     padding-right: ${space.s8};
   }
   @media (min-width: ${breakpoints.lg}) {
-    padding-top: ${space.s24};
+    padding-top: ${space.s40};
+    padding-left: ${space.s40};
   }
 `
 
 const Title = styled.div`
   color: ${colors.text.primary};
   font-size: ${space.s8};
+  text-align: center;
   font-weight: 700;
   padding-bottom: ${space.s4};
   @media (min-width: ${breakpoints.md}) {
@@ -68,14 +70,12 @@ const SubTitle = styled.div`
   color: ${colors.text.primary};
   font-size: ${space.s5};
   font-weight: 300;
+  text-align: center;
 `
 
 const ContainerButton = styled.div`
   button {
     margin: auto;
-    @media (min-width: ${breakpoints.md}) {
-      margin: inherit;
-    }
   }
   margin-top: ${space.s6};
   position: relative;
@@ -93,10 +93,10 @@ function Landing() {
   return (
     <Container>
       <ContainerTitle>
-        <Title>List Your RV on Outdoorsy</Title>
-        <SubTitle>Earn great money renting your RV when you re not using it!</SubTitle>
+        <Title>Publica tu Casa Rodante</Title>
+        <SubTitle>¡Gana plata mientras no la estas usando!</SubTitle>
         <ContainerButton>
-          <MainButton text="Alquilar mi RV" onClickButton={onRentRV} />
+          <MainButton text="Publicar mi Casa Rodante" onClickButton={onRentRV} />
         </ContainerButton>
       </ContainerTitle>
       <ContainerImageLanding>

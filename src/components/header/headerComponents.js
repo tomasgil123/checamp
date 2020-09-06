@@ -51,8 +51,8 @@ const Logo = styled.div`
   justify-content: center;
   align-items: center;
   & img {
-    height: ${space.s16};
-    width: ${space.s16};
+    height: auto;
+    width: ${space.s48};
   }
   @media (min-width: ${breakpoints.md}) {
     flex: 1;
@@ -90,6 +90,7 @@ const ContainerTabs = styled.div`
   margin-left: auto;
   display: flex;
   flex-direction: row;
+  align-items: center;
   padding-left: ${space.s3};
 `
 
@@ -104,6 +105,17 @@ const Tab = styled.div`
     display: inherit !important;
     padding-left: ${space.s5};
     padding-right: ${space.s5};
+  }
+`
+
+const TabImportant = styled.div`
+  display: none;
+  color: ${colors.base.white};
+  @media (min-width: ${breakpoints.md}) {
+    display: inherit !important;
+    border-radius: 4px;
+    background-color: ${colors.base.primaryGreen};
+    padding: ${space.s2};
   }
 `
 
@@ -130,5 +142,6 @@ export {
   Tab,
   TitleLogo,
   ContainerImageLogo,
+  TabImportant,
   FormTabs,
 }

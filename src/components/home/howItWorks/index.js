@@ -38,9 +38,7 @@ const Title = styled.div`
 function HowItWorks() {
   return (
     <Container>
-      <Title>
-        Por qué poner en alquiler tu <br /> autocaravana en CheCamp
-      </Title>
+      <Title>¿Cómo funciona?</Title>
       <ContainerItems>
         <Item
           text="Contratamos seguros especiales para cada una de las autocaravanas que se alquilan en nuestra plataforma"

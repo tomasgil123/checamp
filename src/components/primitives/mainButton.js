@@ -6,13 +6,13 @@ import { colors, boxShadow, space } from 'src/tokens/index'
 import Loader from './loader'
 
 const ContainerButton = styled.button`
-  height: 50px;
+  height: ${space.s12};
   width: 100%;
   outline: none;
   border-width: 0px;
   border: ${(props) => (props.secondary ? `2px solid ${colors.base.primaryGreen}` : `inherit`)};
   font-size: ${space.s4} !important;
-  max-width: 250px;
+  max-width: ${space.s64};
   border-radius: 4px;
   color: ${(props) => (props.secondary ? `${colors.base.primaryGreen}` : `${colors.base.white}`)};
   background-color: ${(props) =>
