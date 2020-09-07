@@ -1,9 +1,15 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
+import { support } from 'src/utils'
 
 import MainButton from 'src/components/primitives/mainButton'
-import { Subtitle, ContainerButton, ContainerLoader } from 'src/components/owners/general'
+import {
+  Subtitle,
+  ContainerButton,
+  ContainerLoader,
+  SupportNumber,
+} from 'src/components/owners/general'
 import Loader from 'src/components/primitives/loader'
 
 function End({ ownerData, saveOwnerDataInit, resultRequest, isLoading }) {
@@ -45,8 +51,15 @@ function End({ ownerData, saveOwnerDataInit, resultRequest, isLoading }) {
             Ante cualquier duda o consulta no dudes en escribirnos por whatsapp a cualquiera de
             nuestros representantes de atención al cliente
           </Subtitle>
+          {support.allSupportNumbers.map((info) => (
+            <SupportNumber
+              name={info.name}
+              number={info.number}
+              numberComplete={info.numberComplete}
+            />
+          ))}
           <ContainerButton>
-            <MainButton text="Volver a la pagina principal" onClickButton={goBackHome} />
+            <MainButton text="Volver a la página principal" onClickButton={goBackHome} />
           </ContainerButton>
         </div>
       ) : (
@@ -54,7 +67,10 @@ function End({ ownerData, saveOwnerDataInit, resultRequest, isLoading }) {
           <h2>Ups... parece que hubo un problema con el envio de tus datos</h2>
           <Subtitle>
             Por favor, reintenta enviarlos y si el problema persiste no dudes en escribirnos por
-            whatsapp al número 11-5621-7620{' '}
+            whatsapp al número{' '}
+            <a href={`https://wa.me/${support.supportNumberComplete}`} target="_blank">
+              {support.supportNumber}
+            </a>
           </Subtitle>
           <ContainerButton>
             <MainButton text="Reenviar datos" secondary onClickButton={retryDataSent} />

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 import { colors, space } from 'src/tokens'
 
 const Container = styled.div`
@@ -58,8 +59,35 @@ const Hint = styled.div`
   padding-top: ${space.s3};
 `
 
+const ContainerSupportNumber = styled.div`
+  padding-top: ${space.s3};
+  padding-bottom: ${space.s3};
+  color: ${colors.text.secondary};
+`
+const Name = styled.span`
+  padding-right: ${space.s3};
+`
+const SupportNumber = ({ name, number, numberComplete }) => {
+  return (
+    <ContainerSupportNumber>
+      <Name>{name}</Name>
+      {'   '}
+      <a href={`https://wa.me/${numberComplete}`} target="_blank">
+        {number}
+      </a>
+    </ContainerSupportNumber>
+  )
+}
+
+SupportNumber.propTypes = {
+  number: PropTypes.string,
+  name: PropTypes.string,
+  numberComplete: PropTypes.string,
+}
+
 export {
   Container,
+  SupportNumber,
   ContainerButton,
   ContainerTitle,
   ContainerFeatures,

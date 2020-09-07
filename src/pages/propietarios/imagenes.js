@@ -45,7 +45,7 @@ function ImagesRV() {
       <ContainerHelpCard>
         <HelpCard
           title="Consejo"
-          body="Si no tenes a mano las imagenes como para cargarlas ahora lo podes hacer despues"
+          body="Si no tenes a mano las imagenes como para cargarlas ahora lo podes hacer después"
         />
       </ContainerHelpCard>
     </Container>

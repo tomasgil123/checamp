@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { space, breakpoints, boxShadow, colors } from 'src/tokens'
+import { support } from 'src/utils'
 import Link from 'next/link'
 
 const HeaderWrapper = styled.div`
@@ -119,10 +120,19 @@ const TabImportant = styled.div`
   }
 `
 
+const TextLeftNumber = styled.span`
+  padding-right: ${space.s2};
+`
+
 const FormTabs = () => {
   return (
     <>
-      <Tab>Tenes una consulta? Escribinos por whatsapp al 11-5621-7620</Tab>
+      <Tab>
+        <TextLeftNumber>¿Tenes una consulta? Escribinos por whatsapp al </TextLeftNumber>
+        <a href={`https://wa.me/${support.supportNumberComplete}`} target="_blank">
+          {support.supportNumber}
+        </a>
+      </Tab>
       <Tab>
         <Link href="/">
           <a>Salir</a>

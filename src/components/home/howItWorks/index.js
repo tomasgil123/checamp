@@ -34,7 +34,7 @@ function HowItWorks() {
           icon="https://d1o5877uy6tsnd.cloudfront.net/marketplace-search-production/images/icons/dmv-positive-d837b0e827b93ac3f8a0ae0d03887ac9.svg"
         />
         <Item
-          text="Publica tu Casa Rodante de manera gratuita"
+          text="Alquilala sin ningún costo y gana plata mientras no la usas"
           icon="https://d1o5877uy6tsnd.cloudfront.net/marketplace-search-production/images/icons/reviews-big-f2783008163826c3318785d4eb0054af.svg"
         />
       </ContainerItems>

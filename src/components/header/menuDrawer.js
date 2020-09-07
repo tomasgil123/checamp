@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
+import { support } from 'src/utils'
 import { space, colors } from 'src/tokens'
 
 const ContainerMenuDrawer = styled.ul`
@@ -65,10 +66,19 @@ GrayOverlay.propTypes = {
   onClose: PropTypes.func,
 }
 
+const TextLeftNumber = styled.span`
+  padding-right: ${space.s2};
+`
+
 const NavigationOptionsInForm = () => {
   return (
     <>
-      <li>Tenes una consulta? Escribinos por whatsapp al 11-5621-7620</li>
+      <li>
+        <TextLeftNumber>¿Tenes una consulta? Escribinos por whatsapp al </TextLeftNumber>
+        <a href={`https://wa.me/${support.supportNumberComplete}`} target="_blank">
+          {support.supportNumber}
+        </a>
+      </li>
       <li>
         <Link href="/">
           <a>Salir</a>
