@@ -20,12 +20,12 @@ function HowItWorks() {
     <Container>
       <Title>¿Cómo funciona?</Title>
       <TextBody>
-        Checamp es el lugar de encuentro para aquellas personas que tienen una casa rodante que
-        quieren alquilar y personas que buscan una casa rodante para sus próximas vacaciones
+        Checamp conecta personas que tienen una Casa Rodante para alquilar con personas que buscan
+        una para sus próximas vacaciones
       </TextBody>
       <ContainerItems>
         <Item
-          text="Publica tu casa rodante"
+          text="Publica tu Casa Rodante de manera gratuita"
           topPx="-18px"
           icon="https://d1o5877uy6tsnd.cloudfront.net/marketplace-search-production/images/icons/delivery-4db5ab4a99fe3e47cd538189615dd9db.svg"
         />
@@ -34,7 +34,7 @@ function HowItWorks() {
           icon="https://d1o5877uy6tsnd.cloudfront.net/marketplace-search-production/images/icons/dmv-positive-d837b0e827b93ac3f8a0ae0d03887ac9.svg"
         />
         <Item
-          text="Alquila tu casa rodante y gana plata mientras no la usas"
+          text="Publica tu Casa Rodante de manera gratuita"
           icon="https://d1o5877uy6tsnd.cloudfront.net/marketplace-search-production/images/icons/reviews-big-f2783008163826c3318785d4eb0054af.svg"
         />
       </ContainerItems>

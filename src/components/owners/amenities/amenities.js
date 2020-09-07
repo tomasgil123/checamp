@@ -43,7 +43,7 @@ const Column = styled.div`
 const Amenities = ({ spaceRV, amenities, addSpace, addAmenities, goToNextStep }) => {
   return (
     <>
-      <h2>Espacio del vehiculo</h2>
+      <h2>Espacio del vehículo</h2>
       <Formik
         initialValues={initialValues(spaceRV, amenities.amenities)}
         validationSchema={Yup.object().shape(validationSchema)}
@@ -59,8 +59,8 @@ const Amenities = ({ spaceRV, amenities, addSpace, addAmenities, goToNextStep })
             <MinusPlusInput
               key="sleepers"
               name="sleepers"
-              title="Overnight guests"
-              subtitle="How many people sleep comfortably in your rig"
+              title="Huéspedes"
+              subtitle="¿Cuántas personas puede dormir cómodamente?"
               value={formProps.values.sleepers}
               handleChange={formProps.setFieldValue}
               formProps={formProps}
@@ -68,8 +68,8 @@ const Amenities = ({ spaceRV, amenities, addSpace, addAmenities, goToNextStep })
             <MinusPlusInput
               key="passengers"
               name="passengers"
-              title="Passangers"
-              subtitle="Number of seats with seatbelts"
+              title="Pasajeros"
+              subtitle="Asientos con cinturón de seguridad"
               value={formProps.values.passengers}
               handleChange={formProps.setFieldValue}
             />

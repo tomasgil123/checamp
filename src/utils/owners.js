@@ -1,10 +1,12 @@
 // eslint-disable-next-line import/prefer-default-export
 export const typesOfRV = [
-  { name: 'Kastenbagen', link: '/kastenbagen.svg' },
-  { name: 'Alkoben', link: '/alkoben.svg' },
-  { name: 'Integriert', link: '/integriert.svg' },
-  { name: 'Wohnwagen', link: '/wohnwagen.svg' },
+  { name: 'Tipo A', link: '/integriert.svg' },
+  { name: 'Tipo C', link: '/alkoben.svg' },
+  { name: 'Tipo B', link: '/kastenbagen.svg' },
+  { name: 'Remolque', link: '/wohnwagen.svg' },
 ]
+
+export const spanishTranslationForRV = 'Casa Rodante'
 
 export const stepsOwnersForm = [
   { url: 'tipo-de-vehiculo', stepNumber: 0 },

@@ -17,10 +17,10 @@ function DescriptionListingDetails({ descriptionListing, addDescriptionListing, 
         description: Yup.string()
           .test(
             'len',
-            'Intenta que la descripcion no tenga menos de 20 caracteres',
+            'Intenta que la descripción no tenga menos de 20 caracteres',
             (val) => !val || val.toString().length > 21
           )
-          .required('Por favor, completa la descripcion de tu anuncio'),
+          .required('Por favor, completa la descripción de tu anuncio'),
       })}
       onSubmit={(values) => {
         addDescriptionListing(values.description)
@@ -33,7 +33,7 @@ function DescriptionListingDetails({ descriptionListing, addDescriptionListing, 
             key="description"
             type="text"
             name="description"
-            label="Descripcion de tu anuncio"
+            label="Descripción de tu anuncio"
             handleChange={formProps.handleChange}
             handleBlur={formProps.handleBlur}
             value={formProps.values.description}

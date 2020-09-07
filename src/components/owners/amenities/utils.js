@@ -128,7 +128,7 @@ export const listAmenities = [
             unchecked: '-24px 0px',
           },
           {
-            label: 'Calefaccion',
+            label: 'Calefacción',
             name: 'heater',
             checked: '0 -216px',
             unchecked: '-24px -216px',
@@ -140,7 +140,7 @@ export const listAmenities = [
             unchecked: '-24px -240px',
           },
           {
-            label: 'Bano',
+            label: 'Baño',
             name: 'toilet',
             checked: '0 -528px',
             unchecked: '-24px -528px',
@@ -158,7 +158,7 @@ export const listAmenities = [
             unchecked: '-24px -624px',
           },
           {
-            label: 'Awning',
+            label: 'Toldo',
             name: 'awning',
             checked: '0 -48px',
             unchecked: '-24px -48px',
@@ -180,7 +180,7 @@ export const listAmenities = [
       {
         items: [
           {
-            label: 'TowHitch',
+            label: 'Gancho remolque',
             name: 'towHitch',
             checked: '0 -552px',
             unchecked: '-24px -552px',
@@ -198,13 +198,13 @@ export const listAmenities = [
             unchecked: '-24px -432px',
           },
           {
-            label: 'BackupCamera',
+            label: 'Cámara marcha atrás',
             name: 'backupCamera',
             checked: '0 -72px',
             unchecked: '-24px -72px',
           },
           {
-            label: 'ExtraStorage',
+            label: 'Porta equipaje',
             name: 'extraStorage',
             checked: '0 -144px',
             unchecked: '-24px -144px',
@@ -216,7 +216,7 @@ export const listAmenities = [
             unchecked: '-24px -576px',
           },
           {
-            label: 'Inverter',
+            label: 'Convertidor de corriente',
             name: 'inverter',
             checked: '0 -264px',
             unchecked: '-24px -264px',

@@ -5,7 +5,6 @@ import { Formik } from 'formik'
 import FormInput from 'src/components/forms/formInput'
 import MainButton from 'src/components/primitives/mainButton'
 import { WrapperSubmitSection, ContainerSubmitButton } from 'src/components/forms/submitButton'
-import { Hint } from 'src/components/owners/general'
 
 function Features({ features, addFeatures, goToNextStep }) {
   return (
@@ -72,14 +71,13 @@ function Features({ features, addFeatures, goToNextStep }) {
             key="length"
             type="number"
             name="length"
-            label="Largo (en metros) - Utiliza un punto para indicar decimales. Ej: 2.5"
+            label="Utiliza un número aproximado entero. Ej: Si mide 2.5 pone 3 mts"
             handleChange={formProps.handleChange}
             handleBlur={formProps.handleBlur}
             value={formProps.values.length}
             errors={formProps.errors}
             touched={formProps.touched}
           />
-          <Hint>Si usas un iphone o una mac solo vas a poder ingresar un número entero</Hint>
           <WrapperSubmitSection />
           <ContainerSubmitButton>
             <MainButton text="Continuar" onClickButton={undefined} type="submit" />

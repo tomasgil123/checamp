@@ -17,13 +17,13 @@ function TypeRV() {
   return (
     <Container>
       <ContainerTitleTypeRV>
-        <h2>Indica tu tipo de vehiculo</h2>
+        <h2>Indica tu tipo de vehículo</h2>
       </ContainerTitleTypeRV>
       <TypeRVOptions goToNextStep={goToNextStep} />
       <ContainerHelpCard>
         <HelpCard
           title="Consejo"
-          body="Tenes una consulta? Contactanos por whatsapp al 11-5621-7620"
+          body="¿Tenes una consulta? Contactanos por whatsapp al 11-5621-7620"
         />
       </ContainerHelpCard>
     </Container>

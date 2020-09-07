@@ -27,10 +27,10 @@ function PickupAddressDetailsRV() {
   return (
     <Container>
       <ContainerTitle>
-        <h2>Direccion</h2>
+        <h2>Dirección</h2>
         <Subtitle>
-          Contanos por donde tendrian que pasar los huespedes a buscar tu vehiculo al momento de
-          alquilarlo
+          Contanos por donde tendrian que pasar los huéspedes a buscar tu Casa Rodante al momento de
+          alquilarla
         </Subtitle>
       </ContainerTitle>
       <ContainerFeatures>

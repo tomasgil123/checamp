@@ -36,10 +36,10 @@ function End({ tenantData, saveTenantDataInit, resultRequest, isLoading }) {
     <div>
       {resultRequest ? (
         <div>
-          <h2>Excelente! Te acabas de registrar en Checamp</h2>
+          <h2>¡Excelente! Nos estaremos contactando con vos</h2>
           <Subtitle>
-            Ante cualquier duda o consulta no dudes en escribirnos por whatsapp al numero
-            11-5621-7620
+            Ante cualquier duda o consulta no dudes en escribirnos por whatsapp a cualquiera de
+            nuestros representantes de atención al cliente
           </Subtitle>
           <ContainerButton>
             <MainButton text="Volver a la pagina principal" onClickButton={goBackHome} />

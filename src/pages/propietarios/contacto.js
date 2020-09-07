@@ -29,8 +29,9 @@ function ContactInfoOwner() {
       <ContainerTitle>
         <h2>Tu informacion de contacto</h2>
         <Subtitle>
-          Vamos a necesitar un mail y un numero de celular para avisarte cuando alguien quiera
-          alquilar tu motor home. Nunca va a ser compartido con terceros sin tu autorizacion
+          Vamos a necesitar tu nombre, un mail y un número de celular para avisarte cuando alguien
+          quiera alquilar tu Casa Rodante. Nunca va a ser compartido con terceros sin tu
+          autorización
         </Subtitle>
       </ContainerTitle>
       <ContainerFeatures>
