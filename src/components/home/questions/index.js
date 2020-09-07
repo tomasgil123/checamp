@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import styled from 'styled-components'
 import { space, colors, boxShadow } from 'src/tokens'
 import { support } from 'src/utils'
