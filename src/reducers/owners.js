@@ -189,6 +189,7 @@ export const getContactInfo = createSelector(getOwnerssState, (ownersState) => {
   return {
     email: ownersState.email,
     phone: ownersState.phone,
+    nameAndSurname: ownersState.nameAndSurname,
   }
 })
 

@@ -59,5 +59,6 @@ export const getContactInfo = createSelector(getTenantssState, (tenantsState) =>
   return {
     email: tenantsState.email,
     phone: tenantsState.phone,
+    nameAndSurname: tenantsState.nameAndSurname,
   }
 })
