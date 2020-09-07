@@ -20,6 +20,7 @@ const initialState = {
   descriptionListing: '',
   email: '',
   phone: '',
+  nameAndSurname: '',
   images: [],
   pricePerDay: '',
   priceExtra: '',
@@ -78,6 +79,7 @@ export default function ownersReducer(state = initialState, action) {
       case 'ADD_CONTACT_INFO': {
         draft.email = action.contactInfo.email
         draft.phone = action.contactInfo.phone
+        draft.nameAndSurname = action.contactInfo.nameAndSurname
         return draft
       }
       case 'ADD_IMAGES': {

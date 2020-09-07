@@ -12,10 +12,12 @@ function ContactInfoDetails({ contactInfo, addContactInfo, goToNextStep }) {
   return (
     <Formik
       initialValues={{
+        nameAndSurname: contactInfo.nameAndSurname,
         email: contactInfo.email,
         phone: contactInfo.phone,
       }}
       validationSchema={Yup.object().shape({
+        nameAndSurname: Yup.string().required('Por favor, completa tu nombre y apellido'),
         email: Yup.string()
           .test('is-phone-valid', 'Ese email no parece ser valido', (val) => isEmailValid(val))
           .required('Por favor, completa con tu email'),
@@ -31,10 +33,21 @@ function ContactInfoDetails({ contactInfo, addContactInfo, goToNextStep }) {
       {(formProps) => (
         <form onSubmit={formProps.handleSubmit}>
           <FormInput
+            key="nameAndSurname"
+            type="text"
+            name="nameAndSurname"
+            label="Tu nombre y apellido"
+            handleChange={formProps.handleChange}
+            handleBlur={formProps.handleBlur}
+            value={formProps.values.nameAndSurname}
+            errors={formProps.errors}
+            touched={formProps.touched}
+          />
+          <FormInput
             key="email"
             type="text"
             name="email"
-            label="Tu direccion de email"
+            label="Tu dirección de email"
             handleChange={formProps.handleChange}
             handleBlur={formProps.handleBlur}
             value={formProps.values.email}

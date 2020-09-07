@@ -5,6 +5,7 @@ import produce from 'immer'
 const initialState = {
   email: '',
   phone: '',
+  nameAndSurname: '',
   loading: true,
   wasRequestSuccessfull: null,
 }
@@ -18,6 +19,7 @@ export default function tenantsReducer(state = initialState, action) {
       case 'ADD_CONTACT_INFO_TENANT': {
         draft.email = action.contactInfo.email
         draft.phone = action.contactInfo.phone
+        draft.nameAndSurname = action.contactInfo.nameAndSurname
         return draft
       }
       case 'SAVE_TENANT_DATA_INIT': {
