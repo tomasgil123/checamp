@@ -12,6 +12,7 @@ import {
   SupportNumber,
 } from 'src/components/owners/general'
 import Loader from 'src/components/primitives/loader'
+import { motion } from 'framer-motion'
 
 function End({ tenantData, saveTenantDataInit, resultRequest, isLoading }) {
   const router = useRouter()
@@ -40,7 +41,14 @@ function End({ tenantData, saveTenantDataInit, resultRequest, isLoading }) {
   }
 
   return (
-    <div>
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={{
+        hidden: { opacity: 0, transition: { duration: 1.5 } },
+        visible: { opacity: 1, transition: { duration: 1.5 } },
+      }}
+    >
       {resultRequest ? (
         <div>
           <h2>¡Excelente! Nos estaremos contactando con vos</h2>
@@ -74,7 +82,7 @@ function End({ tenantData, saveTenantDataInit, resultRequest, isLoading }) {
           </ContainerButton>
         </div>
       )}
-    </div>
+    </motion.div>
   )
 }
 
