@@ -34,6 +34,7 @@ function OptimizedImg({ srcImg }) {
 
     if (isIOSChrome) {
       // is Google Chrome on IOS
+      setIsChrome(false)
     } else if (
       isChromium !== null &&
       typeof isChromium !== 'undefined' &&
