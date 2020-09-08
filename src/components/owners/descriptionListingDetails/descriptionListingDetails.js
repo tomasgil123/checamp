@@ -40,7 +40,7 @@ function DescriptionListingDetails({ descriptionListing, addDescriptionListing, 
             errors={formProps.errors}
             touched={formProps.touched}
           />
-          <Hint>Tu descripcion tiene que tener por lo menos 20 caracteres</Hint>
+          <Hint>Tu descripción tiene que tener por lo menos 20 caracteres</Hint>
           <CharacterLimit>{`${formProps.values.description.length} caracteres`}</CharacterLimit>
           <WrapperSubmitSection />
           <ContainerSubmitButton>

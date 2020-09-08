@@ -19,6 +19,7 @@ const LabelElement = styled.label`
 const TextareaElement = styled.textarea`
   width: 100%;
   border-width: 1px !important;
+  padding: ${space.s2};
   border: 0 solid
     ${(props) => (props.error ? `${colors.text.error}` : `${colors.base.inputBorders}`)};
   outline: none !important;

@@ -30,7 +30,7 @@ function PriceRV() {
     <Container>
       <ContainerTitle>
         <h2>Precio del alquiler</h2>
-        <Subtitle>Contanos que precio queres cobrar por dia y que costos extra existen</Subtitle>
+        <Subtitle>Contanos que precio queres cobrar por día y que costos extra existen</Subtitle>
       </ContainerTitle>
       <ContainerFeatures>
         <Price goToNextStep={goToNextStep} />
