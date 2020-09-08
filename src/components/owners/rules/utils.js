@@ -21,7 +21,7 @@ export const listRules = [
   {
     name: 'tailgating',
     label: 'Remolque',
-    subLabel: '¿Pueden los huéspedes usar tu vehículo para hacer remolque?',
+    subLabel: '¿Pueden los huéspedes usar tu vehículo como remolque?',
   },
   {
     name: 'festivals',
