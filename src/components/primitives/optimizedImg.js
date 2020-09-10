@@ -23,6 +23,8 @@ function OptimizedImg({ srcImg }) {
   const [isLoaded, setIsLoaded] = useState(true)
   const [isChrome, setIsChrome] = useState(true)
 
+  const multipleSizes = require(`images/${srcImg}?resize&sizes[]=640&sizes[]=768&sizes[]=1024&sizes[]=2048`)
+
   useEffect(() => {
     // it seems only chrome support webp images. Firefox and safari wont sohw the image
     const isChromium = window.chrome
@@ -43,7 +45,7 @@ function OptimizedImg({ srcImg }) {
       isIEedge === false
     ) {
       // is Google Chrome
-      setIsChrome(true)
+      setIsChrome(false)
     } else {
       // not Google Chrome
       setIsChrome(false)
@@ -56,13 +58,24 @@ function OptimizedImg({ srcImg }) {
         <img src={require(`images/${srcImg}?lqip`)} alt="" />
       </BlurImage>
       <ContainerNormalImage opacity={isLoaded ? '1' : '0'}>
-        <img
-          onLoad={() => {
-            setIsLoaded(true)
-          }}
-          src={isChrome ? require(`images/${srcImg}?webp`) : require(`images/${srcImg}`)}
-          alt=""
-        />
+        {isChrome ? (
+          <img
+            onLoad={() => {
+              setIsLoaded(true)
+            }}
+            src={require(`images/${srcImg}?webp`)}
+            alt=""
+          />
+        ) : (
+          <img
+            onLoad={() => {
+              setIsLoaded(true)
+            }}
+            srcSet={multipleSizes.srcSet}
+            src={multipleSizes.src}
+            alt=""
+          />
+        )}
       </ContainerNormalImage>
     </>
   )

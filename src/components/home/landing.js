@@ -30,7 +30,7 @@ const ContainerImageLanding = styled.div`
     width: 100%;
     height: 70vh;
     object-fit: cover;
-    object-position: 30% 50%;
+    object-position: 0% 50%;
   }
 `
 
@@ -100,7 +100,7 @@ function Landing() {
         </ContainerButton>
       </ContainerTitle>
       <ContainerImageLanding>
-        <OptimizedImg srcImg="checamp-landing.jpg" />
+        <OptimizedImg srcImg="checamp-landing-2.jpg" />
       </ContainerImageLanding>
     </Container>
   )
