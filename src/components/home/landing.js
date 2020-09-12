@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import styled from 'styled-components'
 import { colors, breakpoints, space } from 'src/tokens'
 
-import OptimizedImg from 'src/components/primitives/optimizedImg'
+import OptimizedImgWithDifferentImgOptions from 'src/components/primitives/optimizedImgWithDifferentImgOptions'
 import MainButton from 'src/components/primitives/mainButton'
 
 const Container = styled.div`
@@ -28,9 +28,12 @@ const ContainerImageLanding = styled.div`
   }
   img {
     width: 100%;
-    height: 70vh;
+    height: 60vh;
     object-fit: cover;
     object-position: 0% 50%;
+    @media (min-width: ${breakpoints.lg}) {
+      height: 60vh;
+    }
   }
 `
 
@@ -100,7 +103,10 @@ function Landing() {
         </ContainerButton>
       </ContainerTitle>
       <ContainerImageLanding>
-        <OptimizedImg srcImg="checamp-landing-2.jpg" />
+        <OptimizedImgWithDifferentImgOptions
+          srcImg="checamp-landing-2.jpg"
+          srcImgMobile="checamp_landing_2_app.jpeg"
+        />
       </ContainerImageLanding>
     </Container>
   )
