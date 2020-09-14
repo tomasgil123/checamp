@@ -43,17 +43,35 @@ export default async (req, res) => {
   google.options({ auth })
 
   // we check if the first row has values
-  let dataFirstRow
-  try {
-    result = await sheets.spreadsheets.values.get({
-      spreadsheetId: process.env.SPREAD_SHEET_ID,
-      range: '1:1',
-    })
-  } catch (err) {
-    result = { success: false, err: err.message, private_key: privateKey }
-    res.json(result ? { ...result } : null)
-    return
-  }
+  // let dataFirstRow
+  // try {
+  //   result = await sheets.spreadsheets.values.get({
+  //     spreadsheetId: process.env.SPREAD_SHEET_ID,
+  //     range: '1:1',
+  //   })
+  // } catch (err) {
+  //   result = { success: false, err: err.message, private_key: privateKey }
+  //   res.json(result ? { ...result } : null)
+  //   return
+  // }
+
+  // we add a new row
+  // try {
+  //   result = await sheets.spreadsheets.values.append({
+  //     spreadsheetId: process.env.SPREAD_SHEET_ID,
+  //     range: '1:1',
+  //     valueInputOption: 'RAW',
+  //     insertDataOption: 'INSERT_ROWS',
+  //     requestBody: {
+  //       values: [['test'], ['test1']],
+  //     },
+  //   })
+  //   result.success = true
+  // } catch (err) {
+  //   result = { success: false, err: err.message }
+  //   res.json(result ? { ...result } : null)
+  //   return
+  // }
 
   res.json(result ? { ...result } : null)
 }

@@ -1,6 +1,9 @@
+/* eslint-disable global-require */
+/* eslint-disable react/jsx-no-target-blank */
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
+import { support } from 'src/utils'
 import { space, colors } from 'src/tokens'
 
 const ContainerMenuDrawer = styled.ul`
@@ -21,8 +24,8 @@ const ContainerMenuDrawer = styled.ul`
 `
 
 const ContainerNavigation = styled.ul`
-  padding-top: ${space.s12};
-  padding-left: ${space.s12};
+  padding-top: ${space.s6};
+  padding-left: ${space.s6};
   padding-right: ${space.s6};
   li {
     list-style-type: none;
@@ -47,12 +50,14 @@ const ContainerLogo = styled.div`
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid ${colors.base.borders};
+  padding-top: ${space.s2};
+  padding-bottom: ${space.s2};
 `
 
 const Logo = styled.div`
   img {
-    height: ${space.s16};
-    width: ${space.s32};
+    height: auto;
+    width: ${space.s48};
   }
 `
 
@@ -65,10 +70,19 @@ GrayOverlay.propTypes = {
   onClose: PropTypes.func,
 }
 
+const TextLeftNumber = styled.span`
+  padding-right: ${space.s2};
+`
+
 const NavigationOptionsInForm = () => {
   return (
     <>
-      <li>Tenes una consulta? Escribinos por whatsapp al 11-5621-7620</li>
+      <li>
+        <TextLeftNumber>¿Tenes una consulta? Escribinos por whatsapp al </TextLeftNumber>
+        <a href={`https://wa.me/${support.supportNumberComplete}`} target="_blank">
+          {support.supportNumber}
+        </a>
+      </li>
       <li>
         <Link href="/">
           <a>Salir</a>
@@ -78,17 +92,40 @@ const NavigationOptionsInForm = () => {
   )
 }
 
+const ImportantOption = styled.li`
+  border-radius: 4px;
+  background-color: ${colors.base.primaryGreen};
+  text-align: center;
+  color: ${colors.base.white};
+  padding: ${space.s2} !important;
+`
+
+const Option = styled.li`
+  text-align: center;
+  padding: ${space.s2} !important;
+`
+
 const MenuDrawer = ({ translate, pages, isInForm }) => {
   const navigationOptions = isInForm ? (
     <NavigationOptionsInForm />
   ) : (
     <>
       {pages.map((page) => (
-        <li key={page.name}>
-          <Link href={`/${page.link}`}>
-            <a>{page.name}</a>
-          </Link>
-        </li>
+        <>
+          {page.link === 'propietarios/tipo-de-vehiculo' ? (
+            <ImportantOption key={page.name}>
+              <Link href={`/${page.link}`}>
+                <a>{page.name}</a>
+              </Link>
+            </ImportantOption>
+          ) : (
+            <Option key={page.name}>
+              <Link href={`/${page.link}`}>
+                <a>{page.name}</a>
+              </Link>
+            </Option>
+          )}
+        </>
       ))}
     </>
   )
@@ -97,10 +134,7 @@ const MenuDrawer = ({ translate, pages, isInForm }) => {
     <ContainerMenuDrawer translate={translate}>
       <ContainerLogo>
         <Logo>
-          <img
-            src="https://d1o5877uy6tsnd.cloudfront.net/application-layout/outdoorsy-logo.svg"
-            alt="cheCamp"
-          />
+          <img src={require(`images/checamp_logo_horizontal.png`)} alt="checamp-logo" />
         </Logo>
       </ContainerLogo>
       <ContainerNavigation>

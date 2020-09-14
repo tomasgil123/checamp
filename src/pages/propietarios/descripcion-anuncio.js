@@ -27,10 +27,10 @@ function DescriptionListingRV() {
   return (
     <Container>
       <ContainerTitle>
-        <h2>Descripcion de tu anuncio</h2>
+        <h2>Descripción de tu anuncio</h2>
         <Subtitle>
-          Contanos que hace a tu RV diferente. Esta informacion va a poder ser leida por potenciales
-          huespedes mientras buscan alquilar un RV
+          Contanos que hace a tu Casa Rodante diferente. Esta información va a poder ser leida por
+          potenciales huéspedes
         </Subtitle>
       </ContainerTitle>
       <ContainerFeatures>

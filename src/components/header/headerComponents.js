@@ -1,5 +1,7 @@
+/* eslint-disable react/jsx-no-target-blank */
 import styled from 'styled-components'
 import { space, breakpoints, boxShadow, colors } from 'src/tokens'
+import { support } from 'src/utils'
 import Link from 'next/link'
 
 const HeaderWrapper = styled.div`
@@ -51,8 +53,8 @@ const Logo = styled.div`
   justify-content: center;
   align-items: center;
   & img {
-    height: ${space.s16};
-    width: ${space.s16};
+    height: auto;
+    width: ${space.s48};
   }
   @media (min-width: ${breakpoints.md}) {
     flex: 1;
@@ -90,6 +92,7 @@ const ContainerTabs = styled.div`
   margin-left: auto;
   display: flex;
   flex-direction: row;
+  align-items: center;
   padding-left: ${space.s3};
 `
 
@@ -107,10 +110,30 @@ const Tab = styled.div`
   }
 `
 
+const TabImportant = styled.div`
+  display: none;
+  color: ${colors.base.white};
+  @media (min-width: ${breakpoints.md}) {
+    display: inherit !important;
+    border-radius: 4px;
+    background-color: ${colors.base.primaryGreen};
+    padding: ${space.s2};
+  }
+`
+
+const TextLeftNumber = styled.span`
+  padding-right: ${space.s2};
+`
+
 const FormTabs = () => {
   return (
     <>
-      <Tab>Tenes una consulta? Escribinos por whatsapp al 11-5621-7620</Tab>
+      <Tab>
+        <TextLeftNumber>¿Tenes una consulta? Escribinos por whatsapp al </TextLeftNumber>
+        <a href={`https://wa.me/${support.supportNumberComplete}`} target="_blank">
+          {support.supportNumber}
+        </a>
+      </Tab>
       <Tab>
         <Link href="/">
           <a>Salir</a>
@@ -130,5 +153,6 @@ export {
   Tab,
   TitleLogo,
   ContainerImageLogo,
+  TabImportant,
   FormTabs,
 }

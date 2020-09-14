@@ -3,6 +3,7 @@
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { useState, useEffect } from 'react'
+import { breakpoints } from 'src/tokens'
 
 const BlurImage = styled.div`
   & > img {
@@ -19,7 +20,7 @@ const ContainerNormalImage = styled.div`
   }
 `
 
-function OptimizedImg({ srcImg }) {
+function OptimizedImgWithDifferentImgOptions({ srcImg, srcImgMobile }) {
   const [isLoaded, setIsLoaded] = useState(true)
   const [isChrome, setIsChrome] = useState(true)
 
@@ -59,30 +60,45 @@ function OptimizedImg({ srcImg }) {
       </BlurImage>
       <ContainerNormalImage opacity={isLoaded ? '1' : '0'}>
         {isChrome ? (
-          <img
-            onLoad={() => {
-              setIsLoaded(true)
-            }}
-            src={require(`images/${srcImg}?webp`)}
-            alt=""
-          />
+          <picture>
+            <source
+              srcSet={require(`images/${srcImgMobile}?webp`)}
+              media={`(max-width: ${breakpoints.sm})`}
+            />
+            <img
+              onLoad={() => {
+                setIsLoaded(true)
+              }}
+              src={require(`images/${srcImg}?webp`)}
+              alt=""
+            />
+          </picture>
         ) : (
-          <img
-            onLoad={() => {
-              setIsLoaded(true)
-            }}
-            srcSet={multipleSizes.srcSet}
-            src={multipleSizes.src}
-            alt=""
-          />
+          <>
+            <picture>
+              <source
+                srcSet={require(`images/${srcImgMobile}?`)}
+                media={`(max-width: ${breakpoints.sm})`}
+              />
+              <img
+                onLoad={() => {
+                  setIsLoaded(true)
+                }}
+                srcSet={multipleSizes.srcSet}
+                src={multipleSizes.src}
+                alt=""
+              />
+            </picture>
+          </>
         )}
       </ContainerNormalImage>
     </>
   )
 }
 
-OptimizedImg.propTypes = {
+OptimizedImgWithDifferentImgOptions.propTypes = {
   srcImg: PropTypes.string,
+  srcImgMobile: PropTypes.string,
 }
 
-export default OptimizedImg
+export default OptimizedImgWithDifferentImgOptions

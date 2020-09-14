@@ -30,6 +30,8 @@ export default async (req, res) => {
   const usersData = req.body.data
   // we add a special id
   usersData.uid = uuidv4()
+  // we add a timestamp
+  usersData.timestamp = new Date()
 
   google.options({ auth })
 
@@ -69,6 +71,7 @@ export default async (req, res) => {
     result = await sheets.spreadsheets.values.append({
       spreadsheetId,
       range: '1:1',
+      insertDataOption: 'INSERT_ROWS',
       valueInputOption: 'RAW',
       requestBody: {
         values: [Object.values(usersData)],

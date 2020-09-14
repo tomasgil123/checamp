@@ -27,10 +27,10 @@ function NameListingRV() {
   return (
     <Container>
       <ContainerTitle>
-        <h2>Titulo de tu anuncio</h2>
+        <h2>Título de tu anuncio</h2>
         <Subtitle>
-          Contanos por donde tendrian que pasar los huespedes a buscar tu vehiculo al momento de
-          alquilarlo
+          Una frase breve que describa tu vehículo. ¡Si tiene un apodo, este es el lugar para
+          agregarlo!
         </Subtitle>
       </ContainerTitle>
       <ContainerFeatures>

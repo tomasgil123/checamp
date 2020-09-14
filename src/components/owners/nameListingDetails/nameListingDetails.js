@@ -17,10 +17,10 @@ function NameListingDetails({ nameListing, addNameListing, goToNextStep }) {
         name: Yup.string()
           .test(
             'len',
-            'Intenta que el titulo no tenga mas de 75 caracteres',
+            'Intenta que el título no tenga mas de 75 caracteres',
             (val) => !val || val.toString().length < 76
           )
-          .required('Por favor, completa el titulo de tu anuncio'),
+          .required('Por favor, completa el título de tu anuncio'),
       })}
       onSubmit={(values) => {
         addNameListing(values.name)
@@ -33,7 +33,7 @@ function NameListingDetails({ nameListing, addNameListing, goToNextStep }) {
             key="name"
             type="text"
             name="name"
-            label="Titulo de tu anuncio"
+            label="Título de tu anuncio"
             handleChange={formProps.handleChange}
             handleBlur={formProps.handleBlur}
             value={formProps.values.name}

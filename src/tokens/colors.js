@@ -12,6 +12,7 @@ const colors = {
     minusIcon: '#afb8c0',
     gray: '#c6c6c6',
     background: '#fffffe',
+    backgroundGray: '#f6f7f9',
     primaryLightBlue: '#e5faf1',
     primaryGreen: '#2a5913',
     secondaryGreen: '#ADE8C4',

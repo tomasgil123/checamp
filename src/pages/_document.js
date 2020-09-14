@@ -1,4 +1,5 @@
-import Document from 'next/document'
+/* eslint-disable react/no-danger */
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
@@ -27,5 +28,28 @@ export default class MyDocument extends Document {
     } finally {
       sheet.seal()
     }
+  }
+
+  render() {
+    return (
+      <Html>
+        <Head>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `${process.env.GOOGLE_TAG_MANAGER_HEAD_TAG}`,
+            }}
+          />
+        </Head>
+        <noscript
+          dangerouslySetInnerHTML={{
+            __html: `${process.env.GOOGLE_TAG_MANAGER_BODY_TAG}`,
+          }}
+        />
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    )
   }
 }

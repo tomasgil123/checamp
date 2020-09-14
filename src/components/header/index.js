@@ -1,9 +1,9 @@
+/* eslint-disable global-require */
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import { navigation } from 'src/utils/index'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
-import OptimizedImage from 'src/components/primitives/optimizedImg'
 import {
   HeaderWrapper,
   Container,
@@ -12,6 +12,7 @@ import {
   Logo,
   ContainerTabs,
   Tab,
+  TabImportant,
   ContainerImageLogo,
   FormTabs,
 } from './headerComponents'
@@ -40,11 +41,21 @@ function Header({ isInForm }) {
   ) : (
     <>
       {navigation.pages.map((page) => (
-        <Tab>
-          <Link href={`/${page.link}`}>
-            <a>{page.name}</a>
-          </Link>
-        </Tab>
+        <>
+          {page.link === 'propietarios/tipo-de-vehiculo' ? (
+            <TabImportant>
+              <Link href={`/${page.link}`}>
+                <a>{page.name}</a>
+              </Link>
+            </TabImportant>
+          ) : (
+            <Tab>
+              <Link href={`/${page.link}`}>
+                <a>{page.name}</a>
+              </Link>
+            </Tab>
+          )}
+        </>
       ))}
     </>
   )
@@ -70,7 +81,7 @@ function Header({ isInForm }) {
         </MenuLeft>
         <Logo>
           <ContainerImageLogo onClick={onGoHome}>
-            <OptimizedImage srcImg="checamp_logo_green.png" />
+            <img src={require(`images/checamp_logo_horizontal.png`)} alt="checamp-logo" />
           </ContainerImageLogo>
         </Logo>
         <MenuRight />

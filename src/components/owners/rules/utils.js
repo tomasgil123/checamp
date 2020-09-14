@@ -17,20 +17,20 @@ export const validationSchema = {
 }
 
 export const listRules = [
-  { name: 'pets', label: 'Mascotas', subLabel: 'Pueden los huespedes llevar mascotas?' },
+  { name: 'pets', label: 'Mascotas', subLabel: '¿Pueden los huéspedes llevar mascotas?' },
   {
     name: 'tailgating',
-    label: 'Tailgating',
-    subLabel: 'Pueden los huespedes usar tu vehiculo para hacer tailgating?',
+    label: 'Remolque',
+    subLabel: '¿Pueden los huéspedes usar tu vehículo como remolque?',
   },
   {
     name: 'festivals',
     label: 'Festivales o eventos',
-    subLabel: 'Pueden los huespedes usar tu vehiculo para ir a festivales o eventos?',
+    subLabel: '¿Pueden los huéspedes usar tu vehículo para ir a festivales o eventos?',
   },
   {
     name: 'smoking',
-    label: 'Smoking',
-    subLabel: 'Pueden los huespedes fumar dentro del vehiculo?',
+    label: 'Fumar',
+    subLabel: '¿Pueden los huéspedes fumar dentro del vehículo?',
   },
 ]

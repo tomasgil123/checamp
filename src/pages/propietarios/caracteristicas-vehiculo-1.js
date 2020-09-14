@@ -26,7 +26,7 @@ function FeaturesRVOne() {
   return (
     <Container>
       <ContainerTitle>
-        <h2>Caracteristicas de tu vehiculo</h2>
+        <h2>Características de tu vehículo</h2>
       </ContainerTitle>
       <ContainerFeatures>
         <Features goToNextStep={goToNextStep} />

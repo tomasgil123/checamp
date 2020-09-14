@@ -30,7 +30,7 @@ function PriceRV() {
     <Container>
       <ContainerTitle>
         <h2>Precio del alquiler</h2>
-        <Subtitle>Contanos que precio queres cobrar por dia y que costos extra existen</Subtitle>
+        <Subtitle>Contanos que precio queres cobrar por día y que costos extra existen</Subtitle>
       </ContainerTitle>
       <ContainerFeatures>
         <Price goToNextStep={goToNextStep} />
@@ -38,8 +38,8 @@ function PriceRV() {
       <ContainerHelpCard>
         <HelpCard
           title="Sobre los costos extra"
-          body="Menciona que otros costos tiene alquilar tu motorhome ademas del precio por dia. Por
-          ejemplo, hay un costo extra si se recorren mas de cierta cantidad de km? Hay un cargo
+          body="Menciona que otros costos tiene alquilar tu Casa Rodante ademas del precio por día. Por
+          ejemplo, ¿hay un costo extra si se recorren más de cierta cantidad de km? ¿Hay un cargo
           por limpieza?"
         />
       </ContainerHelpCard>
