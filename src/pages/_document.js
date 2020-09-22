@@ -44,13 +44,13 @@ export default class MyDocument extends Document {
             }}
           />
         </Head>
-        <noscript
-          dangerouslySetInnerHTML={{
-            __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=${process.env.TM_TRACKING_ID}&gtm_auth=BCxU5QaddBS7cH89ieDj1A&gtm_preview=env-3&gtm_cookies_win=x"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
-          }}
-        />
         <body>
+          <noscript
+            dangerouslySetInnerHTML={{
+              __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=${process.env.TM_TRACKING_ID}&gtm_auth=BCxU5QaddBS7cH89ieDj1A&gtm_preview=env-3&gtm_cookies_win=x"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
+            }}
+          />
           <Main />
           <NextScript />
         </body>
