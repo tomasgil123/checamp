@@ -36,13 +36,18 @@ export default class MyDocument extends Document {
         <Head>
           <script
             dangerouslySetInnerHTML={{
-              __html: `${process.env.GOOGLE_TAG_MANAGER_HEAD_TAG}`,
+              __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl+ '&gtm_auth=BCxU5QaddBS7cH89ieDj1A&gtm_preview=env-3&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','${process.env.TM_TRACKING_ID}');`,
             }}
           />
         </Head>
         <noscript
           dangerouslySetInnerHTML={{
-            __html: `${process.env.GOOGLE_TAG_MANAGER_BODY_TAG}`,
+            __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=${process.env.TM_TRACKING_ID}&gtm_auth=BCxU5QaddBS7cH89ieDj1A&gtm_preview=env-3&gtm_cookies_win=x"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
           }}
         />
         <body>
