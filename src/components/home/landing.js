@@ -93,10 +93,11 @@ function Landing() {
       pathname: `/propietarios/tipo-de-vehiculo`,
     })
   }
+  const environment = process.env.NEXT_PUBLIC_ENVIRONMENT ? ' - DEV' : ''
   return (
     <Container>
       <ContainerTitle>
-        <Title>Publica tu Casa Rodante - DEV</Title>
+        <Title>{`Publica tu Casa Rodante ${environment}`}</Title>
         <SubTitle>¡Gana plata mientras no la estas usando!</SubTitle>
         <ContainerButton>
           <MainButton text="Publicar mi Casa Rodante" onClickButton={onRentRV} />
