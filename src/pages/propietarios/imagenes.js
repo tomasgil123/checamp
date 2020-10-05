@@ -43,10 +43,11 @@ function ImagesRV() {
         <Images goToNextStep={goToNextStep} />
       </ContainerFeatures>
       <ContainerHelpCard>
-        <HelpCard
-          title="Consejo"
-          body="Si no tenes a mano las imagenes como para cargarlas ahora lo podes hacer después"
-        />
+        <HelpCard title="Consejo">
+          <span>
+            Si no tenes a mano las imagenes como para cargarlas ahora lo podes hacer después
+          </span>
+        </HelpCard>
       </ContainerHelpCard>
     </Container>
   )

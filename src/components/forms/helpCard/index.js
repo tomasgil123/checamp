@@ -38,14 +38,14 @@ const Body = styled.div`
   font-weight: 400;
 `
 
-const HelpCard = ({ icon, title, body }) => {
+const HelpCard = ({ icon, title, children }) => {
   const iconElement = !icon ? <TipIcon /> : null
   return (
     <Card>
       <ContainerIcon>{iconElement}</ContainerIcon>
       <ContainerText>
         <Title>{title}</Title>
-        <Body>{body}</Body>
+        <Body>{children}</Body>
       </ContainerText>
     </Card>
   )
@@ -54,7 +54,8 @@ const HelpCard = ({ icon, title, body }) => {
 HelpCard.propTypes = {
   icon: PropTypes.string,
   title: PropTypes.string,
-  body: PropTypes.string,
+  // eslint-disable-next-line react/forbid-prop-types
+  children: PropTypes.object,
 }
 
 export default HelpCard

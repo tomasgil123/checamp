@@ -36,12 +36,13 @@ function PriceRV() {
         <Price goToNextStep={goToNextStep} />
       </ContainerFeatures>
       <ContainerHelpCard>
-        <HelpCard
-          title="Sobre los costos extra"
-          body="Menciona que otros costos tiene alquilar tu Casa Rodante ademas del precio por día. Por
-          ejemplo, ¿hay un costo extra si se recorren más de cierta cantidad de km? ¿Hay un cargo
-          por limpieza?"
-        />
+        <HelpCard title="Sobre los costos extra">
+          <span>
+            Menciona que otros costos tiene alquilar tu Casa Rodante ademas del precio por día. Por
+            ejemplo, ¿hay un costo extra si se recorren más de cierta cantidad de km? ¿Hay un cargo
+            por limpieza?
+          </span>
+        </HelpCard>
       </ContainerHelpCard>
     </Container>
   )

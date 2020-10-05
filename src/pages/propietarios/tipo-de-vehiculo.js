@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import { useContext } from 'react'
 import { PageNavigationContext } from 'src/context'
 import styled from 'styled-components'
@@ -22,10 +23,12 @@ function TypeRV() {
       </ContainerTitleTypeRV>
       <TypeRVOptions goToNextStep={goToNextStep} />
       <ContainerHelpCard>
-        <HelpCard
-          title="Consejo"
-          body={`¿Tenes una consulta? Contactanos por whatsapp al ${support.supportNumber}`}
-        />
+        <HelpCard title="Consejo">
+          <span>¿Tenes una consulta? Escribinos por whatsapp al </span>
+          <a href={`https://wa.me/${support.supportNumberComplete}`} target="_blank">
+            {support.supportNumber}
+          </a>
+        </HelpCard>
       </ContainerHelpCard>
     </Container>
   )
