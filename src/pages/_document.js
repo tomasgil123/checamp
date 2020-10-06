@@ -43,6 +43,7 @@ export default class MyDocument extends Document {
               })(window,document,'script','dataLayer','${process.env.TM_TRACKING_ID}');`,
             }}
           />
+          <meta property="og:image" content="/Preview.png" />
         </Head>
         <body>
           <noscript
