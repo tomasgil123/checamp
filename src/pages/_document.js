@@ -44,6 +44,7 @@ export default class MyDocument extends Document {
             }}
           />
           <meta property="og:image" content="/Preview.png" />
+          <link rel="shortcut icon" href="/favicon2.png" />
         </Head>
         <body>
           <noscript
