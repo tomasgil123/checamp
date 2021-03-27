@@ -3,10 +3,13 @@
       "browser": true,
       "es6": true
     },
-    "parser": "babel-eslint",
+    "parser": "@typescript-eslint/parser",
     "extends": [
       "eslint:recommended",
       "plugin:react/recommended",
+      "plugin:@typescript-eslint/eslint-recommended", // eslint TypeScript rules (github.com/typescript-eslint/typescript-eslint)
+      "plugin:@typescript-eslint/recommended",
+      "prettier/@typescript-eslint",
       "airbnb",
       "plugin:prettier/recommended",
       "prettier/react"
@@ -24,6 +27,8 @@
       "project": ["./jsconfig.json"]
     },
     "rules": {
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": ["error"],
         "react/react-in-jsx-scope": "off",
         "react/require-default-props": "off",
         "linebreak-style": "off",
@@ -34,5 +39,14 @@
         "prettier/prettier": ["error", {
          "endOfLine":"auto"
        }]
-      }
+      },
+      "overrides": [
+        {
+          // enable the rule specifically for TypeScript files
+          "files": ["*.ts", "*.tsx"],
+          "rules": {
+            "@typescript-eslint/explicit-function-return-type": ["error"],
+          },
+        },
+      ],
   }
