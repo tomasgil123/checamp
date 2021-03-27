@@ -10,7 +10,6 @@
       "plugin:@typescript-eslint/eslint-recommended", // eslint TypeScript rules (github.com/typescript-eslint/typescript-eslint)
       "plugin:@typescript-eslint/recommended",
       "prettier/@typescript-eslint",
-      "airbnb",
       "plugin:prettier/recommended",
       "prettier/react"
     ],
@@ -22,9 +21,7 @@
     "parserOptions": {
       "ecmaFeatures": {
         "jsx": true
-      },
-      "ecmaVersion": 2018,
-      "project": ["./jsconfig.json"]
+      }
     },
     "rules": {
         "no-use-before-define": "off",
