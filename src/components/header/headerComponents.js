@@ -7,7 +7,6 @@ import Link from 'next/link'
 const HeaderWrapper = styled.div`
   position: ${(props) => (props.isInForm ? 'relative' : 'sticky')};
   top: 0px;
-  left: 0px;
   background-color: ${colors.base.white};
   z-index: 101;
   font-size: ${space.s4};

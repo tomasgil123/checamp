@@ -5,7 +5,11 @@ import Layout from 'src/components/layout'
 import PageWithLayout from 'src/types/pageWithLayout'
 
 const RVRental: FC = () => {
-  return <div>Rv rental</div>
+  return (
+    <div>
+      <div>Rv rental</div>
+    </div>
+  )
 }
 
 ;(RVRental as PageWithLayout).layout = Layout
