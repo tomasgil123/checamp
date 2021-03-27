@@ -12,6 +12,7 @@ const Container = styled.div`
   padding-left: ${space.s12};
   padding-right: ${space.s12};
   align-items: center;
+  width: 100%;
   @media (min-width: ${breakpoints.md}) {
     flex-direction: row;
     justify-content: space-between;
@@ -23,9 +24,9 @@ const ContainerIcons = styled.div`
   flex-direction: row;
 `
 
-const Footer = () => {
+const Footer = ({ addPositionAbsolute }) => {
   return (
-    <Container>
+    <Container style={addPositionAbsolute ? { position: 'absolute', bottom: '0' } : {}}>
       <div>© Checamp 2020</div>
       <ContainerIcons>
         <SocialNetworkIcon
