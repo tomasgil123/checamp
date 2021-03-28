@@ -30,7 +30,7 @@
         "react/require-default-props": "off",
         "linebreak-style": "off",
         "import/no-unresolved": "off",
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }],
         "jsx-a11y/anchor-is-valid": "off",
         "import/no-absolute-path": "off",
         "prettier/prettier": ["error", {
