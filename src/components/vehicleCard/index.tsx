@@ -1,27 +1,19 @@
 import React from 'react'
 import Image from 'next/image'
-import styled from 'styled-components'
 
-import { colors, space } from 'src/tokens'
+import { colors } from 'src/tokens'
 
 import Gallery from 'src/components/gallery'
+import { Title, Subtitle, Price, PerNight, ImageWrapper, TextWrapper } from './components'
 
-const ImageWrapper = styled.div`
-  position: relative;
-  height: 0;
-  width: 100%;
-  padding-bottom: 60%;
-  background: ${colors.base.backgroundGray};
-  border-radius: ${space.s1};
-  div {
-    border-radius: ${space.s1};
-  }
-  img {
-    overflow: hidden;
-  }
-`
+import { Vehicle } from 'src/types/vehicleCard'
 
-const VehicleCard = (): JSX.Element => {
+interface VehicleCardProps {
+  data: Vehicle
+}
+
+const VehicleCard = ({ data }: VehicleCardProps): JSX.Element => {
+  const { title, year, city, passengers, guests, price, images } = data
   const stylesParentGallery = {
     position: 'relative',
     height: '0',
@@ -33,13 +25,7 @@ const VehicleCard = (): JSX.Element => {
   return (
     <div>
       <Gallery
-        images={[
-          'rv-rental-1.jpeg',
-          'rv-rental-2.jpeg',
-          'rv-rental-3.jpeg',
-          'rv-rental-4.jpeg',
-          'rv-rental-5.jpeg',
-        ]}
+        images={images}
         imageComponent={(image: string): JSX.Element => (
           <ImageWrapper>
             <Image src={`/${image}`} alt="RV image" layout="fill" objectFit="cover" />
@@ -47,6 +33,23 @@ const VehicleCard = (): JSX.Element => {
         )}
         stylesParentGallery={stylesParentGallery}
       />
+      <TextWrapper>
+        <Title>{title}</Title>
+        <div>
+          <Subtitle>{year}</Subtitle>
+          <Subtitle style={{ paddingLeft: '4px', paddingRight: '4px' }}>-</Subtitle>
+          <Subtitle>{city}</Subtitle>
+        </div>
+        <div>
+          <Subtitle>{`Pasajeros: ${passengers}`}</Subtitle>
+          <Subtitle style={{ paddingLeft: '4px', paddingRight: '4px' }}>-</Subtitle>
+          <Subtitle>{`Huéspedes: ${guests}`}</Subtitle>
+        </div>
+        <div>
+          <Price>{`$${price}`}</Price>
+          <PerNight>/ por noche</PerNight>
+        </div>
+      </TextWrapper>
     </div>
   )
 }

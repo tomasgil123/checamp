@@ -15,19 +15,64 @@ const ContainerVehicleCards = styled.div`
   @media (min-width: ${breakpoints.sm}) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+  @media (min-width: ${breakpoints.md}) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  @media (min-width: ${breakpoints.lg}) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 `
+
+const Wrapper = styled.div`
+  padding-top: ${space.s6};
+  padding-left: ${space.s4};
+  padding-right: ${space.s4};
+  max-width: ${breakpoints.xl};
+  margin: auto;
+`
+
+const data = [
+  {
+    title: 'Overland 4x4',
+    year: '2018',
+    city: 'Capital Federal',
+    passengers: '2',
+    guests: '2',
+    price: '3000',
+    images: [
+      'rv-rental-1.jpeg',
+      'rv-rental-2.jpeg',
+      'rv-rental-3.jpeg',
+      'rv-rental-4.jpeg',
+      'rv-rental-5.jpeg',
+    ],
+  },
+  {
+    title: 'Compacto',
+    year: '2015',
+    city: 'Bariloche',
+    passengers: '2',
+    guests: '2',
+    price: '2000',
+    images: [
+      'rv-rental-2.jpeg',
+      'rv-rental-3.jpeg',
+      'rv-rental-4.jpeg',
+      'rv-rental-5.jpeg',
+      'rv-rental-1.jpeg',
+    ],
+  },
+]
 
 const RVRental: FC = () => {
   return (
-    <div>
-      <div>Rv rental</div>
-      <VehicleCard />
-      {/* <ContainerVehicleCards>
-        <VehicleCard />
-        <VehicleCard />
-        <VehicleCard />
-      </ContainerVehicleCards> */}
-    </div>
+    <Wrapper>
+      <ContainerVehicleCards>
+        {data.map((car) => (
+          <VehicleCard key={car.title} data={car} />
+        ))}
+      </ContainerVehicleCards>
+    </Wrapper>
   )
 }
 
