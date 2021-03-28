@@ -25,6 +25,7 @@ const ContainerVehicleCards = styled.div`
 
 const Wrapper = styled.div`
   padding-top: ${space.s6};
+  padding-bottom: ${space.s6};
   padding-left: ${space.s4};
   padding-right: ${space.s4};
   max-width: ${breakpoints.xl};

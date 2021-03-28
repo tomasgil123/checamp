@@ -8,14 +8,15 @@ export default function Layout({ children }) {
   const [addPositionAbsolute, setAddPositionAbsolute] = useState(false)
   useEffect(() => {
     if (containerPage && typeof window !== 'undefined') {
-      setAddPositionAbsolute(containerPage.current.clientHeight === window.innerHeight)
+      //we add 150 because that is aproximately the footers height
+      setAddPositionAbsolute(containerPage.current.clientHeight + 150 < window.innerHeight)
     }
   }, [])
 
   return (
-    <div ref={containerPage} style={{ position: 'relative', minHeight: '100vh' }}>
+    <div style={{ position: 'relative', minHeight: '100vh' }}>
       <Header />
-      {children}
+      <div ref={containerPage}>{children}</div>
       <Footer addPositionAbsolute={addPositionAbsolute} />
     </div>
   )
