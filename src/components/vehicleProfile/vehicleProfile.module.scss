@@ -1,7 +1,74 @@
 @import 'src/sassTokens/breakpoints', 'src/sassTokens/baseColors';
 
-.textColor{
-    color: $primaryGreen
+@mixin one-column-gallery {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'image-1';
 }
 
+@mixin two-column-gallery-three-pics {
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        'image-1 image-2'
+        'image-1 image-3';
+}
+
+@mixin two-column-gallery-two-pics {
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        'image-1 image-2'
+        'image-1 image-2';
+}
+
+@mixin three-column-gallery {
+    grid-template-columns: 50% 1fr 1fr;
+    grid-template-areas:
+        'image-1 image-2 image-4'
+        'image-1 image-3 image-4';
+}
+
+.photoGridContainer{
+    @include one-column-gallery;
+    @media (min-width: $md) {
+        @include two-column-gallery-three-pics;
+    }
+    @media (min-width: $lg) {
+        @include three-column-gallery;
+    }
+}
+
+.photoGridContainerThreePics{
+    @include one-column-gallery;
+    @media (min-width: $md) {
+        @include two-column-gallery-three-pics;
+    }
+}
+
+.photoGridContainerTwoPics{
+    @include one-column-gallery;
+    @media (min-width: $md) {
+        @include two-column-gallery-two-pics;
+    }
+}
+
+.photoGridContainerOnePic{
+    @include one-column-gallery;
+}
+
+.firstPic{
+    grid-area: image-1;
+}
+
+.secondPic{
+    grid-area: image-2;
+}
+
+.thirdPic{
+    grid-area: image-3;
+}
+
+.fourthPic{
+    grid-area: image-4;
+}
 

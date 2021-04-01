@@ -9,12 +9,15 @@ import { GetStaticProps, GetStaticPaths } from 'next'
 
 import data from 'src/data/mockVehicles.json'
 
-const RV: FC<Vehicle> = (vehicle) => {
+interface RVProps {
+  vehicle: Vehicle
+}
+
+const RV: FC<RVProps> = ({ vehicle }) => {
   const { images } = vehicle
   return (
     <div>
-      RV
-      <ImageGrid />
+      <ImageGrid images={images} />
     </div>
   )
 }
