@@ -35,6 +35,7 @@ const Wrapper = styled.div`
 const data = [
   {
     title: 'Overland 4x4',
+    id: '1',
     year: '2018',
     city: 'Capital Federal',
     passengers: '2',
@@ -50,6 +51,7 @@ const data = [
   },
   {
     title: 'Compacto',
+    id: '2',
     year: '2015',
     city: 'Bariloche',
     passengers: '2',

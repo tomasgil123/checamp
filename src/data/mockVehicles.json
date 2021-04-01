@@ -1,0 +1,36 @@
+{
+    "vehicles": [
+        {
+            "title": "Overland 4x4",
+            "id": "1",
+            "year": "2018",
+            "city": "Capital Federal",
+            "passengers": "2",
+            "guests": "2",
+            "price": "3000",
+            "images": [
+                "rv-rental-1.jpeg",
+                "rv-rental-2.jpeg",
+                "rv-rental-3.jpeg",
+                "rv-rental-4.jpeg",
+                "rv-rental-5.jpeg"
+          ]
+        },
+        {
+            "title": "Compacto",
+            "id": "2",
+            "year": "2015",
+            "city": "Bariloche",
+            "passengers": "2",
+            "guests": "2",
+            "price": "2000",
+            "images": [
+                "rv-rental-1.jpeg",
+                "rv-rental-2.jpeg",
+                "rv-rental-3.jpeg",
+                "rv-rental-4.jpeg",
+                "rv-rental-5.jpeg"
+          ]
+        }
+      ]
+}
