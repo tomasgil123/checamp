@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 
 import Layout from 'src/components/layout'
+import ImageGrid from 'src/components/vehicleProfile/imageGrid'
 
 import PageWithLayout from 'src/types/pageWithLayout'
 import { Vehicle } from 'src/types/vehicleProfile'
@@ -10,7 +11,12 @@ import data from 'src/data/mockVehicles.json'
 
 const RV: FC<Vehicle> = (vehicle) => {
   const { images } = vehicle
-  return <div>RV</div>
+  return (
+    <div>
+      RV
+      <ImageGrid />
+    </div>
+  )
 }
 
 ;(RV as PageWithLayout).layout = Layout
