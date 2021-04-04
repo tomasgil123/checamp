@@ -37,7 +37,9 @@ const ImageGrid = ({ images }: ImageGridProps): JSX.Element => {
 
   return (
     <>
-      <section className="relative h-64 col-container mt-4 md:mt-6 mb-7 md:h-88 md:mb-8 lg:h-120 lg:mb-9">
+      <section
+        className={`relative h-64 col-container mt-4 md:mt-6 mb-7 md:h-96 md:mb-8 lg:mb-9 lg:h-120`}
+      >
         <div className={`grid md:gap-1 h-full ${containerStyles} md:hidden`}>
           <div className={`overflow-hidden bg-gray-200 relative ${picStyles(0)}`}>
             <Image
@@ -84,7 +86,14 @@ const ImageGrid = ({ images }: ImageGridProps): JSX.Element => {
             onMoveNextRequest={(): void => setPhotoIndex((photoIndex + 1) % images.length)}
           />
         )}
-        <button onClick={(): void => setIsOpen(true)}>Open lightbox</button>
+        <button
+          className="absolute bottom-0 left-0 m-2 p-2 md:m-4 md:p-4 bg-white rounded"
+          onClick={(): void => setIsOpen(true)}
+        >
+          <span className="text-primary-green font-bold text-sm md:text-base">
+            Explorar este vehículo
+          </span>
+        </button>
       </section>
     </>
   )
