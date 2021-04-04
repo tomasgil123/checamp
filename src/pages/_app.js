@@ -1,5 +1,7 @@
 import '../styles/globals.css'
 import 'tailwindcss/tailwind.css'
+import 'react-image-lightbox/style.css'
+
 import { Provider } from 'react-redux'
 import { useStore } from 'src/store'
 import React from 'react'

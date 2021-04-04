@@ -9,11 +9,11 @@
             "guests": "2",
             "price": "3000",
             "images": [
-                "rv-rental-1.jpeg",
-                "rv-rental-2.jpeg",
-                "rv-rental-3.jpeg",
-                "rv-rental-4.jpeg",
-                "rv-rental-5.jpeg"
+                "https://res.cloudinary.com/dh1ulomfs/image/upload/v1617309063/rvs/1/Amarok_1_zwzixc.jpg",
+                "https://res.cloudinary.com/dh1ulomfs/image/upload/v1617309064/rvs/1/Amarok_2_hxbbxr.jpg",
+                "https://res.cloudinary.com/dh1ulomfs/image/upload/v1617309064/rvs/1/Amarok_3_bc2x2s.jpg",
+                "https://res.cloudinary.com/dh1ulomfs/image/upload/v1617309068/rvs/1/Amarok_16_e7g6uo.jpg",
+                "https://res.cloudinary.com/dh1ulomfs/image/upload/v1617309070/rvs/1/Floorplan_Amarok_1_kv2hwg.jpg"
           ]
         },
         {
@@ -25,11 +25,11 @@
             "guests": "2",
             "price": "2000",
             "images": [
-                "rv-rental-1.jpeg",
-                "rv-rental-2.jpeg",
-                "rv-rental-3.jpeg",
-                "rv-rental-4.jpeg",
-                "rv-rental-5.jpeg"
+              "https://res.cloudinary.com/dh1ulomfs/image/upload/v1617309064/rvs/1/Amarok_2_hxbbxr.jpg",
+              "https://res.cloudinary.com/dh1ulomfs/image/upload/v1617309063/rvs/1/Amarok_1_zwzixc.jpg",
+              "https://res.cloudinary.com/dh1ulomfs/image/upload/v1617309064/rvs/1/Amarok_3_bc2x2s.jpg",
+              "https://res.cloudinary.com/dh1ulomfs/image/upload/v1617309068/rvs/1/Amarok_16_e7g6uo.jpg",
+              "https://res.cloudinary.com/dh1ulomfs/image/upload/v1617309070/rvs/1/Floorplan_Amarok_1_kv2hwg.jpg"
           ]
         }
       ]

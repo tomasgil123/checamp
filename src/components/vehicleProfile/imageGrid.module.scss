@@ -1,7 +1,9 @@
 @import 'src/sassTokens/breakpoints', 'src/sassTokens/baseColors';
 
 @mixin one-column-gallery {
+    height: 100%;
     grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
     grid-template-areas: 'image-1';
 }
 

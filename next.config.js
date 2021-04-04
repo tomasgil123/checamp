@@ -8,4 +8,7 @@ module.exports = withOptimizedImages({
     config.resolve.alias.images = path.join(__dirname, 'src/assets/images')
     return config
   },
+  images: {
+    domains: ['res.cloudinary.com'],
+  },
 })
