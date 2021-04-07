@@ -24,7 +24,7 @@ const VehicleCard = ({ data, onClickVehicleCard }: VehicleCardProps): JSX.Elemen
   }
 
   return (
-    <div onClick={(): void => onClickVehicleCard(id)}>
+    <div className="cursor-pointer" onClick={(): void => onClickVehicleCard(id)}>
       <Gallery
         images={images}
         imageComponent={(image: string): JSX.Element => (
