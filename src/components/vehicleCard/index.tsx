@@ -10,10 +10,11 @@ import { Vehicle } from 'src/types/vehicleCard'
 
 interface VehicleCardProps {
   data: Vehicle
+  onClickVehicleCard: (vehicleId: string) => void
 }
 
-const VehicleCard = ({ data }: VehicleCardProps): JSX.Element => {
-  const { title, year, city, passengers, guests, price, images } = data
+const VehicleCard = ({ data, onClickVehicleCard }: VehicleCardProps): JSX.Element => {
+  const { title, year, city, passengers, guests, price, images, id } = data
   const stylesParentGallery = {
     position: 'relative',
     height: '0',
@@ -23,7 +24,7 @@ const VehicleCard = ({ data }: VehicleCardProps): JSX.Element => {
   }
 
   return (
-    <div>
+    <div onClick={(): void => onClickVehicleCard(id)}>
       <Gallery
         images={images}
         imageComponent={(image: string): JSX.Element => (

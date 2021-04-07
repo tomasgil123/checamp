@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
+import { useRouter } from 'next/router'
 
 import { space, breakpoints } from 'src/tokens'
 
@@ -68,11 +69,16 @@ const data = [
 ]
 
 const RVRental: FC = () => {
+  const router = useRouter()
+  const onClickVehicleCard = (vehicleId: string): void => {
+    router.push(`/rv/${vehicleId}`)
+  }
+
   return (
     <Wrapper>
       <ContainerVehicleCards>
         {data.map((car) => (
-          <VehicleCard key={car.title} data={car} />
+          <VehicleCard key={car.title} data={car} onClickVehicleCard={onClickVehicleCard} />
         ))}
       </ContainerVehicleCards>
     </Wrapper>
