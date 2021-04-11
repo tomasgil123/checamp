@@ -1,10 +1,12 @@
 export interface Vehicle {
-  title: string
-  id: string
-  year: string
+  id: number
+  titleListing: string
+  RVManufactureDate: string
+  RVBrand: string
+  RVModel: string
   city: string
-  passengers: string
-  guests: string
-  price: string
-  images: string[]
+  pricePerDay: string | null
+  spaceForSleepers: number
+  spaceForPassengers: number
+  mainImages: string[]
 }

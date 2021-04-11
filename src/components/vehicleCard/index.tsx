@@ -10,11 +10,20 @@ import { Vehicle } from 'src/types/vehicleCard'
 
 interface VehicleCardProps {
   data: Vehicle
-  onClickVehicleCard: (vehicleId: string) => void
+  onClickVehicleCard: (vehicleId: number) => void
 }
 
 const VehicleCard = ({ data, onClickVehicleCard }: VehicleCardProps): JSX.Element => {
-  const { title, year, city, passengers, guests, price, images, id } = data
+  const {
+    titleListing,
+    RVManufactureDate,
+    city,
+    spaceForPassengers,
+    spaceForSleepers,
+    pricePerDay,
+    mainImages,
+    id,
+  } = data
   const stylesParentGallery = {
     position: 'relative',
     height: '0',
@@ -26,29 +35,35 @@ const VehicleCard = ({ data, onClickVehicleCard }: VehicleCardProps): JSX.Elemen
   return (
     <div className="cursor-pointer" onClick={(): void => onClickVehicleCard(id)}>
       <Gallery
-        images={images}
+        images={mainImages}
         imageComponent={(image: string): JSX.Element => (
           <ImageWrapper>
-            <Image src={`/${image}`} alt="RV image" layout="fill" objectFit="cover" />
+            <Image src={image} alt="RV image" layout="fill" objectFit="cover" />
           </ImageWrapper>
         )}
         stylesParentGallery={stylesParentGallery}
       />
       <TextWrapper>
-        <Title>{title}</Title>
+        <Title>{titleListing}</Title>
         <div>
-          <Subtitle>{year}</Subtitle>
+          <Subtitle>{RVManufactureDate}</Subtitle>
           <Subtitle style={{ paddingLeft: '4px', paddingRight: '4px' }}>-</Subtitle>
           <Subtitle>{city}</Subtitle>
         </div>
         <div>
-          <Subtitle>{`Pasajeros: ${passengers}`}</Subtitle>
+          <Subtitle>{`Pasajeros: ${spaceForPassengers}`}</Subtitle>
           <Subtitle style={{ paddingLeft: '4px', paddingRight: '4px' }}>-</Subtitle>
-          <Subtitle>{`Huéspedes: ${guests}`}</Subtitle>
+          <Subtitle>{`Huéspedes: ${spaceForSleepers}`}</Subtitle>
         </div>
         <div>
-          <Price>{`$${price}`}</Price>
-          <PerNight>/ por noche</PerNight>
+          {pricePerDay ? (
+            <>
+              <Price>{`$${pricePerDay}`}</Price>
+              <PerNight>/ por noche</PerNight>
+            </>
+          ) : (
+            <PerNight>Consultar precio</PerNight>
+          )}
         </div>
       </TextWrapper>
     </div>

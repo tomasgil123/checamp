@@ -50,7 +50,7 @@ const Dot = styled.div`
 
 const CarouselPagination = ({ pages, activePage, onClick }: RenderPaginationProps): JSX.Element => {
   return (
-    <div style={{ position: 'absolute', bottom: `${space.s3}` }}>
+    <div style={{ position: 'absolute', bottom: '0' }}>
       {pages.map((page) => {
         const diff = activePage - page
         return (

@@ -4,10 +4,16 @@ import { useRouter } from 'next/router'
 
 import { space, breakpoints } from 'src/tokens'
 
+// * Components *
 import Layout from 'src/components/layout'
 import VehicleCard from 'src/components/vehicleCard'
 
+// * Types *
 import PageWithLayout from 'src/types/pageWithLayout'
+import { Vehicle } from 'src/types/vehicleCard'
+
+// * Utils *
+import { getAllRvs } from 'src/services/index'
 
 const ContainerVehicleCards = styled.div`
   display: grid;
@@ -33,58 +39,42 @@ const Wrapper = styled.div`
   margin: auto;
 `
 
-const data = [
-  {
-    title: 'Overland 4x4',
-    id: '1',
-    year: '2018',
-    city: 'Capital Federal',
-    passengers: '2',
-    guests: '2',
-    price: '3000',
-    images: [
-      'rv-rental-1.jpeg',
-      'rv-rental-2.jpeg',
-      'rv-rental-3.jpeg',
-      'rv-rental-4.jpeg',
-      'rv-rental-5.jpeg',
-    ],
-  },
-  {
-    title: 'Compacto',
-    id: '2',
-    year: '2015',
-    city: 'Bariloche',
-    passengers: '2',
-    guests: '2',
-    price: '2000',
-    images: [
-      'rv-rental-2.jpeg',
-      'rv-rental-3.jpeg',
-      'rv-rental-4.jpeg',
-      'rv-rental-5.jpeg',
-      'rv-rental-1.jpeg',
-    ],
-  },
-]
+interface RVRentalProps {
+  rvs: Vehicle[]
+}
 
-const RVRental: FC = () => {
+const RVRental: FC<RVRentalProps> = ({ rvs }) => {
   const router = useRouter()
-  const onClickVehicleCard = (vehicleId: string): void => {
+  const onClickVehicleCard = (vehicleId: number): void => {
     router.push(`/rv/${vehicleId}`)
   }
 
   return (
     <Wrapper>
       <ContainerVehicleCards>
-        {data.map((car) => (
-          <VehicleCard key={car.title} data={car} onClickVehicleCard={onClickVehicleCard} />
+        {rvs.map((rv) => (
+          <VehicleCard key={rv.id} data={rv} onClickVehicleCard={onClickVehicleCard} />
         ))}
       </ContainerVehicleCards>
     </Wrapper>
   )
 }
 
-;(RVRental as PageWithLayout).layout = Layout
+;(RVRental as PageWithLayout<RVRentalProps>).layout = Layout
+
+export async function getStaticProps(): Promise<unknown> {
+  const response = await getAllRvs()
+  const rvs = response.data
+  return {
+    props: { rvs: rvs },
+  }
+}
+
+export async function getStaticPaths(): Promise<unknown> {
+  return {
+    paths: [],
+    fallback: true,
+  }
+}
 
 export default RVRental
