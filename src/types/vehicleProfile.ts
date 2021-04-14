@@ -7,7 +7,7 @@ export interface Vehicle {
   RVLength: number
   spaceForSleepers: number
   spaceForPassengers: number
-  refrigerator: true
+  refrigerator: boolean
   kitchenSink: boolean
   diningTable: boolean
   microwave: boolean
@@ -22,7 +22,7 @@ export interface Vehicle {
   awning: boolean
   generator: boolean
   outsideShower: boolean
-  towHitch: true
+  towHitch: boolean
   bikeRack: boolean
   solar: boolean
   backupCamera: boolean
@@ -47,3 +47,49 @@ export interface Vehicle {
   mainImages: string[]
   images?: string[] | null
 }
+
+export type OverviewSection = Pick<
+  Vehicle,
+  | 'titleListing'
+  | 'descriptionListing'
+  | 'RvType'
+  | 'RVBrand'
+  | 'RVModel'
+  | 'RVManufactureDate'
+  | 'spaceForPassengers'
+  | 'spaceForSleepers'
+  | 'city'
+>
+
+export type DetailsSpace = Pick<Vehicle, 'spaceForPassengers' | 'spaceForSleepers'>
+
+export type Amenities = Pick<
+  Vehicle,
+  | 'refrigerator'
+  | 'kitchenSink'
+  | 'diningTable'
+  | 'microwave'
+  | 'stoveRange'
+  | 'oven'
+  | 'airConditioner'
+  | 'heater'
+  | 'insideShower'
+  | 'toilet'
+  | 'satellite'
+  | 'ceilingFan'
+  | 'awning'
+  | 'generator'
+  | 'outsideShower'
+  | 'towHitch'
+  | 'bikeRack'
+  | 'solar'
+  | 'backupCamera'
+  | 'extraStorage'
+  | 'washerDryer'
+  | 'inverter'
+  | 'handicapAccesible'
+  | 'tvDvd'
+  | 'audioInputs'
+  | 'radio'
+  | 'wifi'
+>

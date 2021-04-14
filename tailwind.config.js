@@ -9,6 +9,8 @@ module.exports = {
     extend: {
       colors: {
         'primary-green': '#2a5913',
+        black: '#373b3e',
+        'gray-600': '#606b76',
       },
       height: {
         120: '30rem',

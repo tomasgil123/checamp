@@ -23,7 +23,7 @@ export default async (req, res): Promise<any> => {
   let rvImages: string[] = []
   try {
     const result = await cloudinary.search
-      .expression(`resource_type:image AND folder:rvs/${id}/*`)
+      .expression(`resource_type:image AND folder:${process.env.NODE_ENV}/rvs/${id}/*`)
       .max_results(30)
       .execute()
     rvImages = result.resources.map((resource) => resource.secure_url)
