@@ -5,6 +5,7 @@ const _ = require('lodash')
 const sheets = google.sheets('v4')
 
 const privateKey = _.replace(process.env.GOOGLE_PRIVATE_KEY, new RegExp('\\\\n', 'g'), '\n')
+//const privateKey = process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n')
 
 export default async (req, res) => {
   let auth

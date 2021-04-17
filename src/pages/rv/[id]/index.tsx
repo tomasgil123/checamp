@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import { useRouter } from 'next/router'
 
 // * Components *
 import Layout from 'src/components/layout'
@@ -23,6 +24,7 @@ interface RVProps {
 }
 
 const RV: FC<RVProps> = ({ rv }) => {
+  const router = useRouter()
   const {
     images,
     titleListing,
@@ -68,9 +70,15 @@ const RV: FC<RVProps> = ({ rv }) => {
     cityGoogleMap,
     pricePerDay,
     priceExtra,
+    id,
   } = rv
 
-  const onCheckAvailability = (): void => {}
+  const onCheckAvailability = (): void => {
+    router.push({
+      pathname: '/inquilinos/contacto',
+      query: { rvId: id },
+    })
+  }
 
   return (
     <div>

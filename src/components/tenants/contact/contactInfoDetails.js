@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import { useRouter } from 'next/router'
 import * as Yup from 'yup'
 import { isPhoneValid, isEmailValid } from 'src/utils/owners'
 
@@ -9,6 +10,8 @@ import { WrapperSubmitSection, ContainerSubmitButton } from 'src/components/form
 import { Hint } from 'src/components/owners/general'
 
 function ContactInfoDetails({ contactInfo, addContactInfo, goToNextStep }) {
+  const router = useRouter()
+  const rvId = router.query?.rvId
   return (
     <Formik
       initialValues={{
@@ -26,6 +29,7 @@ function ContactInfoDetails({ contactInfo, addContactInfo, goToNextStep }) {
         ),
       })}
       onSubmit={(values) => {
+        values.rvId = rvId ?? ''
         addContactInfo(values)
         goToNextStep()
       }}

@@ -20,6 +20,7 @@ export default function tenantsReducer(state = initialState, action) {
         draft.email = action.contactInfo.email
         draft.phone = action.contactInfo.phone
         draft.nameAndSurname = action.contactInfo.nameAndSurname
+        draft.rvId = action.contactInfo.rvId
         return draft
       }
       case 'SAVE_TENANT_DATA_INIT': {
