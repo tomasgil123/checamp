@@ -8,6 +8,7 @@ import Space from 'src/components/vehicleProfile/details/space'
 import Amenities from 'src/components/vehicleProfile/details/amenities'
 import OwnerRules from 'src/components/vehicleProfile/details/ownerRules'
 import PickupLocation from 'src/components/vehicleProfile/details/pickUpLocation'
+import Price from 'src/components/vehicleProfile/details/price'
 
 // * Types *
 import PageWithLayout from 'src/types/pageWithLayout'
@@ -65,6 +66,8 @@ const RV: FC<RVProps> = ({ rv }) => {
     festivals,
     smoking,
     cityGoogleMap,
+    pricePerDay,
+    priceExtra,
   } = rv
   return (
     <div>
@@ -118,6 +121,7 @@ const RV: FC<RVProps> = ({ rv }) => {
           }}
         />
         <OwnerRules {...{ pets, tailgating, festivals, smoking }} />
+        <Price pricePerDay={pricePerDay} priceExtra={priceExtra} />
         <PickupLocation cityGoogleMap={cityGoogleMap} city={city} />
       </div>
     </div>
