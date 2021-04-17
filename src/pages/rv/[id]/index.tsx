@@ -69,60 +69,91 @@ const RV: FC<RVProps> = ({ rv }) => {
     pricePerDay,
     priceExtra,
   } = rv
+
+  const onCheckAvailability = (): void => {}
+
   return (
     <div>
       <ImageGrid images={images} />
       <div className="px-4 md:px-6 w-full lg:grid lg:grid-cols-6">
-        <Overview
-          {...{
-            titleListing,
-            descriptionListing,
-            RvType,
-            RVBrand,
-            RVModel,
-            RVManufactureDate,
-            spaceForPassengers,
-            spaceForSleepers,
-            city,
-          }}
-        />
-        <Space {...{ spaceForPassengers, spaceForSleepers }} />
-        <Amenities
-          amenities={{
-            ...{
-              refrigerator,
-              kitchenSink,
-              diningTable,
-              microwave,
-              stoveRange,
-              oven,
-              airConditioner,
-              heater,
-              insideShower,
-              toilet,
-              satellite,
-              ceilingFan,
-              awning,
-              generator,
-              outsideShower,
-              towHitch,
-              bikeRack,
-              solar,
-              backupCamera,
-              extraStorage,
-              washerDryer,
-              inverter,
-              handicapAccesible,
-              tvDvd,
-              audioInputs,
-              radio,
-              wifi,
-            },
-          }}
-        />
-        <OwnerRules {...{ pets, tailgating, festivals, smoking }} />
-        <Price pricePerDay={pricePerDay} priceExtra={priceExtra} />
-        <PickupLocation cityGoogleMap={cityGoogleMap} city={city} />
+        <div className="w-full lg:col-start-1 lg:col-end-5">
+          <Overview
+            {...{
+              titleListing,
+              descriptionListing,
+              RvType,
+              RVBrand,
+              RVModel,
+              RVManufactureDate,
+              spaceForPassengers,
+              spaceForSleepers,
+              city,
+            }}
+          />
+          <Space {...{ spaceForPassengers, spaceForSleepers }} />
+          <Amenities
+            amenities={{
+              ...{
+                refrigerator,
+                kitchenSink,
+                diningTable,
+                microwave,
+                stoveRange,
+                oven,
+                airConditioner,
+                heater,
+                insideShower,
+                toilet,
+                satellite,
+                ceilingFan,
+                awning,
+                generator,
+                outsideShower,
+                towHitch,
+                bikeRack,
+                solar,
+                backupCamera,
+                extraStorage,
+                washerDryer,
+                inverter,
+                handicapAccesible,
+                tvDvd,
+                audioInputs,
+                radio,
+                wifi,
+              },
+            }}
+          />
+          <OwnerRules {...{ pets, tailgating, festivals, smoking }} />
+          <Price pricePerDay={pricePerDay} priceExtra={priceExtra} />
+          <PickupLocation cityGoogleMap={cityGoogleMap} city={city} />
+          <div className="sticky bottom-0 w-full bg-white lg:hidden p-4">
+            <div className="relative w-full flex justify-end">
+              <button
+                className="p-2 md:p-4 bg-primary-green rounded"
+                onClick={(): void => onCheckAvailability()}
+              >
+                <span className="text-white font-bold text-sm md:text-base">
+                  Consultar disponibilidad
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div className="hidden lg:block lg:col-start-5 lg:col-end-7">
+          <div className="sticky top-24 w-72 h-32 shadow-lg rounded-lg m-auto">
+            <div className="flex flex-row justify-center w-full h-full items-center">
+              <button
+                className="p-2 md:p-4 bg-primary-green rounded"
+                onClick={(): void => onCheckAvailability()}
+              >
+                <span className="text-white font-bold text-sm md:text-base">
+                  Consultar disponibilidad
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )

@@ -65,7 +65,7 @@ const Amenities = ({ amenities }: AmenitiesTypes): JSX.Element => {
   const [showModal, setShowModal] = useState(false)
 
   return (
-    <section className="w-full lg:col-start-1 lg:col-end-5">
+    <section>
       <h1 className="font-bold text-lg md:text-xl pb-4 text-black">Amenities</h1>
       <div className="grid grid-cols-2">
         <>

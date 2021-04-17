@@ -12,7 +12,7 @@ import { OwnerRules as OwnerRulesTypes } from 'src/types/vehicleProfile'
 
 const OwnerRules = ({ pets, tailgating, festivals, smoking }: OwnerRulesTypes): JSX.Element => {
   return (
-    <section className="w-full lg:col-start-1 lg:col-end-5">
+    <section>
       <h1 className="font-bold text-lg md:text-xl pb-4 text-black">Reglas del vehículo</h1>
       <div className="flex flex-wrap">
         <div className="w-1/2 md:w-1/4">

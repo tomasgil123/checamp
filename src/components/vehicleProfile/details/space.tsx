@@ -5,7 +5,7 @@ import { DetailsSpace } from 'src/types/vehicleProfile'
 
 const Space = ({ spaceForPassengers, spaceForSleepers }: DetailsSpace): JSX.Element => {
   return (
-    <section className="w-full lg:col-start-1 lg:col-end-5">
+    <section>
       <h1 className="font-bold text-lg md:text-xl pb-4 text-black">Espacio</h1>
       <div className="flex flex-wrap">
         <div className="w-1/2 md:w-1/4">

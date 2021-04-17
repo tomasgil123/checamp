@@ -6,7 +6,7 @@ const Price = ({
   priceExtra: string
 }): JSX.Element => {
   return (
-    <section className="w-full lg:col-start-1 lg:col-end-5">
+    <section>
       <h1 className="font-bold text-lg md:text-xl pb-4 text-black">Precio</h1>
       <div className="text-base md:text-lg text-black font-medium pb-4">
         <span>Precio por dia: {pricePerDay}</span>
