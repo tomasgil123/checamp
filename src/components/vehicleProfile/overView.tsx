@@ -33,7 +33,7 @@ const Overview = ({
         </div>
         <div className="text-base pt-4 lg:pt-5 text-gray-500">{descriptionListing}</div>
       </header>
-      <div className="border-b border-gray-400 border-solid my-4 md:my-6 w-full"></div>
+      <div className="border-b border-gray-400 border-solid my-6 md:my-10 w-full"></div>
     </section>
   )
 }
