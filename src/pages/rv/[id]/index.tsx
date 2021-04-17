@@ -6,6 +6,7 @@ import ImageGrid from 'src/components/vehicleProfile/imageGrid'
 import Overview from 'src/components/vehicleProfile/overView'
 import Space from 'src/components/vehicleProfile/details/space'
 import Amenities from 'src/components/vehicleProfile/details/amenities'
+import OwnerRules from 'src/components/vehicleProfile/details/ownerRules'
 
 // * Types *
 import PageWithLayout from 'src/types/pageWithLayout'
@@ -58,6 +59,10 @@ const RV: FC<RVProps> = ({ rv }) => {
     audioInputs,
     radio,
     wifi,
+    pets,
+    tailgating,
+    festivals,
+    smoking,
   } = rv
   return (
     <div>
@@ -110,6 +115,7 @@ const RV: FC<RVProps> = ({ rv }) => {
             },
           }}
         />
+        <OwnerRules {...{ pets, tailgating, festivals, smoking }} />
       </div>
     </div>
   )

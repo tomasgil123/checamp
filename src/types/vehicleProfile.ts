@@ -95,3 +95,5 @@ export type Amenities = {
     | 'wifi'
   >
 }
+
+export type OwnerRules = Pick<Vehicle, 'pets' | 'tailgating' | 'festivals' | 'smoking'>
