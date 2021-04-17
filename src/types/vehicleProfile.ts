@@ -40,6 +40,7 @@ export interface Vehicle {
   smoking: boolean
   pickupAddress: string
   city: string
+  cityGoogleMap: string
   titleListing: string
   descriptionListing: string
   pricePerDay: string | null

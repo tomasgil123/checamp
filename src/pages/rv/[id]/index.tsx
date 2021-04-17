@@ -7,6 +7,7 @@ import Overview from 'src/components/vehicleProfile/overView'
 import Space from 'src/components/vehicleProfile/details/space'
 import Amenities from 'src/components/vehicleProfile/details/amenities'
 import OwnerRules from 'src/components/vehicleProfile/details/ownerRules'
+import PickupLocation from 'src/components/vehicleProfile/details/pickUpLocation'
 
 // * Types *
 import PageWithLayout from 'src/types/pageWithLayout'
@@ -63,6 +64,7 @@ const RV: FC<RVProps> = ({ rv }) => {
     tailgating,
     festivals,
     smoking,
+    cityGoogleMap,
   } = rv
   return (
     <div>
@@ -116,6 +118,7 @@ const RV: FC<RVProps> = ({ rv }) => {
           }}
         />
         <OwnerRules {...{ pets, tailgating, festivals, smoking }} />
+        <PickupLocation cityGoogleMap={cityGoogleMap} city={city} />
       </div>
     </div>
   )

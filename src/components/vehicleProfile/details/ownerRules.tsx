@@ -34,8 +34,8 @@ const OwnerRules = ({ pets, tailgating, festivals, smoking }: OwnerRulesTypes): 
               }
               text={
                 tailgating && festivals
-                  ? 'Se permite concurrir a eventos y recitales'
-                  : 'No se permite concurrir a eventos y recitales'
+                  ? 'Se permite ir a eventos/recitales'
+                  : 'No se permite ir a eventos/recitales'
               }
             />
           </div>
