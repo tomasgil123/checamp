@@ -133,7 +133,7 @@ const RV: FC<RVProps> = ({ rv }) => {
             }}
           />
           <OwnerRules {...{ pets, tailgating, festivals, smoking }} />
-          <Price pricePerDay={pricePerDay} priceExtra={priceExtra} />
+          <Price pricePerDay={pricePerDay} priceExtra={priceExtra} id={id} />
           <PickupLocation cityGoogleMap={cityGoogleMap} city={city} />
           <div className="sticky bottom-0 w-full bg-white lg:hidden p-4">
             <div className="relative w-full flex justify-end">
