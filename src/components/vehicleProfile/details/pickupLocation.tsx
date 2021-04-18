@@ -43,7 +43,7 @@ const PickupLocation = ({
           tabIndex={0}
         ></iframe>
       </ContainerMap>
-      <div className="my-6 md:my-10 w-full"></div>
+      <div className="mt-6 mb-24 md:mt-10 md:mb-32 w-full"></div>
     </section>
   )
 }

@@ -8,7 +8,7 @@ import Overview from 'src/components/vehicleProfile/overView'
 import Space from 'src/components/vehicleProfile/details/space'
 import Amenities from 'src/components/vehicleProfile/details/amenities'
 import OwnerRules from 'src/components/vehicleProfile/details/ownerRules'
-import PickupLocation from 'src/components/vehicleProfile/details/pickUpLocation'
+import PickupLocation from 'src/components/vehicleProfile/details/pickupLocation'
 import Price from 'src/components/vehicleProfile/details/price'
 
 // * Types *
@@ -17,7 +17,7 @@ import { Vehicle } from 'src/types/vehicleProfile'
 import { GetStaticProps, GetStaticPaths } from 'next'
 
 // * Utils *
-import { getAllRvIds, getRv } from 'src/services/index'
+import { getAllRvIds, getRv } from 'src/services/rvs/index'
 
 interface RVProps {
   rv: Vehicle

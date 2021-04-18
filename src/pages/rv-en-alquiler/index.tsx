@@ -70,11 +70,4 @@ export async function getStaticProps(): Promise<unknown> {
   }
 }
 
-export async function getStaticPaths(): Promise<unknown> {
-  return {
-    paths: [],
-    fallback: true,
-  }
-}
-
 export default RVRental
