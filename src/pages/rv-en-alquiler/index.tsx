@@ -61,7 +61,7 @@ const RVRental: FC<RVRentalProps> = ({ rvs }) => {
   const [atLeastOneFilterIsApplied, setatLeastOneFilterIsApplied] = useState(false)
 
   const filterStyles = cx(
-    'w-full lg:hidden mb-4 p-4 flex flex-row sticky z-50 bg-white border-b border-gray-500 md:z-40 top-16 border-opacity-10',
+    'w-full mb-4 p-4 flex flex-row sticky z-50 bg-white border-b border-gray-500 md:z-40 top-16 border-opacity-10',
     { hidden: showModalFilters }
   )
 
@@ -108,7 +108,6 @@ const RVRental: FC<RVRentalProps> = ({ rvs }) => {
         </div>
       </div>
       <Wrapper>
-        {/* <h1 className="font-bold text-lg md:text-xl pb-4 text-black">Filtros</h1> */}
         <ContainerVehicleCards>
           {rvsToShow.map((rv) => (
             <VehicleCard key={rv.id} data={rv} onClickVehicleCard={onClickVehicleCard} />

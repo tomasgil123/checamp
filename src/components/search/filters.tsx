@@ -2,7 +2,7 @@ import { useState } from 'react'
 import cx from 'classnames'
 
 // * Components *
-import Box from 'src/components/vehicleProfile/details/components/Box'
+import Box from 'src/components/vehicleProfile/details/components/box'
 
 // * Utils *
 import useRequest from 'src/hooks/useRequest'
