@@ -9,7 +9,7 @@ export default function Layout({ children }) {
   return (
     <div style={{ position: 'relative', minHeight: '100vh' }}>
       <Header />
-      <div className="pb-12" ref={containerPage}>
+      <div className="pb-32" ref={containerPage}>
         {children}
       </div>
       <Footer />

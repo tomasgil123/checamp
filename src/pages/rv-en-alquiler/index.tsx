@@ -61,7 +61,7 @@ const RVRental: FC<RVRentalProps> = ({ rvs }) => {
   const [atLeastOneFilterIsApplied, setatLeastOneFilterIsApplied] = useState(false)
 
   const filterStyles = cx(
-    'w-full mb-4 p-4 flex flex-row sticky z-50 bg-white border-b border-gray-500 md:z-40 top-16 border-opacity-10',
+    'w-full mb-4 p-4 flex flex-row sticky z-50 bg-white border-b border-gray-500 md:z-40 top-14 border-opacity-10',
     { hidden: showModalFilters }
   )
 

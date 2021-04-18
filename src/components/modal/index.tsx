@@ -33,10 +33,7 @@ const Modal = ({ children, showModal, closeModal }: IncomingProps): JSX.Element 
             duration: 0.5,
           }}
         >
-          <DialogContent
-            aria-label="dialog"
-            className="m-auto md:mt-11 md:mx-5 lg:mx-36 focus:outline-none"
-          >
+          <DialogContent aria-label="dialog" className="m-auto md:mt-11 focus:outline-none">
             <div className="relative h-screen md:h-1/2 mt-20 bg-white w-full rounded-sm max-w-screen-md m-auto overflow-y-scroll">
               <div className="flex justify-end w-full pt-3 px-3 sticky top-0 bg-white">
                 <img className="h-4 w-4 cursor-pointer" onClick={closeModal} src={closeIcon} />

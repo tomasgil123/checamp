@@ -2,7 +2,7 @@ import { Vehicle as VehicleCard } from 'src/types/vehicleCard'
 import { Vehicle as VehicleProfile } from 'src/types/vehicleProfile'
 
 const fetchRequest = (url: string, method: string): Promise<any> => {
-  return fetch(`${process.env.NEXT_PUBLIC_BASE_URL}${url}`, {
+  return fetch(`${url}`, {
     method: method,
   })
 }
