@@ -2,6 +2,7 @@ import { DialogContent, DialogOverlay } from '@reach/dialog'
 import { AnimatePresence, motion } from 'framer-motion'
 import closeIcon from './cancel.svg'
 import * as React from 'react'
+import useCustomBackNavigation from 'src/hooks/useCustomBackNavigation'
 
 type IncomingProps = {
   children?: JSX.Element
@@ -15,6 +16,8 @@ const Modal = ({ children, showModal, closeModal }: IncomingProps): JSX.Element 
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
   }
+
+  useCustomBackNavigation(closeModal)
 
   return (
     <DialogOverlay
