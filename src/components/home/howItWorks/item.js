@@ -20,6 +20,8 @@ const ContainerItem = styled.div`
 const ContainerImage = styled.div`
   height: 100px;
   position: relative;
+  display: flex;
+  justify-content: center;
   top: ${(props) => (props.topPx ? props.topPx : `0px`)};
 `
 

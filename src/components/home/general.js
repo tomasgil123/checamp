@@ -2,11 +2,11 @@ import styled from 'styled-components'
 import { breakpoints, space, colors } from 'src/tokens'
 
 const Container = styled.div`
-  padding-top: ${space.s32};
-  padding-bottom: ${(props) => (props.addPaddingBottom ? `${space.s32}` : 'inherit')};
+  padding-top: ${space.s20};
+  padding-bottom: ${(props) => (props.addPaddingBottom ? `${space.s20}` : 'inherit')};
   @media (min-width: ${breakpoints.md}) {
-    padding-top: ${space.s40};
-    padding-bottom: ${(props) => (props.addPaddingBottom ? `${space.s40}` : 'inherit')};
+    padding-top: ${space.s24};
+    padding-bottom: ${(props) => (props.addPaddingBottom ? `${space.s24}` : 'inherit')};
   }
 `
 
