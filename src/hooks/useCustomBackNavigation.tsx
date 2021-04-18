@@ -16,21 +16,26 @@ import { useEffect, useRef } from 'react'
 
 const useCustomBackNavigation = (customBackNavigationFunctionality: () => void) => {
   const router = useRouter()
+  let currentLocation
 
-  const currentLocation = useRef(`${window.location.pathname}${window.location.search}`)
+  if (typeof window !== 'undefined') {
+    currentLocation = useRef(`${window.location.pathname}${window.location.search}`)
+  }
 
   useEffect(() => {
-    router.beforePopState(() => {
-      customBackNavigationFunctionality()
-      history.scrollRestoration = 'manual'
-      window.history.pushState({}, '', currentLocation.current)
-      return false
-    })
-    return (): void => {
+    if (typeof window !== 'undefined') {
       router.beforePopState(() => {
-        history.scrollRestoration = 'auto'
-        return true
+        customBackNavigationFunctionality()
+        history.scrollRestoration = 'manual'
+        window.history.pushState({}, '', currentLocation.current)
+        return false
       })
+      return (): void => {
+        router.beforePopState(() => {
+          history.scrollRestoration = 'auto'
+          return true
+        })
+      }
     }
   }, [])
 }
