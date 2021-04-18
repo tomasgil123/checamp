@@ -22,7 +22,7 @@ export const getAllRvs = async (): Promise<ResponseAllRvs> => {
   const { data: Rvs, error } = await supabase
     .from('Rvs')
     .select(
-      'id, titleListing, RVManufactureDate, RVBrand, RVModel, city, pricePerDay, spaceForSleepers, spaceForPassengers, mainImages'
+      'id, titleListing, RVManufactureDate, RVBrand, RVModel, city, pricePerDay, spaceForSleepers, spaceForPassengers, mainImages, RvType'
     )
 
   if (error) {

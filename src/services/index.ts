@@ -66,3 +66,23 @@ export const getRv = async (id: string): Promise<ResponseRv> => {
 
   return { status: response.status, data: data.data, error: error }
 }
+
+interface ResponseAllCities {
+  data: string[] | null
+  error: string | null
+  status: number
+}
+
+export const getAllCities = async (): Promise<ResponseAllCities> => {
+  const response = await fetchRequest(`/api/getAllCities`, 'GET')
+  const responseData = await response.json()
+  let data = null
+  let error = null
+  if (responseData.message) {
+    error = responseData.message
+  } else {
+    data = responseData
+  }
+
+  return { status: response.status, data: data.data, error: error }
+}

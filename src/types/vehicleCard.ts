@@ -9,4 +9,5 @@ export interface Vehicle {
   spaceForSleepers: number
   spaceForPassengers: number
   mainImages: string[]
+  RvType: string
 }

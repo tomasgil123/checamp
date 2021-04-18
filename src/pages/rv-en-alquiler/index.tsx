@@ -1,19 +1,24 @@
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
+import dynamic from 'next/dynamic'
+import cx from 'classnames'
 
 import { space, breakpoints } from 'src/tokens'
 
 // * Components *
 import Layout from 'src/components/layout'
 import VehicleCard from 'src/components/vehicleCard'
+import FilterIcon from 'src/components/icons/filter.svg'
+const Modal = dynamic(() => import('src/components/modal'))
+import Filters from 'src/components/search/filters'
 
 // * Types *
 import PageWithLayout from 'src/types/pageWithLayout'
 import { Vehicle } from 'src/types/vehicleCard'
 
 // * Utils *
-import { getAllRvs } from 'src/services/index'
+import { getAllRvs } from 'src/services/rvs/index'
 
 const ContainerVehicleCards = styled.div`
   display: grid;
@@ -49,14 +54,71 @@ const RVRental: FC<RVRentalProps> = ({ rvs }) => {
     router.push(`/rv/${vehicleId}`)
   }
 
+  const [showModalFilters, setShowModalFilters] = useState(false)
+
+  const [rvsToShow, setRvsToShow] = useState(rvs)
+
+  const [atLeastOneFilterIsApplied, setatLeastOneFilterIsApplied] = useState(false)
+
+  const filterStyles = cx(
+    'w-full lg:hidden mb-4 p-4 flex flex-row sticky z-50 bg-white border-b border-gray-500 md:z-40 top-16 border-opacity-10',
+    { hidden: showModalFilters }
+  )
+
+  const onApplyFilters = (typeRvFilter: string, cityFilter: string): void => {
+    const filters = {
+      typeRv: (rv: Vehicle): any => rv.RvType === typeRvFilter,
+      city: (rv: Vehicle): any => rv.city === cityFilter,
+    }
+    const filtersToApply = []
+    if (typeRvFilter) {
+      filtersToApply.push(filters.typeRv)
+      setatLeastOneFilterIsApplied(true)
+    }
+    if (cityFilter) {
+      filtersToApply.push(filters.city)
+      setatLeastOneFilterIsApplied(true)
+    }
+    setRvsToShow(rvs.filter((item) => filtersToApply.every((f) => f(item))))
+    setShowModalFilters(false)
+  }
+
+  const onCleanFilters = (): void => {
+    setRvsToShow(rvs)
+    setatLeastOneFilterIsApplied(false)
+  }
+
   return (
-    <Wrapper>
-      <ContainerVehicleCards>
-        {rvs.map((rv) => (
-          <VehicleCard key={rv.id} data={rv} onClickVehicleCard={onClickVehicleCard} />
-        ))}
-      </ContainerVehicleCards>
-    </Wrapper>
+    <>
+      <div className={filterStyles}>
+        <span className="text-black lg:text-lg text-base font-bold">Filtros</span>
+        <div className="ml-auto flex flex-row">
+          {atLeastOneFilterIsApplied && (
+            <span className="pr-4 cursor-pointer" onClick={onCleanFilters}>
+              Limpiar filtros
+            </span>
+          )}
+          <div className="border-l  border-opacity-10 border-gray-500 pl-2">
+            <img
+              className="w-6 h-6 lg:w-8 lg:h-8"
+              onClick={(): void => setShowModalFilters(true)}
+              src={FilterIcon}
+            />
+          </div>
+        </div>
+      </div>
+      <Wrapper>
+        {/* <h1 className="font-bold text-lg md:text-xl pb-4 text-black">Filtros</h1> */}
+        <ContainerVehicleCards>
+          {rvsToShow.map((rv) => (
+            <VehicleCard key={rv.id} data={rv} onClickVehicleCard={onClickVehicleCard} />
+          ))}
+        </ContainerVehicleCards>
+      </Wrapper>
+      <Modal showModal={showModalFilters} closeModal={(): void => setShowModalFilters(false)}>
+        <Filters applyFilters={onApplyFilters} />
+      </Modal>
+    </>
   )
 }
 
