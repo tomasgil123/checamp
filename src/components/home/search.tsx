@@ -49,7 +49,7 @@ const Search = ({ rvsShowcase }: SearchProps): JSX.Element => {
       <div className="flex justify-center pt-8">
         <button className="p-2 md:p-4 bg-primary-green rounded w-60 md:w-64">
           <Link href="/rv-en-alquiler">
-            <a className="text-white font-bold text-sm md:text-base">
+            <a className="text-white font-normal text-sm md:text-base">
               Ver todos los Rvs en alquiler
             </a>
           </Link>
