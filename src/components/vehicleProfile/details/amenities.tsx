@@ -64,6 +64,13 @@ const Amenities = ({ amenities }: AmenitiesTypes): JSX.Element => {
   } = amenities
   const [showModal, setShowModal] = useState(false)
 
+  const itemListAmenitiesStyles = (isAvailable: boolean): string => {
+    return cx('text-base font-normal py-2', {
+      'text-black': isAvailable,
+      'text-gray-500 line-through': !isAvailable,
+    })
+  }
+
   return (
     <section>
       <h1 className="font-bold text-lg md:text-xl pb-4 text-black">Amenities</h1>
@@ -98,12 +105,12 @@ const Amenities = ({ amenities }: AmenitiesTypes): JSX.Element => {
             <div key={typeAmenity}>
               <div className="text-lg font-medium py-4 text-black">{typeAmenity}</div>
               {items.map((amenity) => (
-                <>
-                  <div className="text-base font-normal py-2 text-black" key={amenity.name}>
+                <div key={amenity.name}>
+                  <div className={itemListAmenitiesStyles(amenities[amenity.name])}>
                     {amenity.label}
                   </div>
                   <div className="border-b border-gray-200 border-solid my-2 md:my-3 w-full"></div>
-                </>
+                </div>
               ))}
             </div>
           ))}

@@ -32,7 +32,7 @@ export const amenitiesGrouped = [
     typeAmenity: 'General',
     items: [
       {
-        label: 'Aireacondicionado',
+        label: 'Aire acondicionado',
         name: 'airConditioner',
       },
       {

@@ -37,11 +37,11 @@ const Modal = ({ children, showModal, closeModal }: IncomingProps): JSX.Element 
           }}
         >
           <DialogContent aria-label="dialog" className="m-auto md:mt-11 focus:outline-none">
-            <div className="relative h-screen md:h-1/2 mt-20 bg-white w-full rounded-sm max-w-screen-md m-auto overflow-y-scroll">
+            <div className="relative md:h-1/2 mt-20 bg-white w-full rounded-sm max-w-screen-md m-auto">
               <div className="flex justify-end w-full pt-3 px-3 sticky top-0 bg-white">
                 <img className="h-4 w-4 cursor-pointer" onClick={closeModal} src={closeIcon} />
               </div>
-              <div>{children}</div>
+              <div className="overflow-y-auto h-screen pb-8">{children}</div>
             </div>
           </DialogContent>
         </motion.div>
