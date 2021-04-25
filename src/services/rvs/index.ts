@@ -36,6 +36,20 @@ interface ResponseRv {
   message: string | null
 }
 
+export const getGroupOfRvs = async (rvIds: string[]): Promise<ResponseAllRvs> => {
+  const { data: Rvs, error } = await supabase
+    .from('Rvs')
+    .select(
+      'id, titleListing, RVManufactureDate, RVBrand, RVModel, city, pricePerDay, spaceForSleepers, spaceForPassengers, mainImages, RvType'
+    )
+    .in('id', rvIds)
+
+  if (error) {
+    return { data: null, message: error.message }
+  }
+  return { data: Rvs, message: null }
+}
+
 export const getRv = async (id: string): Promise<ResponseRv> => {
   const { data: VehicleData, error } = await supabase
     .from<VehicleProfile>('Rvs')

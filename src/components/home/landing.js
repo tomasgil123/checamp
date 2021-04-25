@@ -13,7 +13,7 @@ const Container = styled.div`
   flex-direction: column;
   @media (min-width: ${breakpoints.md}) {
     flex-direction: row;
-    height: 70vh;
+    height: 60vh;
   }
 `
 
