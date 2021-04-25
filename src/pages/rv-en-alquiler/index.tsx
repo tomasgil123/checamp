@@ -7,6 +7,7 @@ import cx from 'classnames'
 import { space, breakpoints } from 'src/tokens'
 
 // * Components *
+import Link from 'next/link'
 import Layout from 'src/components/layout'
 import VehicleCard from 'src/components/vehicleCard'
 import FilterIcon from 'src/components/icons/filter.svg'
@@ -67,8 +68,8 @@ const RVRental: FC<RVRentalProps> = ({ rvs }) => {
 
   const onApplyFilters = (typeRvFilter: string, cityFilter: string): void => {
     const filters = {
-      typeRv: (rv: Vehicle): any => rv.RvType === typeRvFilter,
-      city: (rv: Vehicle): any => rv.city === cityFilter,
+      typeRv: (rv: Vehicle): boolean => rv.RvType === typeRvFilter,
+      city: (rv: Vehicle): boolean => rv.city === cityFilter,
     }
     const filtersToApply = []
     if (typeRvFilter) {
@@ -108,6 +109,12 @@ const RVRental: FC<RVRentalProps> = ({ rvs }) => {
         </div>
       </div>
       <Wrapper>
+        <div className="text-base font-normal text-black pb-6 px-4">
+          ¿Tenés un casa rodante o RV para alquilar?{' '}
+          <Link href="/propietarios/tipo-de-vehiculo">
+            <a className="text-blue-600">Alquilar mi casa rodante o RV</a>
+          </Link>
+        </div>
         <ContainerVehicleCards>
           {rvsToShow.map((rv) => (
             <VehicleCard key={rv.id} data={rv} onClickVehicleCard={onClickVehicleCard} />
