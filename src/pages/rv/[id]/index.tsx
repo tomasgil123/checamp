@@ -25,6 +25,9 @@ interface RVProps {
 
 const RV: FC<RVProps> = ({ rv }) => {
   const router = useRouter()
+  if (router.isFallback) {
+    return <div className="p-6 font-normal text-base">Loading...</div>
+  }
   const {
     images,
     titleListing,

@@ -47,6 +47,7 @@ export interface Vehicle {
   priceExtra: string | null
   mainImages: string[]
   images?: string[] | null
+  onPreview: boolean
 }
 
 export type OverviewSection = Pick<
