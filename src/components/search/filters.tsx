@@ -15,7 +15,7 @@ interface FilterProps {
 }
 
 const Filters = ({ applyFilters }: FilterProps): JSX.Element => {
-  const [typeRvFilter, setTypeRvFilter] = useState('')
+  const [typeRvFilter, setTypeRvFilter] = useState([''])
   const [cityFilter, setCityFilter] = useState<string>('')
 
   const { loading, error, result } = useRequest<string[]>(() => getAllCities())
@@ -39,14 +39,14 @@ const Filters = ({ applyFilters }: FilterProps): JSX.Element => {
       <div className="text-lg font-medium py-4 text-black">Tipo de RV</div>
       <div className="flex flex-row pb-4">
         <div
-          onClick={(): void => setTypeRvFilter('Remolque')}
-          className={boxStyles(typeRvFilter === 'Remolque', true)}
+          onClick={(): void => setTypeRvFilter(['Remolque'])}
+          className={boxStyles(typeRvFilter.includes('Remolque'), true)}
         >
           <Box text="Remolque" icon={<img className="w-20 h-20" src={'/wohnwagen.svg'} />} />
         </div>
         <div
-          onClick={(): void => setTypeRvFilter('Integrado')}
-          className={boxStyles(typeRvFilter === 'Integrado', false)}
+          onClick={(): void => setTypeRvFilter(['Integrado', 'Tipo A', 'Tipo B', 'Tipo C'])}
+          className={boxStyles(typeRvFilter.includes('Integrado'), false)}
         >
           <Box text="Integrado" icon={<img className="w-20 h-20" src={'/integriert.svg'} />} />
         </div>

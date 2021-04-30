@@ -66,9 +66,9 @@ const RVRental: FC<RVRentalProps> = ({ rvs }) => {
     { hidden: showModalFilters }
   )
 
-  const onApplyFilters = (typeRvFilter: string, cityFilter: string): void => {
+  const onApplyFilters = (typeRvFilter: string[], cityFilter: string): void => {
     const filters = {
-      typeRv: (rv: Vehicle): boolean => rv.RvType === typeRvFilter,
+      typeRv: (rv: Vehicle): boolean => typeRvFilter.includes(rv.RvType),
       city: (rv: Vehicle): boolean => rv.city === cityFilter,
     }
     const filtersToApply = []
