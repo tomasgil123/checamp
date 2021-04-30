@@ -53,6 +53,10 @@ function End({ ownerData, saveOwnerDataInit, resultRequest, isLoading }) {
         <div>
           <h2>¡Excelente! Tu Casa Rodante ya es parte de la red de Checamp</h2>
           <Subtitle>
+            En breve podrás ver tu Casa Rodante publicada en nuestra web. Muchas gracias por
+            registrarte!
+          </Subtitle>
+          <Subtitle>
             En cuanto tengamos un arrendatario interesado para tu Casa Rodante nos estaremos
             contactando con vos.
           </Subtitle>
@@ -62,6 +66,7 @@ function End({ ownerData, saveOwnerDataInit, resultRequest, isLoading }) {
           </Subtitle>
           {support.allSupportNumbers.map((info) => (
             <SupportNumber
+              key={info.name}
               name={info.name}
               number={info.number}
               numberComplete={info.numberComplete}
