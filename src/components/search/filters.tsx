@@ -11,11 +11,11 @@ import useRequest from 'src/hooks/useRequest'
 import { getAllCities } from 'src/services'
 
 interface FilterProps {
-  applyFilters: (typeRvFilter: string, cityFilter: string) => void
+  applyFilters: (typeRvFilter: string[], cityFilter: string) => void
 }
 
 const Filters = ({ applyFilters }: FilterProps): JSX.Element => {
-  const [typeRvFilter, setTypeRvFilter] = useState([''])
+  const [typeRvFilter, setTypeRvFilter] = useState<string[]>([''])
   const [cityFilter, setCityFilter] = useState<string>('')
 
   const { loading, error, result } = useRequest<string[]>(() => getAllCities())
