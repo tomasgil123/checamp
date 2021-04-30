@@ -24,6 +24,7 @@ export const getAllRvs = async (): Promise<ResponseAllRvs> => {
     .select(
       'id, titleListing, RVManufactureDate, RVBrand, RVModel, city, pricePerDay, spaceForSleepers, spaceForPassengers, mainImages, RvType'
     )
+    .eq('onPreview', false)
 
   if (error) {
     return { data: null, message: error.message }
