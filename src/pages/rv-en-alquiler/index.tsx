@@ -135,6 +135,7 @@ export async function getStaticProps(): Promise<unknown> {
   const rvs = response.data
   return {
     props: { rvs: rvs },
+    revalidate: 60 * 60,
   }
 }
 
