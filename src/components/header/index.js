@@ -81,7 +81,7 @@ function Header({ isInForm }) {
         </MenuLeft>
         <Logo>
           <ContainerImageLogo onClick={onGoHome}>
-            <img src={require(`images/checamp_logo_horizontal.png`)} alt="checamp-logo" />
+            <img src={require(`images/checamp_logo_horizontal.png`)} alt="Checamp" />
           </ContainerImageLogo>
         </Logo>
         <MenuRight />

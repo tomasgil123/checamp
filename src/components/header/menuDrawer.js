@@ -134,7 +134,7 @@ const MenuDrawer = ({ translate, pages, isInForm }) => {
     <ContainerMenuDrawer translate={translate}>
       <ContainerLogo>
         <Logo>
-          <img src={require(`images/checamp_logo_horizontal.png`)} alt="checamp-logo" />
+          <img src={require(`images/checamp_logo_horizontal.png`)} alt="Checamp" />
         </Logo>
       </ContainerLogo>
       <ContainerNavigation>

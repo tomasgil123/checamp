@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import { useInView } from 'react-intersection-observer'
 
 import { colors } from 'src/tokens'
 
@@ -32,17 +33,25 @@ const VehicleCard = ({ data, onClickVehicleCard }: VehicleCardProps): JSX.Elemen
     background: colors.base.white,
   }
 
+  const { ref, inView } = useInView({
+    threshold: 0,
+  })
+
   return (
     <div className="cursor-pointer" onClick={(): void => onClickVehicleCard(id)}>
-      <Gallery
-        images={mainImages}
-        imageComponent={(image: string): JSX.Element => (
-          <ImageWrapper>
-            <Image src={image} alt="RV image" layout="fill" objectFit="cover" />
-          </ImageWrapper>
+      <div ref={ref}>
+        {inView && (
+          <Gallery
+            images={mainImages}
+            imageComponent={(image: string): JSX.Element => (
+              <ImageWrapper>
+                <Image src={image} alt="RV image" layout="fill" objectFit="cover" />
+              </ImageWrapper>
+            )}
+            stylesParentGallery={stylesParentGallery}
+          />
         )}
-        stylesParentGallery={stylesParentGallery}
-      />
+      </div>
       <TextWrapper>
         <Title>{titleListing}</Title>
         <div>
