@@ -35,22 +35,21 @@ const VehicleCard = ({ data, onClickVehicleCard }: VehicleCardProps): JSX.Elemen
 
   const { ref, inView } = useInView({
     threshold: 0,
+    triggerOnce: true,
   })
 
   return (
     <div className="cursor-pointer" onClick={(): void => onClickVehicleCard(id)}>
       <div ref={ref}>
-        {inView && (
-          <Gallery
-            images={mainImages}
-            imageComponent={(image: string): JSX.Element => (
-              <ImageWrapper>
-                <Image src={image} alt="RV image" layout="fill" objectFit="cover" />
-              </ImageWrapper>
-            )}
-            stylesParentGallery={stylesParentGallery}
-          />
-        )}
+        <Gallery
+          images={mainImages}
+          imageComponent={(image: string): JSX.Element => (
+            <ImageWrapper>
+              {inView && <Image src={image} alt="RV image" layout="fill" objectFit="cover" />}
+            </ImageWrapper>
+          )}
+          stylesParentGallery={stylesParentGallery}
+        />
       </div>
       <TextWrapper>
         <Title>{titleListing}</Title>

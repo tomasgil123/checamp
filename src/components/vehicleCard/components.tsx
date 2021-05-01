@@ -11,11 +11,11 @@ const Title = styled.div`
 `
 
 const Subtitle = styled.span`
-  font-size: ${space.s3};
+  font-size: ${space.s3_5};
   color: ${colors.text.secondary};
   font-weight: 400;
   @media (min-width: ${breakpoints.sm}) {
-    font-size: ${space.s3_5};
+    font-size: ${space.s4};
   }
 `
 const Price = styled.span`
