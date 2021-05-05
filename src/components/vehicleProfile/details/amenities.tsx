@@ -1,7 +1,9 @@
 /* eslint-disable react/display-name */
 import cx from 'classnames'
 import dynamic from 'next/dynamic'
-import { useState } from 'react'
+import { useRouter } from 'next/router'
+import Link from 'next/link'
+
 // * Components *
 import InsideShower from 'src/components/icons/insideShower'
 import OutsideShower from 'src/components/icons/outsideShower'
@@ -62,7 +64,7 @@ const Amenities = ({ amenities }: AmenitiesTypes): JSX.Element => {
     toilet,
     outsideShower,
   } = amenities
-  const [showModal, setShowModal] = useState(false)
+  const router = useRouter()
 
   const itemListAmenitiesStyles = (isAvailable: boolean): string => {
     return cx('text-base font-normal py-2', {
@@ -91,16 +93,18 @@ const Amenities = ({ amenities }: AmenitiesTypes): JSX.Element => {
         </>
       </div>
       <div className="pt-4">
-        <button
-          onClick={(): void => setShowModal(true)}
-          className="w-32 bg-transparent text-black font-semibold py-2 px-4 border border-black hover:border-transparent rounded"
+        <Link
+          href={`${router.route.replace('[id]', router.query.id as string)}?amenities=true`}
+          shallow
         >
-          Ver más
-        </button>
+          <a className="w-32 bg-transparent text-black font-semibold py-2 px-4 border border-black hover:border-transparent rounded">
+            Ver más
+          </a>
+        </Link>
       </div>
-      <Modal showModal={showModal} closeModal={(): void => setShowModal(false)}>
+      <Modal queryParam="amenities">
         <div className="p-4 flex flex-col justify-start w-full">
-          <div className="font-bold text-lg md:text-xl pb-4 text-black"> Amenities</div>
+          <div className="font-bold pt-6 text-lg md:text-xl pb-4 text-black"> Amenities</div>
           {amenitiesGrouped.map(({ typeAmenity, items }) => (
             <div key={typeAmenity}>
               <div className="text-lg font-medium py-4 text-black">{typeAmenity}</div>

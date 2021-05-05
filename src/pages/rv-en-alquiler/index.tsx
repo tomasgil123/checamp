@@ -121,7 +121,7 @@ const RVRental: FC<RVRentalProps> = ({ rvs }) => {
           ))}
         </ContainerVehicleCards>
       </Wrapper>
-      <Modal showModal={showModalFilters} closeModal={(): void => setShowModalFilters(false)}>
+      <Modal openModal={showModalFilters} closeModal={(): void => setShowModalFilters(false)}>
         <Filters applyFilters={onApplyFilters} />
       </Modal>
     </>
