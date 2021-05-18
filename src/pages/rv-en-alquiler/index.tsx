@@ -72,7 +72,7 @@ const RVRental: FC<RVRentalProps> = ({ rvs }) => {
       city: (rv: Vehicle): boolean => rv.city === cityFilter,
     }
     const filtersToApply = []
-    if (typeRvFilter) {
+    if (typeRvFilter[0]) {
       filtersToApply.push(filters.typeRv)
       setatLeastOneFilterIsApplied(true)
     }
@@ -80,7 +80,8 @@ const RVRental: FC<RVRentalProps> = ({ rvs }) => {
       filtersToApply.push(filters.city)
       setatLeastOneFilterIsApplied(true)
     }
-    setRvsToShow(rvs.filter((item) => filtersToApply.every((f) => f(item))))
+
+    setRvsToShow(rvs.filter((item) => filtersToApply.every((filter) => filter(item))))
     setShowModalFilters(false)
   }
 

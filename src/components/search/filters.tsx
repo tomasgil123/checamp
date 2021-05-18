@@ -37,7 +37,7 @@ const Filters = ({ applyFilters }: FilterProps): JSX.Element => {
     <div className="p-4 flex flex-col justify-start w-full">
       <div className="font-bold text-lg md:text-xl pb-4 text-black"> Filtros</div>
       <div className="text-lg font-medium py-4 text-black">Tipo de RV</div>
-      <div className="flex flex-row pb-4">
+      <div className="flex flex-row pb-2">
         <div
           onClick={(): void => setTypeRvFilter(['Remolque'])}
           className={boxStyles(typeRvFilter.includes('Remolque'), true)}
@@ -54,11 +54,11 @@ const Filters = ({ applyFilters }: FilterProps): JSX.Element => {
       <span className="font-normal text-sm text-black">
         * para los rvs de tipo remolque vas a necesitar tu propio vehículo para transladarlo
       </span>
-      <div className="text-lg font-medium py-4 text-black">Lugar de pickup</div>
+      <div className="text-lg font-medium pt-6 pb-2 text-black">Lugar de pickup</div>
       <span className="font-normal text-sm text-black">
         Es el lugar por donde vas a tener que pasar a buscar el vehículo una vez que lo alquilas
       </span>
-      <div className="pt-4">
+      <div className="pt-4 relative">
         {loading ? (
           <span>Cargando ciudades...</span>
         ) : (
@@ -66,7 +66,7 @@ const Filters = ({ applyFilters }: FilterProps): JSX.Element => {
             {error ? (
               <span>Ha ocurrido un error</span>
             ) : (
-              <div>
+              <div className="-left-1 relative">
                 <select onChange={(e): void => onClickCity(e.target.value)}>
                   <option>Elegi una ciudad</option>
                   {result.map((option) => (
