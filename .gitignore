@@ -37,3 +37,6 @@ yarn-error.log*
 #keys
 oauth2.keys.json
 client_secret.json
+
+#variables
+env-var-names.md

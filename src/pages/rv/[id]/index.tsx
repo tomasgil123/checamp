@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import { useRouter } from 'next/router'
+import * as Sentry from '@sentry/react'
 
 // * Components *
 import Layout from 'src/components/layout'
@@ -28,8 +29,9 @@ const RV: FC<RVProps> = ({ rv }) => {
   if (router.isFallback) {
     return <div className="p-6 font-normal text-base">Loading...</div>
   }
+  console.log('rv', rv.mainImages)
   const {
-    mainImages,
+    images,
     titleListing,
     descriptionListing,
     RvType,
@@ -85,7 +87,7 @@ const RV: FC<RVProps> = ({ rv }) => {
 
   return (
     <div>
-      <ImageGrid images={mainImages} />
+      <ImageGrid images={images} />
       <div className="px-4 md:px-6 w-full lg:grid lg:grid-cols-6">
         <div className="w-full lg:col-start-1 lg:col-end-5">
           <Overview
@@ -189,7 +191,17 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const rv = await getRv(params.id as string)
+  let rv
+  try {
+    rv = await getRv(params.id as string)
+  } catch (err) {
+    Sentry.captureException(err, {
+      tags: {
+        section: 'rv/[id]',
+      },
+    })
+  }
+
   return {
     props: {
       rv: rv.data[0],
