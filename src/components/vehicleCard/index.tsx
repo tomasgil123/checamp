@@ -66,7 +66,7 @@ const VehicleCard = ({ data, onClickVehicleCard }: VehicleCardProps): JSX.Elemen
         <div>
           {pricePerDay ? (
             <>
-              <Price>{`$${pricePerDay}`}</Price>
+              <Price>{`${pricePerDay}`}</Price>
               <PerNight>/ por noche</PerNight>
             </>
           ) : (

@@ -29,7 +29,7 @@ const RV: FC<RVProps> = ({ rv }) => {
     return <div className="p-6 font-normal text-base">Loading...</div>
   }
   const {
-    images,
+    mainImages,
     titleListing,
     descriptionListing,
     RvType,
@@ -85,7 +85,7 @@ const RV: FC<RVProps> = ({ rv }) => {
 
   return (
     <div>
-      <ImageGrid images={images} />
+      <ImageGrid images={mainImages} />
       <div className="px-4 md:px-6 w-full lg:grid lg:grid-cols-6">
         <div className="w-full lg:col-start-1 lg:col-end-5">
           <Overview
@@ -190,7 +190,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const rv = await getRv(params.id as string)
-
   return {
     props: {
       rv: rv.data[0],
