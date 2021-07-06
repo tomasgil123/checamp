@@ -48,6 +48,7 @@ export interface Vehicle {
   mainImages: string[]
   images?: string[] | null
   onPreview: boolean
+  DriverMinimumAge: string
 }
 
 export type OverviewSection = Pick<
@@ -61,6 +62,7 @@ export type OverviewSection = Pick<
   | 'spaceForPassengers'
   | 'spaceForSleepers'
   | 'city'
+  | 'DriverMinimumAge'
 >
 
 export type DetailsSpace = Pick<Vehicle, 'spaceForPassengers' | 'spaceForSleepers'>

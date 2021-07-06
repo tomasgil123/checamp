@@ -74,6 +74,7 @@ const RV: FC<RVProps> = ({ rv }) => {
     pricePerDay,
     priceExtra,
     id,
+    DriverMinimumAge,
   } = rv
 
   const onCheckAvailability = (): void => {
@@ -99,6 +100,7 @@ const RV: FC<RVProps> = ({ rv }) => {
               spaceForPassengers,
               spaceForSleepers,
               city,
+              DriverMinimumAge,
             }}
           />
           <Space {...{ spaceForPassengers, spaceForSleepers }} />
