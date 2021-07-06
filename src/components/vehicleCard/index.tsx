@@ -63,11 +63,10 @@ const VehicleCard = ({ data, onClickVehicleCard }: VehicleCardProps): JSX.Elemen
           <Subtitle style={{ paddingLeft: '4px', paddingRight: '4px' }}>-</Subtitle>
           <Subtitle>{`Huéspedes: ${spaceForSleepers}`}</Subtitle>
         </div>
-        <div>
+        <div className="flex flex-row items-center">
           {pricePerDay ? (
             <>
-              <Price>{`$${pricePerDay}`}</Price>
-              <PerNight>/ por noche</PerNight>
+              <Price>{`$${pricePerDay}`}</Price>&nbsp;<PerNight> / por noche</PerNight>
             </>
           ) : (
             <PerNight>Consultar precio</PerNight>
