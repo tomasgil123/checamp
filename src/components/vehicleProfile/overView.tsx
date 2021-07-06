@@ -31,7 +31,9 @@ const Overview = ({
             <span>&nbsp;•&nbsp;</span>
             <span>{`Huéspedes: ${spaceForSleepers}`}</span>
           </div>
-          <div className="pt-2 text-sm w-full md:w-auto text-black">{`Edad mínima del conductor: ${DriverMinimumAge} años`}</div>
+          {DriverMinimumAge && (
+            <div className="pt-2 text-sm w-full md:w-auto text-black">{`Edad mínima del conductor: ${DriverMinimumAge} años`}</div>
+          )}
         </div>
         <div className="text-base pt-4 lg:pt-5 text-gray-500">{descriptionListing}</div>
       </header>
