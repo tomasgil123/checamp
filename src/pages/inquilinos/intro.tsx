@@ -1,7 +1,8 @@
-import { useContext, FC, useEffect } from 'react'
+import { useContext, FC, useEffect, useState } from 'react'
 import { PageNavigationContext } from 'src/context'
 import { useDispatch } from 'react-redux'
 import { useRouter } from 'next/router'
+import { useSelector } from 'react-redux'
 // actions
 import { saveTenantRvId } from 'src/actions/tenants'
 // components
@@ -20,12 +21,40 @@ const Intro: FC = () => {
   useEffect(() => {
     dispatch(saveTenantRvId(rvId))
   }, [])
+  const goToLast = (): void => {
+    router.push({
+      pathname: `/inquilinos/fin`,
+    })
+  }
+  const [userAlreadyCompletedForm, setUserAlreadyCompletedForm] = useState(false)
+  const numberDays = useSelector((state) => state.tenants.numberDays)
+  const numberPeople = useSelector((state) => state.tenants.numberPeople)
+  const departureDate = useSelector((state) => state.tenants.departureDate)
+  const phone = useSelector((state) => state.tenants.phone)
+  const email = useSelector((state) => state.tenants.email)
+  useEffect(() => {
+    if (numberDays && numberPeople && departureDate && phone && email) {
+      setUserAlreadyCompletedForm(true)
+    }
+  }, [])
   return (
     <Container>
-      <h2 className="text-center pb-4">Para poder ayudarte te vamos a hacer algunas preguntas</h2>
-      <ContainerButton>
-        <MainButton text="Siguiente" onClickButton={goToNextStep} />
-      </ContainerButton>
+      {userAlreadyCompletedForm ? (
+        <div>
+          <ContainerButton>
+            <MainButton text="Enviar consulta" onClickButton={goToLast} />
+          </ContainerButton>
+        </div>
+      ) : (
+        <div>
+          <h2 className="text-center pb-4">
+            Para poder ayudarte te vamos a hacer algunas preguntas
+          </h2>
+          <ContainerButton>
+            <MainButton text="Siguiente" onClickButton={goToNextStep} />
+          </ContainerButton>
+        </div>
+      )}
     </Container>
   )
 }

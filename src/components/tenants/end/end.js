@@ -27,7 +27,7 @@ function End({ tenantData, saveTenantDataInit, resultRequest, isLoading }) {
 
   const goBackHome = () => {
     router.push({
-      pathname: `/`,
+      pathname: `/rv-en-alquiler`,
     })
   }
 
