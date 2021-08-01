@@ -141,9 +141,16 @@ const RV: FC<RVProps> = ({ rv }) => {
           <Price pricePerDay={pricePerDay} priceExtra={priceExtra} id={id} />
           <PickupLocation cityGoogleMap={cityGoogleMap} city={city} />
           <div className="sticky bottom-0 w-full bg-white lg:hidden p-4">
-            <div className="relative w-full flex justify-end">
+            <div className="relative w-full flex">
+              {pricePerDay && (
+                <div className="text-base md:text-lg text-black font-medium pb-4">
+                  <span>
+                    Precio por dia: <span className="font-normal">{pricePerDay}</span>
+                  </span>
+                </div>
+              )}
               <button
-                className="p-2 md:p-4 bg-primary-green rounded"
+                className="p-2 md:p-4 bg-primary-green rounded ml-auto"
                 onClick={(): void => onCheckAvailability()}
               >
                 <span className="text-white font-bold text-sm md:text-base">
@@ -155,7 +162,14 @@ const RV: FC<RVProps> = ({ rv }) => {
         </div>
         <div className="hidden lg:block lg:col-start-5 lg:col-end-7">
           <div className="sticky top-24 w-72 h-32 shadow-lg rounded-lg m-auto">
-            <div className="flex flex-row justify-center w-full h-full items-center">
+            <div className="flex flex-col justify-center w-full h-full items-center">
+              {pricePerDay && (
+                <div className="text-base md:text-lg text-black font-medium pb-4">
+                  <span>
+                    Precio por dia: <span className="font-normal">{pricePerDay}</span>
+                  </span>
+                </div>
+              )}
               <button
                 className="p-2 md:p-4 bg-primary-green rounded"
                 onClick={(): void => onCheckAvailability()}
