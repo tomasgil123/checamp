@@ -79,7 +79,7 @@ const RV: FC<RVProps> = ({ rv }) => {
 
   const onCheckAvailability = (): void => {
     router.push({
-      pathname: '/inquilinos/contacto',
+      pathname: '/inquilinos/intro',
       query: { rvId: id },
     })
   }

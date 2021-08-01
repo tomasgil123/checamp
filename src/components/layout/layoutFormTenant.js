@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import styled from 'styled-components'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -17,22 +18,35 @@ const ContainerHeader = styled.div`
   }
 `
 
+const tenantsSteps = [
+  '/inquilinos/intro',
+  '/inquilinos/cantidad-pasajeros-y-presupuesto',
+  '/inquilinos/dia-partida-y-cantidad-dias',
+  '/inquilinos/contacto',
+  '/inquilinos/fin',
+]
+
 // eslint-disable-next-line react/prop-types
 export default function Layout({ children }) {
   const router = useRouter()
 
   // For some reason useState only works here if React is undefined
   // if we import React it breaks
-
+  const [step, setStep] = React.useState(1)
   // eslint-disable-next-line no-undef
   const [showContent, setShowContent] = React.useState(true)
   // eslint-disable-next-line no-undef
 
+  useEffect(() => {
+    setShowContent(true)
+  }, [router.pathname])
+
   const goToNextStep = () => {
     setShowContent(false)
+    setStep(step + 1)
     setTimeout(function () {
       router.push({
-        pathname: `/inquilinos/fin`,
+        pathname: tenantsSteps[step],
       })
     }, 500)
   }
