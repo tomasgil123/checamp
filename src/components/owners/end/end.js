@@ -51,13 +51,13 @@ function End({ ownerData, saveOwnerDataInit, resultRequest, isLoading }) {
     >
       {resultRequest ? (
         <div>
-          <h2>¡Excelente! Tu Casa Rodante ya es parte de la red de Checamp</h2>
+          <h2>¡Excelente! Tu motorhome ya es parte de la red de Checamp</h2>
           <Subtitle>
-            En breve podrás ver tu Casa Rodante publicada en nuestra web. Muchas gracias por
+            En breve podrás ver tu motorhome publicada en nuestra web. ¡Muchas gracias por
             registrarte!
           </Subtitle>
           <Subtitle>
-            En cuanto tengamos un arrendatario interesado para tu Casa Rodante nos estaremos
+            En cuanto tengamos un arrendatario interesado para tu motorhome nos estaremos
             contactando con vos.
           </Subtitle>
           <Subtitle>
@@ -78,7 +78,7 @@ function End({ ownerData, saveOwnerDataInit, resultRequest, isLoading }) {
         </div>
       ) : (
         <div>
-          <h2>Ups... parece que hubo un problema con el envio de tus datos</h2>
+          <h2>Ups... parece que hubo un problema con el envío de tus datos</h2>
           <Subtitle>
             Por favor, reintenta enviarlos y si el problema persiste no dudes en escribirnos por
             whatsapp al número{' '}

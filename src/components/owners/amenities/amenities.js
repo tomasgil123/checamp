@@ -69,12 +69,12 @@ const Amenities = ({ spaceRV, amenities, addSpace, addAmenities, goToNextStep })
               key="passengers"
               name="passengers"
               title="Pasajeros"
-              subtitle="Asientos con cinturón de seguridad"
+              subtitle="¿Cuántos asientos tiene con cinturón de seguridad?"
               value={formProps.values.passengers}
               handleChange={formProps.setFieldValue}
             />
             <Divider />
-            <h2>Amenities</h2>
+            <h2>Comodidades y características</h2>
             {listAmenities.map((typeAmenity) => (
               <React.Fragment key={typeAmenity.typeAmenity}>
                 <TypeAmenity>{typeAmenity.typeAmenity}</TypeAmenity>

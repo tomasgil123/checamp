@@ -51,7 +51,7 @@ const Intro: FC = () => {
             Para poder ayudarte te vamos a hacer algunas preguntas
           </h2>
           <ContainerButton>
-            <MainButton text="Siguiente" onClickButton={goToNextStep} />
+            <MainButton text="Entendido" onClickButton={goToNextStep} />
           </ContainerButton>
         </div>
       )}

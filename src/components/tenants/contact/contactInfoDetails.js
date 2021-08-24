@@ -58,7 +58,7 @@ function ContactInfoDetails({ contactInfo, addContactInfo, goToNextStep }) {
             key="phone"
             type="number"
             name="phone"
-            label="Tu numero de celular (opcional)"
+            label="Tu número de celular (opcional)"
             handleChange={formProps.handleChange}
             handleBlur={formProps.handleBlur}
             value={formProps.values.phone}
@@ -66,8 +66,8 @@ function ContactInfoDetails({ contactInfo, addContactInfo, goToNextStep }) {
             touched={formProps.touched}
           />
           <Hint>
-            Recorda utilizar la característica correcta al momento de ingresar tu número. Por ej: si
-            es un número de capital utiliza 11
+            Te pedimos que también nos indiques la característica. Por ejemplo, si es un número de
+            Capital Federal tenés que utilizar 11
           </Hint>
           <WrapperSubmitSection />
           <ContainerSubmitButton>

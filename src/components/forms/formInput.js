@@ -38,7 +38,17 @@ const ErrorMessage = styled.div`
   color: ${colors.text.error};
 `
 
-const FormInput = ({ type, name, label, value, handleChange, handleBlur, errors, touched }) => {
+const FormInput = ({
+  type,
+  name,
+  label,
+  sublabel,
+  value,
+  handleChange,
+  handleBlur,
+  errors,
+  touched,
+}) => {
   const showErrorMessage = errors[name] && touched[name]
 
   const errorMessage = showErrorMessage ? (
@@ -50,6 +60,7 @@ const FormInput = ({ type, name, label, value, handleChange, handleBlur, errors,
   return (
     <Container>
       <LabelElement>{label}</LabelElement>
+      {sublabel && <div className="w-full pb-3">{sublabel}</div>}
       <InputElement
         name={name}
         type={type}

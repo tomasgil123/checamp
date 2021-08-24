@@ -14,7 +14,7 @@ function Availability({ availability, addAvailability, goToNextStep }) {
       }}
       validationSchema={Yup.object().shape({
         availability: Yup.string().required(
-          'Por favor, completa cuando podrias alquilar tu motor home'
+          'Por favor, completa cuando podrias alquilar tu motorhome'
         ),
       })}
       onSubmit={(values) => {

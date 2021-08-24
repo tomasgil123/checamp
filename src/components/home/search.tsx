@@ -40,7 +40,7 @@ const Search = ({ rvsShowcase }: SearchProps): JSX.Element => {
   }
   return (
     <Container>
-      <Title>Encontra el RV para tus proximas vacaciones</Title>
+      <Title>Encontra el motorhome para tus proximas vacaciones</Title>
       <ContainerVehicleCards>
         {rvsShowcase.map((rv) => (
           <VehicleCard key={rv.id} data={rv} onClickVehicleCard={onClickVehicleCard} />
@@ -50,7 +50,7 @@ const Search = ({ rvsShowcase }: SearchProps): JSX.Element => {
         <button className="p-2 md:p-4 bg-primary-green rounded w-60 md:w-64">
           <Link href="/rv-en-alquiler">
             <a className="text-white font-normal text-sm md:text-base">
-              Ver todos los Rvs en alquiler
+              Ver todos los motorhomes en alquiler
             </a>
           </Link>
         </button>

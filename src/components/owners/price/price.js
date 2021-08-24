@@ -33,7 +33,7 @@ function Price({ priceDetails, addPriceDetails, goToNextStep }) {
       }}
       validationSchema={Yup.object().shape({
         pricePerDay: Yup.number().required(
-          'Por favor, indicanos a que precio por día vas a alquilar tu Casa Rodante'
+          'Por favor, indicanos a que precio por día vas a alquilar tu motorhome'
         ),
         priceExtra: Yup.string(),
       })}

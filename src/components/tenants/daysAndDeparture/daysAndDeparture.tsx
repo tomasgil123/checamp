@@ -39,6 +39,7 @@ const PeopleAndBudget = ({
             type="number"
             name="numberDays"
             label="Cantidad de dias"
+            sublabel=""
             handleChange={formProps.handleChange}
             handleBlur={formProps.handleBlur}
             value={formProps.values.numberDays}
@@ -50,13 +51,13 @@ const PeopleAndBudget = ({
             type="text"
             name="departureDate"
             label="Fecha de partida"
+            sublabel="Indicanda fecha de partida aproximada nos va a ser mas sencillo ayudarte"
             handleChange={formProps.handleChange}
             handleBlur={formProps.handleBlur}
             value={formProps.values.departureDate}
             errors={formProps.errors}
             touched={formProps.touched}
           />
-          <Hint>Indicanda fecha aproximada aproximada nos va a ser mas sencillo ayudarte</Hint>
           <WrapperSubmitSection />
           <ContainerSubmitButton>
             <MainButton text="Continuar" onClickButton={undefined} type="submit" />

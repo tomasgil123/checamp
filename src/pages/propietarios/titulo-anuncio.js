@@ -29,8 +29,8 @@ function NameListingRV() {
       <ContainerTitle>
         <h2>Título de tu anuncio</h2>
         <Subtitle>
-          Una frase breve que describa tu vehículo. ¡Si tiene un apodo, este es el lugar para
-          agregarlo!
+          el título es lo primero que ven los futuros inquilinos, aprovechalo para describir a tu
+          vehículo
         </Subtitle>
       </ContainerTitle>
       <ContainerFeatures>

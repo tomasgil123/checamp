@@ -30,7 +30,7 @@ function AvailabilityRV() {
       <ContainerTitle>
         <h2>Disponibilidad</h2>
         <Subtitle>
-          Contanos cuándo (qué meses o que semanas del año) podrías alquilar tu casa rodante o
+          Contanos cuándo (qué meses o que semanas del año) podrías alquilar tu motorhome o
           cuándo no.
         </Subtitle>
       </ContainerTitle>
