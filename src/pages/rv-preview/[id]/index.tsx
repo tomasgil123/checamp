@@ -1,4 +1,4 @@
-import RV from '../../rv/[id]/index'
+import RV from '../../motorhome/[id]/index'
 
 // * Types *
 import { GetStaticProps, GetStaticPaths } from 'next'

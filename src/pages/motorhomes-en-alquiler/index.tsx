@@ -52,7 +52,7 @@ interface RVRentalProps {
 const RVRental: FC<RVRentalProps> = ({ rvs }) => {
   const router = useRouter()
   const onClickVehicleCard = (vehicleId: number): void => {
-    router.push(`/rv/${vehicleId}`)
+    router.push(`/motorhome/${vehicleId}`)
   }
 
   const [showModalFilters, setShowModalFilters] = useState(false)
@@ -111,7 +111,7 @@ const RVRental: FC<RVRentalProps> = ({ rvs }) => {
       </div>
       <Wrapper>
         <div className="text-base font-normal text-black pb-6 px-4">
-          ¿Tenés un motorhome o RV para alquilar?{' '}
+          ¿Tenés un motorhome para alquilar?{' '}
           <Link href="/propietarios/tipo-de-vehiculo">
             <a className="text-blue-600">Alquilar mi motorhome o RV</a>
           </Link>

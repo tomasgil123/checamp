@@ -36,7 +36,7 @@ interface SearchProps {
 const Search = ({ rvsShowcase }: SearchProps): JSX.Element => {
   const router = useRouter()
   const onClickVehicleCard = (vehicleId: number): void => {
-    router.push(`/rv/${vehicleId}`)
+    router.push(`/motorhome/${vehicleId}`)
   }
   return (
     <Container>
@@ -48,7 +48,7 @@ const Search = ({ rvsShowcase }: SearchProps): JSX.Element => {
       </ContainerVehicleCards>
       <div className="flex justify-center pt-8">
         <button className="p-2 md:p-4 bg-primary-green rounded w-60 md:w-64">
-          <Link href="/rv-en-alquiler">
+          <Link href="/motorhomes-en-alquiler">
             <a className="text-white font-normal text-sm md:text-base">
               Ver todos los motorhomes en alquiler
             </a>
