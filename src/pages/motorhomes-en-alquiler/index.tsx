@@ -62,7 +62,7 @@ const RVRental: FC<RVRentalProps> = ({ rvs }) => {
   const [atLeastOneFilterIsApplied, setatLeastOneFilterIsApplied] = useState(false)
 
   const filterStyles = cx(
-    'w-full mb-4 p-4 flex flex-row sticky z-50 bg-white border-b border-gray-500 md:z-40 top-14 border-opacity-10',
+    'w-full mb-4 p-4 flex flex-row md:justify-end sticky z-50 bg-white border-b border-gray-500 md:z-40 top-14 border-opacity-10',
     { hidden: showModalFilters }
   )
 
@@ -93,8 +93,8 @@ const RVRental: FC<RVRentalProps> = ({ rvs }) => {
   return (
     <>
       <div className={filterStyles}>
-        <span className="text-black lg:text-lg text-base font-bold">Filtros</span>
-        <div className="ml-auto flex flex-row">
+        <span className="text-black lg:text-lg text-base font-bold md:pr-2">Filtros</span>
+        <div className="ml-auto md:ml-0 flex flex-row">
           {atLeastOneFilterIsApplied && (
             <span className="pr-4 cursor-pointer" onClick={onCleanFilters}>
               Limpiar filtros
