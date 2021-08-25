@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types'
 import * as Yup from 'yup'
 import styled from 'styled-components'
-
+import React, { useState } from 'react'
 import { Formik } from 'formik'
 import TextareaInput from 'src/components/forms/textareaInput'
 import FormInput from 'src/components/forms/formInput'
 import MainButton from 'src/components/primitives/mainButton'
 import { WrapperSubmitSection, ContainerSubmitButton } from 'src/components/forms/submitButton'
+import RadioButton from 'src/components/forms/radioButton'
 
 const ContainerInputPrice = styled.div`
   position: relative;
@@ -25,6 +26,7 @@ const ContainerInputPrice = styled.div`
 `
 
 function Price({ priceDetails, addPriceDetails, goToNextStep }) {
+  const [typeCurrency, setTypeCurrency] = useState('pesos')
   return (
     <Formik
       initialValues={{
@@ -38,6 +40,11 @@ function Price({ priceDetails, addPriceDetails, goToNextStep }) {
         priceExtra: Yup.string(),
       })}
       onSubmit={(values) => {
+        if (typeCurrency === 'pesos') {
+          values.pricePerDay = `$${values.pricePerDay}`
+        } else {
+          values.pricePerDay = `U$S${values.pricePerDay}`
+        }
         addPriceDetails(values)
         goToNextStep()
       }}
@@ -56,6 +63,22 @@ function Price({ priceDetails, addPriceDetails, goToNextStep }) {
               errors={formProps.errors}
               touched={formProps.touched}
             />
+            <div className="flex flex-row items-center pb-4">
+              <RadioButton
+                name="Pesos"
+                onChange={() => setTypeCurrency('pesos')}
+                value="pesos"
+                groupName="price"
+                checked={typeCurrency === 'pesos'}
+              />
+              <RadioButton
+                name="Dólares"
+                onChange={() => setTypeCurrency('dolares')}
+                value="dolares"
+                groupName="price"
+                checked={typeCurrency === 'dolares'}
+              />
+            </div>
           </ContainerInputPrice>
 
           <TextareaInput
