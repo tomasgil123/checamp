@@ -6,7 +6,6 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "pre-commit": "yarn lint-staged",
     "commit": "git-cz"
   },
   "dependencies": {
