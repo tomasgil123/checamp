@@ -143,9 +143,9 @@ const RV: FC<RVProps> = ({ rv }) => {
           <div className="sticky bottom-0 w-full bg-white lg:hidden p-4">
             <div className="relative w-full flex">
               {pricePerDay && (
-                <div className="text-base md:text-lg text-black font-medium pb-4">
+                <div className="text-base md:text-lg lg:text-2xl text-black font-medium pb-4">
                   <span>
-                    Precio por dia: <span className="font-normal">{pricePerDay}</span>
+                    Precio por día: <span className="font-normal">{pricePerDay}</span>
                   </span>
                 </div>
               )}
@@ -161,12 +161,12 @@ const RV: FC<RVProps> = ({ rv }) => {
           </div>
         </div>
         <div className="hidden lg:block lg:col-start-5 lg:col-end-7">
-          <div className="sticky top-24 w-72 h-32 shadow-lg rounded-lg m-auto">
+          <div className="sticky top-24 w-80 h-36 p-4 md:p-6 lg:p-8 shadow-lg rounded-lg m-auto">
             <div className="flex flex-col justify-center w-full h-full items-center">
               {pricePerDay && (
-                <div className="text-base md:text-lg text-black font-medium pb-4">
+                <div className="text-base md:text-lg lg:text-2xl text-black font-medium pb-4">
                   <span>
-                    Precio por dia: <span className="font-normal">{pricePerDay}</span>
+                    Precio por día: <span className="font-normal">{pricePerDay}</span>
                   </span>
                 </div>
               )}
