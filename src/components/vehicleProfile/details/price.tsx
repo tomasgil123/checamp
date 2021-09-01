@@ -22,7 +22,7 @@ const Price = ({
       <h1 className="font-bold text-lg md:text-xl pb-4 text-black">Precio</h1>
       <div className="text-base md:text-lg text-black font-medium pb-4">
         <span>
-          Precio por dia:{' '}
+          Precio por día:{' '}
           <>
             {pricePerDay ? (
               <span className="font-normal">{pricePerDay}</span>
