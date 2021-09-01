@@ -30,8 +30,8 @@ function AvailabilityRV() {
       <ContainerTitle>
         <h2>Disponibilidad</h2>
         <Subtitle>
-          Contanos cuándo (qué meses o que semanas del año) podrías alquilar tu motorhome o
-          cuándo no.
+          Contanos las fechas en las que podrías alquilar tu motorhome. Mientras más detallado lo
+          expreses, más fácil será encontrar un inquilino
         </Subtitle>
       </ContainerTitle>
       <ContainerFeatures>
