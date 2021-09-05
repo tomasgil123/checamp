@@ -30,7 +30,7 @@ function ContactInfoOwner() {
         <h2>Tu informacion de contacto</h2>
         <Subtitle>
           Vamos a necesitar tu nombre, un mail y un número de celular para avisarte cuando alguien
-          quiera alquilar tu Casa Rodante. Nunca va a ser compartido con terceros sin tu
+          quiera alquilar tu motorhome. Nunca va a ser compartido con terceros sin tu
           autorización
         </Subtitle>
       </ContainerTitle>

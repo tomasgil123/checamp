@@ -10,6 +10,7 @@ const Overview = ({
   spaceForPassengers,
   spaceForSleepers,
   city,
+  DriverMinimumAge,
 }: OverviewSection): JSX.Element => {
   return (
     <section className="w-full lg:col-start-1 lg:col-end-5 block">
@@ -25,11 +26,14 @@ const Overview = ({
             <span>&nbsp;•&nbsp;</span>
             <span>{city}</span>
           </div>
-          <div className="text-sm w-full md:w-auto text-black">
+          <div className="pt-2 md:pt-0 text-sm w-full md:w-auto text-black md:pr-4 md:mr-4 md:border-r md:border-gray-900 md:border-opacity-25">
             <span>{`Pasajeros: ${spaceForPassengers}`}</span>
             <span>&nbsp;•&nbsp;</span>
             <span>{`Huéspedes: ${spaceForSleepers}`}</span>
           </div>
+          {DriverMinimumAge && (
+            <div className="pt-2 md:pt-0 text-sm w-full md:w-auto text-black">{`Edad mínima del conductor: ${DriverMinimumAge} años`}</div>
+          )}
         </div>
         <div className="text-base pt-4 lg:pt-5 text-gray-500">{descriptionListing}</div>
       </header>

@@ -33,10 +33,10 @@ function ImagesRV() {
         <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript" />
       </Head>
       <ContainerTitle>
-        <h2>Imagenes de tu Casa Rodante</h2>
+        <h2>Imágenes de tu motorhome</h2>
         <Subtitle>
-          Compartinos algunas imagenes de tu Casa Rodante para que los potenciales huéspedes puedan
-          darse una mejor idea de como es
+          Compartinos algunas imágenes de tu motorhome para que los potenciales huéspedes puedan
+          darse una mejor idea de cómo es
         </Subtitle>
       </ContainerTitle>
       <ContainerFeatures>
@@ -45,7 +45,8 @@ function ImagesRV() {
       <ContainerHelpCard>
         <HelpCard title="Consejo">
           <span>
-            Si no tenes a mano las imagenes como para cargarlas ahora lo podes hacer después
+            Si ahora no tenés a mano las imágenes, no te preocupes. Podés completar el proceso de
+            registro y cargarlas en otro momento
           </span>
         </HelpCard>
       </ContainerHelpCard>

@@ -128,7 +128,7 @@ const FormTabs = () => {
   return (
     <>
       <Tab>
-        <TextLeftNumber>¿Tenes una consulta? Escribinos por whatsapp al </TextLeftNumber>
+        <TextLeftNumber>¿Tenés una consulta? Escribinos por whatsapp al </TextLeftNumber>
         <a href={`https://wa.me/${support.supportNumberComplete}`} target="_blank">
           {support.supportNumber}
         </a>

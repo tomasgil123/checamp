@@ -76,11 +76,12 @@ const RV: FC<RVProps> = ({ rv }) => {
     pricePerDay,
     priceExtra,
     id,
+    DriverMinimumAge,
   } = rv
 
   const onCheckAvailability = (): void => {
     router.push({
-      pathname: '/inquilinos/contacto',
+      pathname: '/inquilinos/intro',
       query: { rvId: id },
     })
   }
@@ -101,6 +102,7 @@ const RV: FC<RVProps> = ({ rv }) => {
               spaceForPassengers,
               spaceForSleepers,
               city,
+              DriverMinimumAge,
             }}
           />
           <Space {...{ spaceForPassengers, spaceForSleepers }} />
@@ -141,9 +143,16 @@ const RV: FC<RVProps> = ({ rv }) => {
           <Price pricePerDay={pricePerDay} priceExtra={priceExtra} id={id} />
           <PickupLocation cityGoogleMap={cityGoogleMap} city={city} />
           <div className="sticky bottom-0 w-full bg-white lg:hidden p-4">
-            <div className="relative w-full flex justify-end">
+            <div className="relative w-full flex">
+              {pricePerDay && (
+                <div className="text-base md:text-lg lg:text-2xl text-black font-medium pb-4">
+                  <span>
+                    Precio por día: <span className="font-normal">{pricePerDay}</span>
+                  </span>
+                </div>
+              )}
               <button
-                className="p-2 md:p-4 bg-primary-green rounded"
+                className="p-2 md:p-4 bg-primary-green rounded ml-auto"
                 onClick={(): void => onCheckAvailability()}
               >
                 <span className="text-white font-bold text-sm md:text-base">
@@ -154,8 +163,15 @@ const RV: FC<RVProps> = ({ rv }) => {
           </div>
         </div>
         <div className="hidden lg:block lg:col-start-5 lg:col-end-7">
-          <div className="sticky top-24 w-72 h-32 shadow-lg rounded-lg m-auto">
-            <div className="flex flex-row justify-center w-full h-full items-center">
+          <div className="sticky top-24 w-80 h-36 p-4 md:p-6 lg:p-8 shadow-lg rounded-lg m-auto">
+            <div className="flex flex-col justify-center w-full h-full items-center">
+              {pricePerDay && (
+                <div className="text-base md:text-lg lg:text-2xl text-black font-medium pb-4">
+                  <span>
+                    Precio por día: <span className="font-normal">{pricePerDay}</span>
+                  </span>
+                </div>
+              )}
               <button
                 className="p-2 md:p-4 bg-primary-green rounded"
                 onClick={(): void => onCheckAvailability()}

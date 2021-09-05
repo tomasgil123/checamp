@@ -6,8 +6,13 @@ const initialState = {
   email: '',
   phone: '',
   nameAndSurname: '',
+  numberPeople: null,
+  budget: '',
+  departureDate: '',
+  numberDays: null,
   loading: true,
   wasRequestSuccessfull: null,
+  rvId: null,
 }
 
 export default function tenantsReducer(state = initialState, action) {
@@ -20,7 +25,16 @@ export default function tenantsReducer(state = initialState, action) {
         draft.email = action.contactInfo.email
         draft.phone = action.contactInfo.phone
         draft.nameAndSurname = action.contactInfo.nameAndSurname
-        draft.rvId = action.contactInfo.rvId
+        return draft
+      }
+      case 'ADD_PEOPLE_AND_BUDGET': {
+        draft.numberPeople = action.payload.numberPeople
+        draft.budget = action.payload.budget
+        return draft
+      }
+      case 'ADD_DEPARTURE_DATE_AND_NUMBER_DAYS': {
+        draft.departureDate = action.payload.departureDate
+        draft.numberDays = action.payload.numberDays
         return draft
       }
       case 'SAVE_TENANT_DATA_INIT': {
@@ -35,6 +49,10 @@ export default function tenantsReducer(state = initialState, action) {
       case 'SAVE_TENANT_DATA_FAIL': {
         draft.loading = false
         draft.wasRequestSuccessfull = false
+        return draft
+      }
+      case 'SAVE_TENANT_RV_ID': {
+        draft.rvId = action.rvId
         return draft
       }
     }
@@ -61,5 +79,19 @@ export const getContactInfo = createSelector(getTenantssState, (tenantsState) =>
     email: tenantsState.email,
     phone: tenantsState.phone,
     nameAndSurname: tenantsState.nameAndSurname,
+  }
+})
+
+export const getPeopleAndBudget = createSelector(getTenantssState, (tenantsState) => {
+  return {
+    numberPeople: tenantsState.numberPeople,
+    budget: tenantsState.budget,
+  }
+})
+
+export const getDepartureDateAndNumberDays = createSelector(getTenantssState, (tenantsState) => {
+  return {
+    departureDate: tenantsState.departureDate,
+    numberDays: tenantsState.numberDays,
   }
 })

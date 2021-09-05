@@ -15,10 +15,10 @@ function PickupAddressDetails({ pickupAddressDetails, addPickupAddressDetails, g
       }}
       validationSchema={Yup.object().shape({
         pickupAddress: Yup.string().required(
-          'Por favor, indicanos la direccion por la cual los huespedes van a tener que pasar a buscar tu RV'
+          'Por favor, indicanos la dirección por la cual los huespedes van a tener que pasar a buscar tu RV'
         ),
         city: Yup.string().required(
-          'Por favor, inidicanos a que ciudad corresponde la direccion anterior RV'
+          'Por favor, inidicanos a que ciudad corresponde la dirección anterior RV'
         ),
       })}
       onSubmit={(values) => {
@@ -32,7 +32,7 @@ function PickupAddressDetails({ pickupAddressDetails, addPickupAddressDetails, g
             key="pickupAddress"
             type="text"
             name="pickupAddress"
-            label="Direccion de pickup"
+            label="Dirección de pickup"
             handleChange={formProps.handleChange}
             handleBlur={formProps.handleBlur}
             value={formProps.values.pickupAddress}

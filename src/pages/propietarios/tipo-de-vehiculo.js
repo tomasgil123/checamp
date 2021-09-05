@@ -19,12 +19,12 @@ function TypeRV() {
   return (
     <Container>
       <ContainerTitleTypeRV>
-        <h2>Indica tu tipo de vehículo</h2>
+        <h2>Indicanos tu tipo de vehículo</h2>
       </ContainerTitleTypeRV>
       <TypeRVOptions goToNextStep={goToNextStep} />
       <ContainerHelpCard>
         <HelpCard title="Consejo">
-          <span>¿Tenes una consulta? Escribinos por whatsapp al </span>
+          <span>¿Tenés una consulta? Escribinos por whatsapp al </span>
           <a href={`https://wa.me/${support.supportNumberComplete}`} target="_blank">
             {support.supportNumber}
           </a>

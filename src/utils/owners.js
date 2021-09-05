@@ -6,7 +6,7 @@ export const typesOfRV = [
   { name: 'Remolque', link: '/wohnwagen.svg' },
 ]
 
-export const spanishTranslationForRV = 'Casa Rodante'
+export const spanishTranslationForRV = 'motorhome'
 
 export const stepsOwnersForm = [
   { url: 'tipo-de-vehiculo', stepNumber: 0 },

@@ -32,16 +32,8 @@ const Footer = () => {
       <div>© Checamp 2020</div>
       <ContainerIcons>
         <SocialNetworkIcon
-          imgLink="https://d1o5877uy6tsnd.cloudfront.net/application-layout/icons/facebook.png"
-          socialNetworkLink="https://www.facebook.com/"
-        />
-        <SocialNetworkIcon
-          imgLink="https://d1o5877uy6tsnd.cloudfront.net/application-layout/icons/twitter.png"
-          socialNetworkLink="https://twitter.com"
-        />
-        <SocialNetworkIcon
           imgLink="https://d1o5877uy6tsnd.cloudfront.net/application-layout/icons/instagram.png"
-          socialNetworkLink="https://instagram.com"
+          socialNetworkLink="https://www.instagram.com/checamper/?hl=es-la"
         />
       </ContainerIcons>
     </Container>
