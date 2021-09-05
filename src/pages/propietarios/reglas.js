@@ -28,7 +28,7 @@ function RulesRV() {
     <Container>
       <ContainerTitle>
         <h2>Reglas del vehículo</h2>
-        <Subtitle>¿Que cosas se pueden hacer y cuáles no con tu vehículo?</Subtitle>
+        <Subtitle>¿Qué cosas se pueden hacer y cuáles no con tu vehículo?</Subtitle>
       </ContainerTitle>
       <ContainerFeatures>
         <Rules goToNextStep={goToNextStep} />

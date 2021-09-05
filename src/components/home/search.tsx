@@ -40,7 +40,9 @@ const Search = ({ rvsShowcase }: SearchProps): JSX.Element => {
   }
   return (
     <Container>
-      <Title>Encontra el motorhome para tus proximas vacaciones</Title>
+      <Title>
+        Descubrí el motorhome ideal para tus próximas vacaciones y viví una experiencia única
+      </Title>
       <ContainerVehicleCards>
         {rvsShowcase.map((rv) => (
           <VehicleCard key={rv.id} data={rv} onClickVehicleCard={onClickVehicleCard} />

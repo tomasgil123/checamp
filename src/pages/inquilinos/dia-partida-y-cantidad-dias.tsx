@@ -12,7 +12,7 @@ const DaysAndDepartureDatePage: FC = () => {
   return (
     <Container>
       <ContainerTitle>
-        <h2 className="text-lg pb-4">Pasajeros y dia de partida</h2>
+        <h2 className="text-lg pb-4">Pasajeros y día de partida</h2>
       </ContainerTitle>
       <ContainerFeatures>
         <DaysAndDepartureDate goToNextStep={goToNextStep} />

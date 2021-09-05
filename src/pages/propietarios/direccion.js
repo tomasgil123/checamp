@@ -29,7 +29,7 @@ function PickupAddressDetailsRV() {
       <ContainerTitle>
         <h2>Dirección</h2>
         <Subtitle>
-          Contanos por donde tendrian que pasar los huéspedes a buscar tu motorhome al momento de
+          Contanos por dónde tendrían que pasar los huéspedes a buscar tu motorhome al momento de
           alquilarla
         </Subtitle>
       </ContainerTitle>

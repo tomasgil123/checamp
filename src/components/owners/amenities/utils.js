@@ -95,7 +95,7 @@ export const listAmenities = [
       {
         items: [
           {
-            label: 'Microhondas',
+            label: 'Microondas',
             name: 'microwave',
             checked: '0 -288px',
             unchecked: '-24px -288px',
@@ -122,7 +122,7 @@ export const listAmenities = [
       {
         items: [
           {
-            label: 'Aireacondicionado',
+            label: 'Aire acondicionado',
             name: 'airConditioner',
             checked: '0px 0px',
             unchecked: '-24px 0px',
@@ -146,7 +146,7 @@ export const listAmenities = [
             unchecked: '-24px -528px',
           },
           {
-            label: 'Satelite',
+            label: 'Satélite',
             name: 'satellite',
             checked: '0 -648px',
             unchecked: '-24px -648px',
@@ -192,7 +192,7 @@ export const listAmenities = [
             unchecked: '-24px -96px',
           },
           {
-            label: 'Energia solar',
+            label: 'Energía solar',
             name: 'solar',
             checked: '0 -432px',
             unchecked: '-24px -432px',

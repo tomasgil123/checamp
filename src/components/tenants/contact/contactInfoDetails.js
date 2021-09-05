@@ -21,7 +21,7 @@ function ContactInfoDetails({ contactInfo, addContactInfo, goToNextStep }) {
         email: Yup.string()
           .test('is-phone-valid', 'Ese email no parece ser valido', (val) => isEmailValid(val))
           .required('Por favor, completa con tu email'),
-        phone: Yup.string().test('is-phone-valid', 'Ese numero no parece ser valido', (val) =>
+        phone: Yup.string().test('is-phone-valid', 'Ese número no parece ser valido', (val) =>
           isPhoneValid(val)
         ),
       })}

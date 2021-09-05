@@ -71,7 +71,7 @@ function Features({ features, addFeatures, goToNextStep }) {
             key="length"
             type="number"
             name="length"
-            label="Largo: utiliza un número aproximado entero. Ej: Si mide 2.5 pone 3 mts"
+            label="indicanos un número entero aproximado. Por ejemplo: si mide 2,5 metros, poné 3"
             handleChange={formProps.handleChange}
             handleBlur={formProps.handleBlur}
             value={formProps.values.length}

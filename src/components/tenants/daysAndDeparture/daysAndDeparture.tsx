@@ -5,7 +5,6 @@ import { Formik } from 'formik'
 import FormInput from 'src/components/forms/formInput'
 import MainButton from 'src/components/primitives/mainButton'
 import { WrapperSubmitSection, ContainerSubmitButton } from 'src/components/forms/submitButton'
-import { Hint } from 'src/components/owners/general'
 
 const PeopleAndBudget = ({
   departureDate,
@@ -24,7 +23,7 @@ const PeopleAndBudget = ({
           'Por favor, completa con una fecha de partida aproximada'
         ),
         numberDays: Yup.number()
-          .required('Por favor, completa con una cantidad de dias aproximada')
+          .required('Por favor, completa con una cantidad de días aproximada')
           .nullable(),
       })}
       onSubmit={(values): void => {
@@ -38,7 +37,7 @@ const PeopleAndBudget = ({
             key="numberDays"
             type="number"
             name="numberDays"
-            label="Cantidad de dias"
+            label="Cantidad de días"
             sublabel=""
             handleChange={formProps.handleChange}
             handleBlur={formProps.handleBlur}

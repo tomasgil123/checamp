@@ -93,12 +93,13 @@ function Landing() {
       pathname: `/propietarios/tipo-de-vehiculo`,
     })
   }
-  const environment = process.env.NEXT_PUBLIC_ENVIRONMENT ? ' - DEV' : ''
   return (
     <Container>
       <ContainerTitle>
-        <Title>{`Publica tu motorhome ${environment}`}</Title>
-        <SubTitle>¡Gana plata mientras no la estas usando!</SubTitle>
+        <Title>{`Somos la plataforma de motorhomes más grande de Argentina`}</Title>
+        <SubTitle>
+          Si tenés un motorhome, ¡ponelo en alquiler y ganá plata mientras no lo usás!
+        </SubTitle>
         <ContainerButton>
           <MainButton text="Publicar mi motorhome" onClickButton={onRentRV} />
         </ContainerButton>
