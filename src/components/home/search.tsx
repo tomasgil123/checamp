@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router'
 import styled from 'styled-components'
 
 // * Components *
@@ -34,10 +33,6 @@ interface SearchProps {
 }
 
 const Search = ({ rvsShowcase }: SearchProps): JSX.Element => {
-  const router = useRouter()
-  const onClickVehicleCard = (vehicleId: number): void => {
-    router.push(`/motorhome/${vehicleId}`)
-  }
   return (
     <Container>
       <Title>
@@ -45,7 +40,7 @@ const Search = ({ rvsShowcase }: SearchProps): JSX.Element => {
       </Title>
       <ContainerVehicleCards>
         {rvsShowcase.map((rv) => (
-          <VehicleCard key={rv.id} data={rv} onClickVehicleCard={onClickVehicleCard} />
+          <VehicleCard key={rv.id} data={rv} />
         ))}
       </ContainerVehicleCards>
       <div className="flex justify-center pt-8">
