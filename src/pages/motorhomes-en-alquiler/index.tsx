@@ -50,11 +50,6 @@ interface RVRentalProps {
 }
 
 const RVRental: FC<RVRentalProps> = ({ rvs }) => {
-  const router = useRouter()
-  const onClickVehicleCard = (vehicleId: number): void => {
-    router.push(`/motorhome/${vehicleId}`)
-  }
-
   const [showModalFilters, setShowModalFilters] = useState(false)
 
   const [rvsToShow, setRvsToShow] = useState(rvs)
@@ -118,7 +113,7 @@ const RVRental: FC<RVRentalProps> = ({ rvs }) => {
         </div>
         <ContainerVehicleCards>
           {rvsToShow.map((rv) => (
-            <VehicleCard key={rv.id} data={rv} onClickVehicleCard={onClickVehicleCard} />
+            <VehicleCard key={rv.id} data={rv} />
           ))}
         </ContainerVehicleCards>
       </Wrapper>
